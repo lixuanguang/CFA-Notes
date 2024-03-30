@@ -1,0 +1,167 @@
+\subsection{Statistics}
+
+\begin{definition}
+\hlt{Harmonic Mean}
+\begin{align}
+\overline{X}_H = \frac{n}{\sum\limits_{i=1}^n \frac{1}{X_i}} \nonumber
+\end{align}
+\end{definition}
+
+\begin{definition}
+\hlt{Mean Absolute Deviation}
+\begin{align}
+\text{MAD} = \frac{\sum\limits_{i=1}^n \abs{X_i - \overline{X}}}{n} \nonumber
+\end{align}
+\end{definition}
+
+\begin{definition}
+\hlt{Semi-variance}: average squared deviation below mean
+\begin{align}
+s^2 = \frac{\sum\limits_{i=1}^n (X_i - \overline{X})^2}{n-1} \ \ \ \forall X_i \leq \overline{X} \nonumber
+\end{align}
+\end{definition}
+
+\begin{definition}
+\hlt{Chebyshev Inequality}: proportion of observations within $k$ standard deviation of arithmetic mean is at least $1 - \frac{1}{k^2}$
+\begin{align}
+P(\abs{X - \mu} \geq k \sigma) \leq \frac{1}{k^2} \nonumber
+\end{align}
+\end{definition}
+
+\begin{definition}
+\hlt{Coefficient of Variance} (CV): the lower the CV value the better; less risk per unit return.
+\begin{equation}
+CV = \frac{s}{\overline{X}} \nonumber
+\end{equation}
+\end{definition}
+
+\begin{definition}
+\hlt{Skewness}:
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Symmetric: mean = median = mode
+\item Positive skew: mode < median < mean
+\item Negative skew: mean < median < mode
+\end{enumerate}
+Positive skewness is preferred.
+\end{definition}
+
+\begin{definition}
+\hlt{Excess Kurtosis}: characterises kurtosis relative to the normal distribution.
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Normal, mesokurtic distribution: excess kurtosis = 0
+\item Leptokurtic distribution: excess kurtosis > 0
+\item Platykurtic distribution: excess kurtosis < 0
+\end{enumerate}
+\end{definition}
+
+\begin{definition}
+\hlt{Odds}:
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Odds for event $E = \frac{P(E)}{1 - P(E)}$
+\item Odds against event $E = \frac{1-P(E)}{P(E)}$
+\end{enumerate}
+\end{definition}
+
+\begin{definition} {\color{white}space}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Expected value: $E(X) = \sum\limits_{i=1}^n P(X_i) X_i$
+\item Variance: $\sigma^2(X) = E[(X - E[X])^2] = \sum\limits_{i=1}^n P(X_i) [X_i - E[X_i]]^2$
+\item Covariance: $\text{Cov}(R_i, R_j) = E[(R_i - E[R_i])(R_j - E[R_j])]$
+\item Correlation: $\rho(R_i, R_j) = \frac{\text{Cov}(R_i, R_j)}{\sigma(R_i) \sigma(R_j)}$
+\end{enumerate}
+\end{definition}
+
+\begin{definition} {\color{white}space}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Portfolio variance: $\sigma^2(X) = E[(R_p - E[R_p])^2] = \sum\limits_{i=1}^n \sum\limits_{j=1}^n w_i w_j \text{Cov}(R_i, R_j)$
+\item Joint distribution function: $\text{Cov}(R_A, R_B) = \sum\limits_i \sum\limits_j P(R_{A,i}, R_{B,j}) (R_{A,i} - E[R_A]) (R_{B_i} - E[R_B])$.\\
+Sum all possible standard deviation cross-products, weighted by the appropriate joint probability.
+\end{enumerate}
+\end{definition}
+
+\begin{definition} {\color{white}space}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Labelling: of $N$ objects with $k$ different labels. Total combinations $= \frac{n!}{n_1 ! n_2 ! \ldots n_k !}$
+\item Combination: $nCr = \frac{n!}{(n-r)! r!}$
+\item Permutations: $nPr = \frac{n!}{(n-r)!}$
+\end{enumerate}
+\end{definition}
+
+\begin{definition}
+\hlt{Measurement scales}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Nominal: categorises data, but do not have rank
+\item Ordinal: data is sorted ($<, >$)
+\item Interval: differences are meaningful ($<, >, +, -$)
+\item Ratio: true zero is origin ($<, >, +, -, 0$)
+\end{enumerate}
+\end{definition}
+
+\begin{definition}
+	{\color{white}space}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Monte Carlo Simulation: provides distribution of possible solutions to complex functions
+\item Scenario analysis: shows changes in key financial quantities that result from given economic events
+\item Historical simulation: approach in back-testing data
+\end{enumerate}
+\end{definition}
+
+\begin{definition}
+	{\color{white}space}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Empirical probability: estimated from data as relative frequency of occurrence
+\item Subjective probability: drawn on personal or subjective judgment
+\item Priori probability: Obtained based on logical analysis
+\end{enumerate}
+\end{definition}
+
+\begin{definition} \hlt{Probability Distributions}\\
+
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\rowcolor{gray!30}
+\text{Distribution} & \text{Notation} & \text{PMF or PDF} & \text{Mean} & \text{Variance} \\
+\hline
+Binomial & $X \sim B(n,p)$ & $P(X=x) = \binom{n}{x} p^x (1-p)^{n-x}$ & $np$ & $np(1-p)$ \\
+\hline
+Normal & $X \sim N(\mu, \sigma^2)$ & $f(x) = \frac{1}{\sigma \sqrt{2} \pi} \exp(-\frac{1}{2} (\frac{x-\mu}{\sigma})^2)$ & $\mu$ & $\sigma^2$ \\
+\hline
+Standard Normal & $X \sim N(0, 1)$ & Standardised with $Z=\frac{X-\mu}{\sigma}$ & $0$ & $1$ \\
+\hline
+Log-Normal & $X \sim$ Lgn$(\mu, \sigma^2)$ & $\frac{1}{x \sigma \sqrt{2 \pi}} \exp \left( - \frac{(\ln x - \mu)^2}{2 \sigma^2} \right)$ & $\exp(\mu + \frac{\sigma^2}{2})$ & $[\exp(\sigma^2) - 1] \exp(2 \mu + \sigma^2)$ \\
+\hline
+Student's t & $X \sim t_v$ & $-$ & $0$ & $\frac{v}{v-2}$ for $v>2$, $v = n-1$ \\
+\hline
+\end{tabular}
+\end{definition}
+
+\begin{definition} \hlt{Central Limit Theorem} \\
+For any distribution, mean $\overline{X}$ approaches a normal distribution with mean $\mu$ and variance $\frac{\sigma^2}{N}$ as $N \rightarrow \infty$.
+\end{definition}
+
+\begin{definition} \hlt{Confidence Interval}
+\begin{equation}
+\text{Point Estimate} \pm \text{Reliability Factor} \times \text{Standard Error} \nonumber
+\end{equation}
+\end{definition}
+
+\begin{definition} \hlt{Biases}:
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Data Mining: Continually mixing and matching factors until two or more data series that are highly correlated are discovered.
+\item Sample Selection: Data availability leads to certain assets being excluded from analysis, i.e. non-response
+\item Survivorship: Studies on databases that have eliminated all companies that have ceased to exist.
+\item Look-ahead: Studies assume that fundamental info is available when it is not. Bias results up.
+\item Time Period: Test design is based on a time period that may make results time-period specific.
+\item Data Snooping: Bias in inference drawn due to prying into empirical results of others to guide own analysis
+\end{enumerate}
+\end{definition}

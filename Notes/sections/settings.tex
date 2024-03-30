@@ -1,0 +1,86 @@
+\section{Tips and Tricks}
+
+\subsection{Calculator Recommended Settings}
+
+\begin{method}{\color{white}space}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item \hlt{Reset calculator}: \fbox{\strut $2ND$} \fbox{\strut $+ \vert -$}
+\item \hlt{Increase to $9$ decimal}: \fbox{\strut $2ND$} \fbox{\strut \ . } (FORMAT) \fbox{\strut \ $9$ } \fbox{\strut ENTER}
+\item \hlt{Set period to $1$ year}:  \fbox{\strut $2ND$}  \fbox{\strut I/Y} (P/Y) \fbox{\strut \ $1$ } \fbox{\strut ENTER}
+\item \hlt{Set as AOS mode}: \fbox{\strut $2ND$} \fbox{\strut \ . } (FORMAT) \fbox{\strut \ $\uparrow$ } \fbox{\strut $2ND$} \fbox{\strut ENTER}
+\end{enumerate}
+\end{method}
+
+\begin{method}{\color{white}space}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item \hlt{Backspace button}: \fbox{\strut \ $\rightarrow$ }, i.e., pressing \fbox{\strut \ $2$ } \fbox{\strut \ $\times$ } \fbox{\strut \ $3$ } \fbox{\strut \ $\rightarrow$ } \fbox{\strut \ $2$ } \fbox{\strut \ $=$ } will give $4$.
+\item \hlt{Clear previous entry}: \fbox{\strut $CE \vert C$}
+\item \hlt{Clear everything}: \fbox{\strut $CE \vert C$} \fbox{\strut $CE \vert C$}
+\item \hlt{Clear TVM worksheet}: \fbox{\strut $2ND$} \fbox{\strut $FV$} (CLR TVR)
+\end{enumerate}
+\end{method}
+
+\begin{method}{\color{white}space}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item \hlt{Store in memory}: \fbox{\strut $STO$} (\fbox{\strut $0$} to \fbox{\strut $9$})
+\item \hlt{Recall from memory}: \fbox{\strut $RCL$} (\fbox{\strut $0$} to \fbox{\strut $9$})
+\item \hlt{Recall last answer}: \fbox{\strut $2ND$} \fbox{\strut $=$}
+\item \hlt{Clear all memory and store values}: \fbox{\strut $2ND$} \fbox{\strut $0$} \fbox{\strut $2ND$} \fbox{\strut $CE|C$}
+\end{enumerate}
+\end{method}
+
+\begin{method}{\color{white}space}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item \hlt{Set up calculator for single variable statistics}: \fbox{\strut $2ND$} \fbox{\strut $8$}, then \fbox{\strut $2ND$} \fbox{\strut ENTER} until we see $1$-V on screen. Then clear contents \fbox{\strut $CE|C$}. \\
+Enter data setting and clear the data: \fbox{\strut $2ND$} \fbox{\strut $7$} \fbox{\strut $2ND$} \fbox{\strut $CE|C$}.\\
+Enter single-var data: [VALUE] \fbox{\strut ENTER} \fbox{\strut \ $\downarrow$\ } \fbox{\strut \ $\downarrow$\ }, enter value in X (data), and leave Y as $1$ (frequency).\\
+Enter stats function and toggle \fbox{\strut \ $\downarrow$\ } to see mean, sample s.d., population s.d.\\
+For weighted returns, use X as the return, and Y as the weights.
+\item \hlt{Covariance and correlation}: \fbox{\strut $2ND$} \fbox{\strut $8$}, then \fbox{\strut $2ND$} \fbox{\strut ENTER} until we see [LIN] on screen. Then clear contents \fbox{\strut $CE|C$}. \\
+Enter data setting and clear the data: \fbox{\strut $2ND$} \fbox{\strut $7$} \fbox{\strut $2ND$} \fbox{\strut $CE|C$}.\\
+Enter data: [VALUE] \fbox{\strut ENTER} \fbox{\strut \ $\downarrow$\ } \fbox{\strut \ $\downarrow$\ }, enter value in X and Y.\\
+Enter stats function and toggle \fbox{\strut \ $\downarrow$\ } to see $r$, $Sx$ and $Sy$, then compute covariance as $Sx \times S_y$.\\
+Correlation is simply the value $r$ computed earlier.
+\item \hlt{Time value of money}: Input values into all except one of these: \fbox{\strut N} \fbox{\strut $I/Y$} ($\%$), \fbox{\strut PV}, \fbox{\strut PMT}, \fbox{\strut FV}. Then use \fbox{\strut CPT} on the target variable to solve for the results.
+\item \hlt{Interest rate conversion}, i.e., convert nominal $10\%$, $m=12$ payments per year into effective rate.\\
+\fbox{\strut $2ND$} \fbox{\strut $2$} (ICONV) \fbox{\strut \ $\uparrow$\ }\fbox{\strut $12$} \fbox{\strut ENTER}, \fbox{\strut $\downarrow$} \fbox{\strut $10$} \fbox{\strut ENTER}, \fbox{\strut $\downarrow$} \fbox{\strut CPT} to get effective rate.
+\item \hlt{Cash flow computation}: clear memory with \fbox{\strut CF} \fbox{\strut $2ND$} \fbox{\strut $CE|C$}, then input [VALUE] \fbox{\strut ENTER} \fbox{\strut $\downarrow$}.
+Enter interest rate with \fbox{\strut NPV} [VALUE] \fbox{\strut ENTER} \fbox{\strut $\downarrow$}, then \fbox{\strut CPT} to get present value, PV.
+\item \hlt{Amortisation schedule}: i.e., $\$1000$ on $3$-year loan, interest rate of $10\%$.\\
+Check payment per year, make sure it is $1$ (with \fbox{\strut $2ND$} \fbox{\strut $I/Y$}).\\
+Input information with \fbox{\strut $3$} \fbox{\strut N} \fbox{\strut 10} \fbox{\strut $I/Y$} \fbox{\strut $1000$} \fbox{\strut PV} \fbox{\strut CPT} \fbox{\strut PMT}.\\
+Before using amortisation worksheet, clear memory with \fbox{\strut $2ND$} \fbox{\strut PV} (AMORT) \fbox{\strut $2ND$} \fbox{\strut $CE|C$}.\\
+To see interest and principal repayment at each time period, set $P1$ as \fbox{\strut $t$} for year $t$, then use \fbox{\strut CPT} \fbox{\strut $\downarrow$} to see the values at each time period.
+\end{enumerate}
+\end{method}
+
+\subsection{Memorise for Exams}
+
+\begin{definition}
+\hlt{Critical $Z$-values} \\
+
+\begin{tabular}{|c|c|}
+\hline
+\rowcolor{gray!30}
+\text{One-Tailed Test} & \text{Two-Tailed Test} \\
+\hline
+$-$ &  $68\%$ ($1.0$) \\
+\hline
+$-$ &  $90\%$ ($1.645$) \\
+\hline
+$95\%$ ($1.645$) &  $95\%$ ($1.96$) \\
+\hline
+$97.5\%$ ($1.96$) & $-$ \\
+\hline
+$99\%$ ($2.33$) &  $99\%$ ($2.58$)\\
+\hline
+$99.5\%$ ($2.57$) & $-$ \\
+\hline
+\end{tabular}
+\end{definition}
+
+

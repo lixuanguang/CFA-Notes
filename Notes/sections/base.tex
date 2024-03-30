@@ -1,0 +1,177 @@
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage[margin=2cm,foot=1cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{ragged2e}
+\usepackage{amsbsy}
+\usepackage{xparse}
+\usepackage{natbib}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{tabularx}
+
+\hypersetup{
+	colorlinks,
+	linkcolor={blue!80!black},
+	citecolor={green!80!black},
+	urlcolor={red!80!black}
+}
+
+\usepackage[nodisplayskipstretch]{setspace}
+\setstretch{1}
+
+% Used to set numbering of the content
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+\newcommand{\matr}[1]{\mathbf{#1}} % undergraduate algebra version
+%\newcommand{\matr}[1]{#1}          % pure math version
+%\newcommand{\matr}[1]{\bm{#1}}     % ISO complying version
+\newcommand{\vect}[1]{\bm{#1}} % undergraduate algebra version
+
+%%
+% Math packages
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{rotating}
+\usepackage{mathrsfs}
+\usepackage{tikz-cd}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{makecell}
+
+\graphicspath{ {./images/} }
+
+%%
+% Math Commands
+\def\upint{\mathchoice%
+	{\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+	{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+	{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+	{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+	\int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+\usepackage{tikz}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\x}{\mathbf{x}}
+\newcommand{\F}{\mathbf{F}}
+\newcommand{\f}{\mathbf{f}}
+\newcommand{\y}{\mathbf{y}}
+\renewcommand{\b}{\mathbf{b}}
+\renewcommand{\c}{\mathbf{c}}
+\renewcommand{\a}{\mathbf{a}}
+\newcommand{\h}{\mathbf{h}}
+\newcommand{\g}{\mathbf{g}}
+\newcommand{\z}{\mathbf{z}}
+\newcommand{\ze}{\mathbf{0}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+\newcommand{\brk}[1]{ \left[#1\right] }
+\newcommand{\brc}[1]{ \left\{#1\right\} }
+\newcommand{\paren}[1]{ \left(#1\right) }
+\newcommand{\normop}[1]{\left\lVert#1\right\rVert_\text{op}}
+\newcommand{\LL}{\mathcal{L}}
+\newcommand{\uni}{\overset{\text{uni}}{\to}}
+\DeclareMathOperator{\diam}{diam}
+\newcommand{\Prr}[1]{\text{Pr}\left(#1\right)}
+\newcommand{\ceil}[1]{\lceil #1 \rceil}
+\newcommand{\floor}[1]{\lfloor #1 \rfloor}
+
+\definecolor{dartmouthgreen}{rgb}{0.05, 0.5, 0.06}
+\definecolor{egyptianblue}{rgb}{0.06, 0.2, 0.65}
+\definecolor{dukeblue}{rgb}{0.0, 0.0, 0.61}
+\definecolor{jazzberryjam}{rgb}{0.65, 0.04, 0.37}
+\definecolor{magenta}{HTML}{EC008C}
+\definecolor{darkmagenta}{rgb}{0.55, 0.0, 0.55}
+\definecolor{deeppink}{rgb}{1.0, 0.08, 0.58}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\newcommand\disteq{\stackrel{\textnormal{dist}}{=}}
+
+\NewDocumentCommand{\evalat}{sO{\big}mm}{%
+  \IfBooleanTF{#1}
+   {\mleft. #3 \mright|_{#4}}
+   {#3#2|_{#4}}%
+}
+
+%%
+% Self-defined useful shortcuts
+\newcommand{\isomorp}{\xrightarrow{\sim}}
+\newcommand{\hlt}[1]{\textit{{\color{blue}#1}}}
+\newcommand{\simpt}[1]{\textit{{\color{deeppink}#1}}}
+\newcommand{\impt}[1]{\textit{{\color{red}#1}}}
+\newcommand{\gcds}[1]{\textnormal{gcd}#1}
+\newcommand{\mins}[1]{\textnormal{min}#1}
+\newcommand{\maxs}[1]{\textnormal{max}#1}
+\newcommand{\lcms}[1]{\textnormal{lcm}#1}
+\newcommand{\degs}[1]{\textnormal{deg}#1}
+\newcommand{\exps}[1]{\textnormal{exp}#1}
+\newcommand{\tors}[1]{\textnormal{Tor}#1}
+\newcommand{\homs}[1]{\textnormal{Hom}#1}
+\newcommand{\anns}[1]{\textnormal{Ann}#1}
+\DeclareMathOperator{\sign}{sign}
+
+\newcommand\xxx{\par\hangindent1em\makebox[1em][l]{$\bullet$}}
+
+%%
+\setcounter{section}{0}
+% Set up math tools
+\theoremstyle{theorem}
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{qnbank}[theorem]{Question Bank}
+\let\oldqnbank\qnbank
+\renewcommand{\qnbank}{\oldqnbank\normalfont}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\let\oldalgorithm\algorithm
+\renewcommand{\algorithm}{\oldalgorithm\normalfont}
+\newtheorem{process}[theorem]{Process}
+\let\oldprocess\process
+\renewcommand{\process}{\oldprocess\normalfont}
+\newtheorem{method}[theorem]{Method}
+\let\oldmethod\method
+\renewcommand{\method}{\oldmethod\normalfont}
+\newtheorem{definition}[theorem]{Definition}
+\let\olddefinition\definition
+\renewcommand{\definition}{\olddefinition\normalfont}
+\newtheorem{example}[theorem]{Example}
+\let\oldexample\example
+\renewcommand{\example}{\oldexample\normalfont}
+\newtheorem{remark}[theorem]{Remark}
+\let\oldremark\remark
+\renewcommand{\remark}{\oldremark\normalfont}
+
+%% For coding syntax
+\lstdefinestyle{codestyle}{  
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\normalsize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=10pt,
+    frame=single,                
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=codestyle}
