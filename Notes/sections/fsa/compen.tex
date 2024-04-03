@@ -1,0 +1,539 @@
+\subsection{Employee Compensation}
+
+\begin{flushleft}
+\begin{tabularx}{\textwidth}{p{10em}|p{15em}|X}
+\hline
+\rowcolor{gray!30}
+Category & Definition & Common Examples \\
+\hline
+Short-Term Benefits & Compensation expected to be paid within 12 months &
+\xxx Salaries and wages
+\xxx Annual bonuses
+\xxx Non-monetary benefits i.e., medical care
+\xxx Contributions to social security schemes
+\xxx Paid leave \\
+\hline
+Long-Term Benefits & Compensation expected to be paid after 12 months & 
+\xxx Long-term paid leave i.e., sabbatical
+\xxx Long-term disability benefits \\
+\hline
+Termination Benefits & Compensation paid during employee termination &
+\xxx Severance
+\xxx Continued access to medical and other non-monetary benefits
+\xxx Career counselling, outplacement services \\
+\hline
+Share-Based Compensation & Compensation in form or, or in reference to, shares of employer stock &
+\xxx Restricted stock
+\xxx Stock options \\
+\hline
+Post-Employment Benefits & Compensation expected to be paid after employee retirement &
+\xxx Pension and lump sum payments to retirees
+\xxx Retiree life insurance, medical care \\
+\hline
+\end{tabularx}
+\end{flushleft}
+
+\begin{remark} \hlt{Employee Compensation Underlying Principle}\\
+Recognize compensation costs at fair value in the period that the employee provides services, typically the same period that compensation vests.
+\end{remark}
+
+\begin{flushleft}
+\begin{tabularx}{\textwidth}{p{10em}|X|p{12em}|p{12em}}
+\hline
+\rowcolor{gray!30}
+& Short-Term Benefits & Share-Based Compensation & Post-Employment Benefits \\
+\hline
+Typical Vesting Period & Days or weeks & Years & Years, decades \\
+\hline
+Form of Payment & Cash & $\text{Shares}^1$ & Cash \\
+\hline
+Amount Recognised Over Vesting Period & Undiscounted salary, wage, etc. & Fair value on grant date & Present value of estimated future benefits \\
+\hline
+\end{tabularx}
+\end{flushleft}
+\begin{enumerate}[label=\arabic*., before=\small]
+\setlength{\itemsep}{0pt}
+\item Some companies pay share-based compensation settled in cash, which is accounted for like short-term benefits.
+\end{enumerate}
+
+\subsubsection{Short-Term Benefits Compensation}
+
+\begin{method} \hlt{Short-Term Benefits Recognition}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Compensation expense and corresponding current liability recognised as compensation vests. At settlement, cash is paid (as outflow in CFO), liability de-recognised.
+\item If compensation expenses are capitalised as an asset (expense on IS deferred to when employee service is consumed), costs are capitalised to inventories, then later expensed as COGS.
+\end{enumerate}
+\end{method}
+
+\begin{remark} \hlt{Short-Term Benefits}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Income Statement: Vesting period - 'general and administrative expense' with salary for the period
+\item Balance Sheet: Vesting period - 'accrued compensation' with salary for the period\\
+Settlement date - 'accrued compensation' reverses with salary for the period (negative value)
+\item Cash Flow Statement: Settlement period - 'CFO' reverses with salary for the period (negative value)
+\end{enumerate}
+\end{remark}
+
+\begin{remark} \hlt{Short-Term Benefits Tied to Inventory}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Income Statement: Sale date - if good tied to salary sold, 'cost of sales' increase by salary
+\item Balance Sheet: Vesting period - 'inventory' and 'accrued compensation' both increase by salary\\
+Settlement date - 'accrued compensation' decrease by salary\\
+Sale date - 'inventories' decrease by salary
+\item Cash Flow Statement: Settlement period - 'CFO' decrease by salary
+\end{enumerate}
+\end{remark}
+
+\subsubsection{Share-Based Compensation}
+
+\begin{method} \hlt{Share-Based Compensation Recognition} \\
+Offsetting entry for compensation expense is equity on BS.\\
+Single grant affects financial statements over period of vesting.\\
+Fair value used as measurement on grant date.
+\end{method}
+
+\begin{flushleft}
+\begin{tabularx}{\textwidth}{p{9em}|p{14.5em}|X}
+\hline
+\rowcolor{gray!30}
+Instrument & Other Names & Description \\
+\hline
+Restricted Stock &
+\xxx Restricted stock awards
+\xxx RSUs
+\xxx Performance shares/units
+& Awards of shares or share-like units with sale and other restrictions that are lifted upon vesting. \\
+\hline
+Stock Options & \xxx Share options & Awards of non-tradable call options, typically at the money, on the employer stock. \\
+\hline
+Stock Appreciation-Based &
+\xxx Stock appreciation rights
+\xxx Phantom shares 
+& Awards of cash or shares based on performance of shares over a period \\
+\hline
+Stock Purchase-Based & 
+\xxx Employee stock purchase plan
+\xxx Employee stock ownership plan
+& Permits employees to purchase a limited number of newly issued shares at a discount.\\
+\hline
+\end{tabularx}
+\end{flushleft}
+
+\begin{definition} \hlt{Stock Options}\\
+Non-tradable. Compensation expense based on fair value of option on grant date.
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Income Statement: compensation expense amortised on straight line over vesting period.
+\item Balance Sheet: compensation expense decrease net income and retained earnings. Offsetting entry an increase in share-based compensation reserve (part of equity), hence no change to total equity.
+\end{enumerate}
+Fair value of option based on observable market price of similar option. Else, may use an option-pricing model. Companies required to disclose assumptions used (i.e., grant date, stock price, maturity, exercise price, risk-free rate), and implied volatility of the option.
+\end{definition}
+
+\begin{definition} \hlt{Conditional Grants and Stock Grants}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Restricted stock: requirements that must be met before stock can be sold. May have:
+\begin{enumerate}[label=\arabic*.]
+\setlength{\itemsep}{0pt}
+\item Service condition: specifies number of year years of employment needed before options or stock vest
+\item Performance condition: grant vests upon achievement of a specific target
+\item Market condition: target is based on a market metric.
+\end{enumerate}
+\begin{equation}
+\text{Stock Grant Value} = \text{Stock Value on Grant Date} \times \text{Number of Shares Granted} \nonumber
+\end{equation}
+Performance shares are performance-based restricted stocks.
+\item Restricted stock units (RSUs): instruments that represent right to receive shares. No voting rights, dividends, not tradable. Preferred over stock options as hey accrue value if stock price is above zero, are simpler for individual tax calculations, and have no exercise price outlays.\\
+For RSU, stock price is reduced by estimated present value of dividends expected during vesting period.
+\end{enumerate}
+On settlement, value of stock transferred out of share-based compensation reserve, allocated to common stock and paid-in-capital. For option grants, on exercise, there is a cash inflow from strike price reported as cash inflow for financing activity in the cash flow statement.
+\end{definition}
+
+\begin{flushleft}
+Timing for share-based compensation tax:\\
+\begin{tabularx}{\textwidth}{p{4em}|p{14.5em}|X}
+\hline
+\rowcolor{gray!30}
+& Financial Reporting & Tax Return Deduction \\
+\hline
+Timing & Over the vesting period & At settlement \\
+\hline
+Amount & Grant-date fair value & 
+\xxx RSUs: Share price on the settlement date
+\xxx Options: Intrinsic value at exercise\\
+\hline
+\end{tabularx}
+\end{flushleft}
+
+\begin{remark} \hlt{Share-Based Compensation for Tax Purposes}\\
+Compensation expense based on stock price on grant date for both option and stock grants.\\
+Tax deduction for stock-based compensation only allowed upon settlement.
+\begin{align}
+\text{Tax deduction for stock grants} &= \text{share price on settlement date} \times \text{number of shares vested} \nonumber \\
+\text{Tax deduction for options} &= \text{intrinsic value on settlement date} \times \text{number of options vested} \nonumber \\
+&= \text{(stock price on settlement date} - \text{strike price)} \times \text{number of options} \nonumber
+\end{align}
+\end{remark}
+
+\begin{remark} \hlt{Share-Based Compensation on Tax Rates}\\
+Higher share price at settlement results in higher tax deduction than cumulative stock-based compensation expense, resulting in excess tax benefit.
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item IFRS: recognised in equity, hence have more stable effective tax rates
+\item GAAP: recognised in income tax expense on IS, results in volatility in effective tax rate. May cause large differences between issuer effective and statutory tax rates.
+\end{enumerate}
+\end{remark}
+
+\begin{flushleft}
+\begin{tabularx}{\textwidth}{p{20em}|X|X}
+\hline
+\rowcolor{gray!30}
+Condition & IFRS & GAAP \\
+\hline
+Share price on settlement date > grant date (excess tax benefit or tax windfall) &
+Gain recognised directly in shareholder equity &
+Decrease in income tax expense on income statement \\
+\hline
+Share price on settlement date < grant date (tax shortfall) &
+Loss recognised directly in shareholder equity &
+Increase in income tax expense on income statement \\
+\hline
+\end{tabularx}
+\end{flushleft}
+
+\begin{method} \hlt{Treasury Stock Method} \\
+Treasury stock method adds 'net' amount of potentially dilutive securities (i.e., unvested RSUs) to basic shares outstanding. Proceeds from exercise or conversion of potentially dilutive securities assumed to repurchase shares at the average share price for the reporting period.
+\begin{align}
+\text{Basic shares outstanding} + \text{Shares from conversion} - \text{Number of treasury shares} = \text{Diluted shares outstanding} \nonumber
+\end{align}
+Performance shares vested based on period of service are considered dilutive if stock price has not declined substantially. Expectations about vesting of shares based on other performance metrics is more subjective.\\
+Unvested options that are in-the-money are considered dilutive.\\
+RSUs and restricted stock grants are anti-dilutive only if current stock price is significantly less than price on grant date (unrecognised compensation expense per share higher than current market price).\\
+Rapid increase in share price can result in more dilution.
+\begin{align}
+\text{Number of treasury shares} &= \frac{\text{Assumed proceeds}}{\text{Average share price during reporting period}} \nonumber \\
+\text{Assumed proceeds} &= \text{Cash proceeds} + \text{Average unrecognised share-based compensation expense} \nonumber \\
+\text{Cash proceeds} &= \text{Number of options} \times \text{Exercise price} \nonumber\\
+\text{Share-based compensation expense} &= \text{Unvested awards} \times \text{Grant-date fair value} \nonumber
+\end{align}
+where 'Average unrecognised share-based compensation expense' is the average of last two period-end values of amortised amounts of share-based expense. Cash proceeds is zero for stock grants.\\
+Method nets number of hypothetically repurchased shares against total number of potentially dilutive securities.\\
+Diluted EPS cannot exceed basic EPS; companies that report net loss will report same basic and diluted shares.
+\end{method}
+
+\begin{remark} \hlt{Anti-Dilutive Securities for Treasury Stock Method}\\
+Two cases where anti-dilutive securities should be added to diluted shares outstanding for valuation:
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Companies with net loss. As diluted EPS cannot exceed basic EPS, companies will report equal amount of basic and diluted shares outstanding. Be alert to unprofitable companies that use significant amounts of share-based compensation.
+\item Companies with large share price declines, or volatile share price.
+\end{enumerate}
+\end{remark}
+
+\begin{remark} \hlt{IFRS Share-Based Compensation Disclosures}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Nature and extent of compensation arrangement
+\item How the fair value of equity granted during the period was determined
+\item Effect on company's net income during the period and on financial position
+\end{enumerate}
+\end{remark}
+
+\begin{remark} \hlt{Forecasting Share-Based Compensation}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Income Statement: typically not a discrete line item.\\
+If an operating expense item share drivers and/or includes some share-based compensation, then separation of compensation expenses is not required for forecasting purposes.\\
+Else, first subtract amounts attributable to compensation from each relevant category, then forecast individual expenses as proportion of revenues (based on historical trends), finally forecast this separately.\\
+Use historical data, management guidance, assumptions on reversion to industry mean to forecast.
+\item Cash Flow Statement: compensation to be added back to net income to arrive at CFO. Expected cash inflow from option exercise should be reflected in CFF.
+\end{enumerate}
+\end{remark}
+
+\begin{remark} \hlt{Forecasting Shares Outstanding}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Unvested Grants: use diluted number of shares outstanding as reported.
+\item Future grants: discount estimated value of equity by a dilution factor, or by estimating an increase in number of shares outstanding.
+\item Settlement of Awards: based on growth rates of historical values, or by assuming that a percentage of outstanding awards settles each period.
+\end{enumerate}
+\begin{align}
+&\text{ Basic shares}_{\text{Begin}} + \text{RSU vested, options exercised} + \text{shares from secondaries, acquisitions} - \text{share repurchase} \nonumber \\
+= &\text{ Basic shares}_{\text{End}} \nonumber \\
+&\text{ Diluted shares} = \text{Basic shares}_{\text{End}} + \text{Number of diluted securities} \nonumber
+\end{align}
+Option exercises will affect CFS and BS, as cash is received from exercises. RSU vesting does not materially affect financial statements.
+\end{remark}
+
+\begin{remark} \hlt{Valuation Considerations}\\
+Valuation model needs to be modified to account for effect of:
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Dilution from outstanding but unvested share-based awards.\\
+May use diluted shares outstanding to compute per-share value.\\
+Alternatively, may use basic shares outstanding add gross amount of potentially dilutive securities (including share-based awards) as the share count instead.
+\item Dilution from future share-based awards.\\
+In DCF valuation, to deduct share-based compensation from FCF.\\
+Alternatively, reduce equity value by an estimation dilution factor or increasing share count by additional amount. Method is more time consuming, should deliver same result.
+\end{enumerate}
+\end{remark}
+
+\begin{remark} \hlt{Comparison of Companies with Compensation}\\
+As share-based compensation is non-cash, companies with higher non-cash compensation will report higher FCF and any other CF measure.\\
+Ratios using CF measures in relative valuation ma hence be misleading when there are significant differences in compensation structure across companies.
+\end{remark}
+
+\subsubsection{Post-Employment Compensation}
+
+\begin{definition} Pension Arrangements
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item \hlt{Defined Contribution (DC)}: employer contributes certain sum each period to employee retirement account. Contribution based on factors such as years of service, age, compensation, profitability, percentage of employee contribution.\\
+No promises made to employee on future value of plan assets.\\
+Investment decisions left to employee.
+\item \hlt{Defined Benefit (DB)}: employer promises lump sum or periodic payment to employee after retirement. Periodic payment based on years of service, compensation at retirement.\\
+As employee future benefit is predetermined, employer bears all investment risk.\\
+Employers required to pre-fund DB plans by setting aside assets in a separate legal entity, and make contributions to plan assets to meet minimum funding levels or on discretionary basis.\\
+Employer contributions are tax deductible; company may make contributions only in years when it has positive taxable income.
+\item \hlt{Other Post-Employment Benefits (OPEB)}: healthcare for retirees etc.
+\end{enumerate}
+\end{definition}
+
+\begin{flushleft}
+\begin{tabularx}{\textwidth}{p{2.5em}|p{16em}|p{12em}|X}
+\hline
+\rowcolor{gray!30}
+Benefit & Benefit Amount & Employer Obligation & Pre-Funding \\
+\hline
+DC & 
+\xxx Future benefit amount not defined
+\xxx Actual future benefit depend on contributions and investment performance of plan assets
+\xxx Investment and actuarial risks borne by employee & 
+\xxx Amount of obligation defined in each period
+\xxx Contribution made on periodic basis with no future obligation &
+Not applicable \\
+\hline
+DB &
+\xxx Amount of future benefit defined based on plan's formula
+\xxx Investment and actuarial risks borne by employer &
+\xxx Amount of future obligation based on plan formula, must be estimated in current period &
+\xxx Funded by contributing funds to pension trust
+\xxx Regulatory funding requirements vary by country \\
+\hline
+OPEB & 
+\xxx Amount of future benefit depends on plan specs, type of benefit
+\xxx Investment and actuarial risks borne by employer &
+\xxx Eventual benefits are specified
+\xxx Amount of future obligation to be estimated now &
+\xxx Typicall not funded \\
+\hline
+\end{tabularx}
+\end{flushleft}
+
+\begin{method} \hlt{Defined Contribution Accounting Process}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Grant: estimate un-discounted value of plan contribution for the period
+\item Vesting: recognise plan contributions as compensation expense and accrued compensation liability over vesting period. Adjust or reverse entries if needed for changes in estimates
+\item Settlement: employer makes contribution to plan. Accrued compensation liability is disrecognised.
+\end{enumerate}
+\end{method}
+
+\begin{method} \hlt{Defined Contribution on Financial Statements}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Balance Sheet: current liability for vested but not-yet-settled contributions
+\item Income Statement: plan contributions recognised within operating expense category
+\item Cash Flow Statement: cash outflow in CFO
+\end{enumerate}
+\end{method}
+
+\begin{remark} \hlt{Pension Expense}\\
+Pension expense does not include employer contributions to plan and settlement of benefits. It is non-cash accrual based on change in net pension liability/asset. 
+\end{remark}
+
+\begin{definition} {\color{white}space}\\
+The \hlt{Projected Benefit Obligation (PBO)} is the actuarial value (at assumed discount rate) of all future pension benefits earned to date, based on expected future salary increases.\\
+Measures value of obligation, assuming going concern, and employee will work for firm until retirement.\\
+Discount rate for present value computation is typically yield on investment-grade corporate bonds.
+\end{definition}
+
+\begin{definition} \hlt{Funded Status of Plan}\\
+$\text{Funded status} = \text{Fair value of plan assets} - \text{PBO}$
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Overfunded: if plan assets exceed pension obligation. Reported on BS as net pension asset.
+\item Underfunded: If pension obligation exceeds plan assets. Reported on BS as net pension liability.
+\end{enumerate}
+\end{definition}
+
+\begin{definition} {\color{white}space}\\
+\hlt{Current service cost} is present value of benefits earned by employees during current period.\\
+Represent increase in PBO that results from employees working one more period.\\
+Income Statement: recognised 'above the line' (before EBIT).
+\end{definition}
+
+\begin{definition} {\color{white}space}\\
+\hlt{Past service cost} is plan amendments made retroactively.\\
+PBO immediately increased by present value of increased benefits already earned. Beginning PBO is understated by the amount of past service cost.
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item IFRS: past service costs are recognised in PnL immediately and not amortised
+\item GAAP: reported as part of OCI, amortised over average service life of affected employees
+\end{enumerate}
+\end{definition}
+
+\begin{definition} \hlt{Interest Costs}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item IFRS: $\text{Net interest income/expense} = (\text{Beginning funded status} - \text{Past service cost}) \times \text{Discount rate} \nonumber$\\
+Income Statement: recognised below operating income, with other financing costs.
+\item GAAP: $\text{Interest cost} = (\text{Beginning BPO} + \text{Past service cost}) \times \text{Discount rate}$\\
+Income Statement: recognised in interest expense below operating income line.
+\end{enumerate}
+If resulting amount is negative (underfunded), expense is reported. If positive, report as net interest income.
+\end{definition}
+
+\begin{definition} \hlt{Expected Return on Plan Assets}\\
+Employer contributes assets to a trust to satisfy pension obligation in the future.\\
+Expected return on plan assets has no effect on PBO or fair value of plan assets; this is used as offset for computation of reported pension expense.
+\begin{equation}
+\text{Expected return on plan assets} = \text{Expected rate of return} \times \text{Fair value of plan assets at beginning of period} \nonumber 
+\end{equation} 
+Expected rates of return to be based on historical asset return and plan's asset allocation.\\
+Difference between expected and actual return is combined with other items related to changes in actuarial assumptions into 'actuarial gains and losses' account.
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item GAAP: Expected return is offset in earnings.
+\item IFRS: Expected rate of return on plan assets is assumed to be same as discount rate, and is netted against interest cost and a net interest cost/income is reported.
+\end{enumerate}
+\end{definition}
+
+\begin{definition} \hlt{Actuarial Gains and Losses (GnL)/Re-measurements}\\
+Two components within actuarial gains and losses:
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Gains and losses due to decrease or increase in PBO caused by changes in actuarial assumptions
+\item Difference between actual and expected return on plan assets
+\end{enumerate}
+Actuarial gains and losses are recognised in OCI.
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item IFRS: Actuarial gains and losses are never amortised
+\item GAAP: Actuarial gains and losses are amortised using corridor approach
+\end{enumerate}
+\end{definition}
+
+\begin{method} \hlt{GAAP: Corridor Approach}\\
+$\text{Cumulative unrecognised actuarial gains and losses} > 10\% \times \max(\text{pension obligation}, \text{ fair value of plan assets})$, then the excess amount is amortised over expected average remaining working lives of employees in the plan.\\
+Amortisation of actuarial gain reduces pension cost, while amortisation of a loss reduces pension cost.
+\end{method}
+
+\begin{method} \hlt{Defined Benefits: Benefit Obligation}
+\begin{align}
+\text{Periodic pension cost} &= \text{Employer contributions} - (\text{Ending funded stats} - \text{Beginning funded status}) \nonumber \\
+&= (\text{Current} - \text{Past service cost}) + \text{Interest expense} - \text{Asset actual return} + \text{Actuarial GnL} \nonumber \\
+\text{End benefit obligation} &= \text{Begin benefit obligation} + \text{Service and interest cost} - \text{Benefits paid} + \text{Actuarial GnL} \nonumber \\
+\text{End asset fair value} &= \text{Begin asset fair value} + \text{Asset actual return} + \text{Employer contribution} - \text{Benefits paid} \nonumber
+\end{align}
+\end{method}
+
+\begin{flushleft}
+\begin{tabularx}{\textwidth}{X|p{22em}|X}
+\hline
+\rowcolor{gray!30}
+Component & GAAP & IFRS \\
+\hline
+Current service cost & Income statement & Income statement \nonumber \\
+\hline
+Past service cost & OCI, amortised over service life in subsequent years & Income statement \nonumber \\
+\hline
+Interest cost & Income statement & Income statemen$\text{t}^1$ \nonumber \\
+\hline
+Expected return & Income statement & Income statemen$\text{t}^1$ \nonumber \\
+\hline
+Actuarial GnL & Amortised portion in income. & All in OCI - not amortised \nonumber \\
+& Unamortised in OCI & \nonumber \\
+\hline
+\end{tabularx}
+\begin{enumerate}[label=\arabic*., before=\small]
+\setlength{\itemsep}{0pt}
+\item IFRS: expected rate of return on plan assets equals discount rate, and net interest expense/income is reported.
+\end{enumerate}
+\end{flushleft}
+
+
+\begin{method} \hlt{IFRS Periodic Pension Cost (Income Statement)}
+\begin{align}
+\text{Periodic pension cost} &= (\text{Current} + \text{Past service cost}) + \text{Net interest expense or income} \nonumber \\
+\text{Net interest expense or income} &= \text{Discount rate} \times (\text{Beginning BPO} - \text{Beginning plan assets}) \nonumber
+\end{align}
+\end{method}
+
+\begin{method} \hlt{GAAO Periodic Pension Cost (Income Statement)}
+\begin{align}
+\text{Periodic pension cost} &= \text{Current service cost} + \text{Amortised past service cost} + \text{Interest expense} \nonumber \\
+&- \text{Asset expected return} + \text{Amortised actuarial GnL} \nonumber \\
+\text{Interest expense} &= \text{Discount rate} \times \text{Beginning BPO} \nonumber \\
+\text{Asset expected return} &= \text{Expected rate of return} \times \text{Beginning plan assets} \nonumber
+\end{align}
+\end{method}
+
+\begin{definition} \hlt{IFRS Required Disclosures - IAS 19} \\
+DC Plans: disclose amount recognised as expense in notes to financial statements as part of note titled 'Employee Compensation', 'Post-Employment Benefits' or similar.\\
+DB Plans: required to make following disclosures:
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item disclose main characteristics of plan and risks involved,
+\item identify and explain the figures in financial statements arising from them
+\item describe the amount, timing, and uncertainty of future cash flows
+\end{enumerate}
+\end{definition}
+
+\begin{flushleft}
+\begin{tabularx}{\textwidth}{p{9em}|X|p{23em}}
+\hline
+\rowcolor{gray!30}
+Assumption &  Net Pension Liability (Asset) & Periodic Pension Cost/Expense \\
+\hline
+Higher discount rate & Lower obligation & Pension cost and expense will both be lower because of lower opening obligation and lower service costs \\
+\hline
+Higher rate of compensation increase & Higher obligation & Higher service and interest cost will increase periodic costs and expense \\
+\hline
+Higher expected return on plan assets & No effect, as fair value of plan assets are used on BS &
+\xxx IFRS: Not applicable
+\xxx GAAP: No effect on cost, lower expense \\
+\hline
+\end{tabularx}
+\end{flushleft}
+
+\begin{method} \hlt{Analysis of Post-Employment Benefits} \\
+Compare the assumptions (in footnotes) over time and across firms to assess quality of earnings.\\
+Aggressive accounting choices (reduce pension expense and PBO) include low life expectancy of plan beneficiaries, low future inflation, low salary growth rate, and high discount rate.\\
+For GAAP, assuming higher expected rate of return on plan assets reduces reported pension expense, but does not affect the PBO or future value of plan assets.
+\end{method}
+
+\begin{method} \hlt{DC Plans Financial Modelling} \\
+Implicitly done by making operating expense forecasts.\\
+Cash flows well matched with recognised expense.\\
+Balance sheet limited to accrued liabilities already forecasted using working capital ratios.
+\end{method}
+
+\begin{method} \hlt{DB, OPEB Plans Financial Modelling} \\
+Model service cost, net interest expense/income, re-measurements, future contributions.\\
+Valuation must account for 2 impacts:
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Plan’s funded status, either a net liability or net asset.\\
+For underfunded plan, the liability is included in debt, and to be deduced during EV calculation. Overfunded plan is ignored in valuation.
+\item Future service costs are not included in plan’s funded status.\\
+However, to still deduct this cost from FCF in a DCF. Net interest expense/income not to be included in DCF as it represents unwinding of discounted pension obligation. Valuation is done on PV basis. The PV of underfunded pension is already considered by deducting the net pension liability from EV. 
+\end{enumerate}
+\end{method}
+
+
+
+
