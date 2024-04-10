@@ -1,0 +1,151 @@
+\subsection{Integration of Financial Analysis Techniques}
+
+Financial statement analysis framework:
+\begin{flushleft}
+\begin{tabularx}{\textwidth}{p{9em}|p{20em}|X}
+\hline
+\rowcolor{gray!30}
+Phase & Input & Output \\
+\hline
+Define purpose and context of analysis 
+&
+\xxx Perspective of analyst (i.e., evaluate debt/equity investment, issue credit rating)
+\xxx Supervisor/client needs and concerns
+\xxx Institutional guidelines
+&
+\xxx Statement of purpose
+\xxx Specific questions to be answered
+\xxx Nature, content of final report
+\xxx Timetable, resource budget \\
+\hline
+Collect data
+&
+\xxx Financial statements
+\xxx Industry/economic data
+\xxx Communication with management, suppliers, customers, competitors
+\xxx Company site visits (i.e., production facilities, retail stores)
+&
+\xxx Organised financial statements
+\xxx Financial data tables
+\xxx Completed questionnaires \\
+\hline
+Process data & 
+\xxx Data from previous step &
+\xxx Adjusted financial statements
+\xxx Common-size statements
+\xxx Ratios and graphs
+\xxx Forecasts \\
+\hline
+Analyse data & 
+\xxx Input data and processed data &
+\xxx Analytical results \\
+\hline
+Develop, communicate conclusions &
+\xxx Analytical results, previous reports
+\xxx Published report guidelines &
+\xxx Report answering questions from first step
+\xxx Recommendations \\
+\hline
+Follow-up &
+\xxx Periodically-updated information &
+\xxx Updated analysis and recommendations \\
+\hline
+\end{tabularx}
+\end{flushleft}
+
+\begin{remark} \hlt{Purpose of Analysis}:
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Sources of earnings, return on equity
+\item Asset base
+\item Capital structure
+\item Capital allocation decisions
+\item Earnings quality and cash flow analysis
+\item Market value decomposition
+\item Anticipating changes in accounting standards
+\end{enumerate}
+\end{remark}
+
+\begin{remark} \hlt{Sources of Earnings and DuPont Equation} \\
+DuPont decomposition allows identification of firm's performance drivers, expose effects of weaker areas of business that are masked by effects of stronger areas.
+\begin{align}
+\text{ROE} &= \text{ROA} \times \text{Leverage} \nonumber \\
+&= \text{Net profit margin} \times \text{Asset turnover} \times \text{Leverage} \nonumber \\
+&= \text{EBIT margin} \times \text{Tax burden} \times \text{Interest burden} \times \text{Asset turnover} \times \text{Leverage} \nonumber \\
+&= \frac{\text{EBIT}}{\text{Revenue}} \times \frac{\text{NI}}{\text{EBT}} \times \frac{\text{EBT}}{\text{EBIT}} \times \frac{\text{Revenue}}{\text{Average assets}} \times \frac{\text{Average assets}}{\text{Average equity}} \nonumber
+\end{align}
+Consider sources of income, whether income is generated internally from operations or externally through ownership interest in an associate.\\
+If equity income from associates or joint ventures is significant, to isolate these effects by removing equity income from DuPont analysis to eliminate bias.\\
+Remove effects of any usual items (i.e., provisions for restructuring and litigation, goodwill impairment etc) from EBIT before computing EBIT margin and tax burden ratios.\\
+Do not adjust financial leverage without information on how an investment asset is financed.
+\end{remark}
+
+\begin{remark} \hlt{Asset Base Composition}\\
+Analysis of changes in composition of balance sheets over time, in a common size format.\\
+Identify if goodwill composition increased, which indicates that a number of business acquisitions are completed. In this case, increase in EBIT margin and ROE may be partially due to successful acquisition.
+\end{remark}
+
+\begin{remark} \hlt{Capital Structure Analysis}\\
+Firm's capital structure must be able to support management's strategic objectives, and to allow the firm to honour its future obligations.\\
+Decrease of financial leverage ratio does not reveal true nature of the leverage, as some liabilities are more burdensome than others. Financial liabilities and bond liabilities are more burdensome than employee benefit obligations, deferred taxes, restructuring provisions etc.\\
+If long-term debt has decreased, consider possibility of an offsetting change in working capital.\\
+Analyse current ratio, quick ratio, and declining interval ratio, receivables, inventory turnover ratios etc.
+\end{remark}
+
+\begin{remark} \hlt{Capital Allocation Decisions}\\
+Consolidated financial statements may hide individual characteristics of dissimilar subsidiaries. Hence, firms required to disaggregate financial information by segments to assist users.\\
+Use disclosures in identifying each segment's contribution to revenue and profit, relationship between capital expenditures and rates of return, and which segments should be de-emphasised or eliminated.
+If following ratio is greater than one, then the firm is growing the segment by allocating a greater percentage of capital expenditures to a segment than the segment's proportion of total assets:
+\begin{equation}
+\frac{\text{Proportional capital expenditures of segment}}{\text{Proportional assets of segment}} \nonumber
+\end{equation} 
+The following ratio allows determination if firm is investing its capital in its most profitable segments:
+\begin{equation}
+\frac{\text{EBIT margin contributed by segment}}{\text{Capital expenditure proportion to asset proportion of segment}} \nonumber
+\end{equation}
+Accrual-based measures such as EBIT may not be good indicator of entity ability to generate CF. Evaluate segmental capital allocation decisions based on CF generated by each segment. If segmental CF not reported, may be approximated with EBITDA. We may then compute
+\begin{equation}
+\frac{\text{EBITDA}}{\text{Average Assets}} \nonumber
+\end{equation}
+\end{remark}
+
+\begin{definition} \hlt{Balance Sheet-Based Aggregate Accruals}
+\begin{align}
+\text{Net operating assets (NOA)} &= \text{Operating assets} - \text{Operating liabilities} \nonumber \\
+&= (\text{Total assets} - \text{Cash and ST investments}) - (\text{Total liabilities} - \text{Total debt}) \nonumber \\
+\text{Accruals}_{\text{BS}} &= \text{NOA}_{t} - \text{NOA}_{t-1} \nonumber
+\end{align}
+To scale the accrual measure for differences in size, as measure can be distorted if firm is growing or contracting quickly. Scaling allows for comparison with other firms.
+\begin{align}
+\text{Accruals ratio}_{\text{BS}} = \frac{\text{NOA}_{t} - \text{NOA}_{t-1}}{(\text{NOA}_{t} + \text{NOA}_{t-1})/2} \nonumber
+\end{align} \nonumber
+\end{definition}
+
+\begin{definition} \hlt{Cash Flow Statement-Based Aggregate Accruals}\\
+May be derived from CFO and CFI.
+\begin{align}
+\text{Accruals}_{\text{CFS}} &= \text{NI} - (\text{CFO} + \text{CFI}) \nonumber \\
+\text{Accruals ratio}_{\text{CFS}} &= \frac{\text{NI} - (\text{CFO} + \text{CFI})}{(\text{NOA}_{t} + \text{NOA}_{t-1})/2} \nonumber
+\end{align}
+Note that net income arises from transactions associated with CFO (profits from normal operating business) and CFI (income from investments in other businesses). This allows more accurate evaluation of persistence and reliability of earnings.\\
+For firms using GAAP, to reclassify some CFO to CFF for comparison purposes.
+\end{definition}
+
+\begin{remark} \hlt{Comparison of Both Accrual Ratios}\\
+Although both measures are conceptually equivalent, they may differ due to acquisitions and divestitures, exchange rate gains and losses, inconsistent treatment of specific items on BS and on CFS.
+\end{remark}
+
+\begin{definition} \hlt{Cash Generated from Operations (CGO)}\\
+Due to potential for earnings manipulation by increasing accruals, we eliminate cash paid for interest and taxes from CFO by adding them back (interest and taxes are deducted from CFO but not from operating income).
+\begin{align}
+\text{CGO} &= \text{EBIT} + \text{Non-cash charges} - \text{Increase in working capital} \nonumber
+\end{align}
+For firms following IFRS, if interest is reported as CFF, no interest adjustment is necessary.\\
+If CGO exceeds operating income, this reduces concerns of potential earnings manipulation.
+\end{definition}
+
+\begin{remark} \hlt{Market Value Decomposition}\\
+If parent company has ownership interest in an associate, then determine the standalone value of the parent.\\
+Implied value of parent is parent's market value less parent's pro rata share of associate's market value. If associate's stock is traded on foreign exchange, convert to the parent's reporting currency.\\
+We may then compute the implied PE multiple and relevant measures.
+\end{remark}
