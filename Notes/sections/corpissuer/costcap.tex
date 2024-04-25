@@ -6,6 +6,8 @@ Recall that the weight average cost of capital (WACC) is as follows:
 \end{equation}
 where $r_e$ is cost of equity, $r_p$ cost of preferred equity, $r_d$ cost of debt, and $w_e, w_r, w_d$ cost of weights. Consider the after-tax cost of debt if interest expense is tax-deductible, using the marginal tax rate.
 
+\subsubsection{Cost of Capital Factors}
+
 \begin{remark} Top-down factors that impact cost of capital are as follows:
 \begin{enumerate}[label=\roman*.]
 \setlength{\itemsep}{0pt}
@@ -65,21 +67,37 @@ Common Equity: inferior cash flow or voting rights & & \checkmark \\
 \end{tabularx}
 \end{flushleft}
 
-\begin{method} \hlt{Cost of Debt Estimation}
-\begin{enumerate}[label=\roman*.]
-\setlength{\itemsep}{0pt}
-\item \hlt{Traded Debt}: if corporate debt is publicly traded, the yield to maturity (YTM) for longest maturity straight debt (debt with no embedded options) is the best estimate of cost of debt. If there exists shorter-term bonds that are more liquid than longest dated bond, YTM for this may be used instead.
-\item \hlt{Non-Traded Debt}: for private companies, or public companies with non-traded or illiquid debt securities. If credit rating exists, estimate YTM with matrix pricing by considering bonds of other companies with same or similar maturities and credit ratings. If credit rating does not exist, use interest coverage ratio or financial leverage ratio to deduce credit rating. Alternatively, credit spread of specific credit rating and maturity may be applied to benchmark rates.\\
+\subsubsection{Cost of Debt Estimation}
+
+\begin{method} \hlt{Traded Debt}\\
+If corporate debt is publicly traded, the yield to maturity (YTM) for longest maturity straight debt (debt with no embedded options) is the best estimate of cost of debt. If there exists shorter-term bonds that are more liquid than longest dated bond, YTM for this may be used instead.	
+\end{method}
+
+\begin{method} \hlt{Non-Traded Debt}\\
+For private companies, or public companies with non-traded or illiquid debt securities.\\
+If credit rating exists, estimate YTM with matrix pricing by considering bonds of other companies with same or similar maturities and credit ratings. If credit rating does not exist, use interest coverage ratio or financial leverage ratio to deduce credit rating.\\
+Alternatively, credit spread of specific credit rating and maturity may be applied to benchmark rates.\\
 Note, a company may have different ratings depending on debt collateral, seniority, convertibility, and other features. Hence, issuer rating may differ from issuer's individual series of debt.
-\item \hlt{Bank Debt}: determine interest on new bank debt financing for company to estimate cost of bank debt; if new bank debt is recent, then this may be good estimate of cost of debt if interest rate reflects current market conditions, and company risk profile has not changed materially since issuance.
-\item \hlt{Leases}: a finance or capital lease is an example of amortised loan, and can be used to estimate cost of borrowing. The rate implicit in the least (RIIL) is the implied cost of capital, which is IRR from:
+\end{method}
+
+\begin{method} \hlt{Bank Debt}\\
+Determine interest on new bank debt financing for company to estimate cost of bank debt; if new bank debt is recent, then this may be good estimate of cost of debt if interest rate reflects current market conditions, and company risk profile has not changed materially since issuance.
+\end{method}
+
+\begin{method} \hlt{Leases}\\
+A finance or capital lease is an example of amortised loan, and can be used to estimate cost of borrowing. The rate implicit in the least (RIIL) is the implied cost of capital, which is IRR from:
 \begin{equation}
 \text{PV of lease payments} + \text{PV of residual value} = \text{Fair value of leased asset} + \text{Lessor's direct initial cost} \nonumber
 \end{equation}
 If present value of residual value and lessor's direct initial costs are unknown, the incremental borrowing rate (IBR) (rate on new secured loan over same term) may be used.
-\item \hlt{International Considerations}: for foreign market, country risk premium is added to debt's yield. A country risk rating (CRR) may be used, which reflects risk related to economic conditions, political risk, exchange rate risk, securities market development and regulation. Country may be assigned a rating relative to benchmark country, which excess of the median interest rate relative to benchmark is the CRR.
-\end{enumerate}
 \end{method}
+
+\begin{method} \hlt{International Considerations for Cost of Debt Estimation}\\
+For foreign market, country risk premium is added to debt's yield.\\
+A country risk rating (CRR) may be used, which reflects risk related to economic conditions, political risk, exchange rate risk, securities market development and regulation. Country may be assigned a rating relative to benchmark country, which excess of the median interest rate relative to benchmark is the CRR.
+\end{method}
+
+\subsubsection{Cost of Equity Estimation}
 
 \begin{method} \hlt{Equity Risk Premium (ERP) Historical Estimates}\\
 Approach used when reliable long-term equity return data is available. Typically calculated as mean value of difference between broad-based equity index return and a government debt return (as proxy for risk-free rate).\\
@@ -113,10 +131,14 @@ Long-Term Govt Bond YTM & YTM more closely match duration of infinite-life equit
 
 \begin{method} \hlt{Equity Risk Premium (ERP) Forward-Looking Approach}\\
 Approach uses current information and expectations on economic and financial variables. Do not rely on assumption of stationarity, and less affected by survivorship bias.
-\begin{enumerate}[label=\roman*.]
-\setlength{\itemsep}{0pt}
-\item Survey-Based Estimates: uses consensus of opinions from experts. Surveys tend to higher ERPs for developing markets relative to developed markets. Biased toward recent market returns.
-\item Dividend Discount Model Estimates: simplified model uses expected constant earnings growth rate (Gordon Growth Model), and solving for required return on equity yields
+\end{method}
+
+\begin{method} \hlt{Forward-Looking Approach: Survey-Based Estimates}\\
+Uses consensus of opinions from experts. Surveys tend to higher ERPs for developing markets relative to developed markets. Biased toward recent market returns.
+\end{method}
+
+\begin{method} \hlt{Forward-Looking Approach: Dividend Discount Model Estimates}\\
+Simplified model uses expected constant earnings growth rate (Gordon Growth Model), and solving for required return on equity yields
 \begin{equation}
 r_e = \frac{D_1}{V_0} + g \nonumber
 \end{equation}
@@ -132,7 +154,10 @@ For rapidly growing economies, a three stage growth model (fast, transition, mat
 \text{Equity Index Price} = PV_{\text{Fast}} + PV_{\text{Transition}} + PV_{\text{Mature}} \nonumber
 \end{equation}
 The $IRR$ from this is then the required rate of return. Subtract current risk-free rate to get ERP.
-\item Macroeconomic Model: Grinold-Kroner model is used, which decomposes ERP as follows:
+\end{method}
+
+\begin{method} \hlt{Forward-Looking Approach: Macroeconomic Model}\\
+Grinold-Kroner model is used, which decomposes ERP as follows:
 \begin{align}
 \text{ERP} &= [\text{Dividend Yield} + \text{Capital Gains Yield}] - E[r_f] \nonumber \\
 &= [\text{Dividend Yield} + \text{Expected Repricing} + \text{Earnings Growth per Share}] - E[r_f] \nonumber \\
@@ -153,12 +178,12 @@ Expected growth in real EPS & $g$ & Real GDP growth \\
 \hline
 Expected $\Delta$\% in shares outstd & $\Delta S$ & Depends on market and time period \\
 \hline
-\end{tabularx}
+\end{tabularx}\\
+
 Common approach to estimate expected inflation is to compare nominal yield on US Treasury bond to yield on equivalent inflation-protected Treasury security (TIPS):
 \begin{equation}
 i = \frac{1 + \text{YTM}_{\text{Treasury Bond}}}{1 + \text{YTM}_{\text{TIPS}}} - 1 \approx \text{YTM}_{\text{Treasury Bond}} - \text{YTM}_{\text{TIPS}} \nonumber
 \end{equation}
-\end{enumerate}
 \end{method}
 
 \begin{remark} \hlt{Limitations of Forward-Looking Approach for Computing ERP}\\
@@ -176,10 +201,8 @@ Macroecon & Models may have modelling errors or behavioural biases in forecastin
 \end{tabularx}
 \end{remark}
 
-\begin{method} \hlt{Equity Risk Premium Estimation}
-\begin{enumerate}[label=\roman*.]
-\setlength{\itemsep}{0pt}
-\item Dividend Discount Model: for individual company, cost of equity is dividend yield plus capital gains yield.
+\begin{method} \hlt{ERP Estimation: Dividend Discount Model}\\
+For individual company, cost of equity is dividend yield plus capital gains yield.
 \begin{equation}
 r_e = \frac{D_1}{P_0} + g \nonumber
 \end{equation}
@@ -187,13 +210,11 @@ A multi-year forecast may be built, in this case we may solve for $r_e$ in follo
 \begin{equation}
 P_0 = \left[ \sum\limits_{t=1}^n \frac{D_t}{(1+r_e)^t} \right] + \frac{P_n}{(1+r_e)^n} \nonumber
 \end{equation}
-\item Bond Yield Plus Risk Premium Approach (BYPRP): build-up approach for estimating cost of equity for company with publicly traded debt. To select risk premium, an average of historical difference between equity returns and cost of debt may be used.
-\begin{equation}
-r_e = r_d + RP \nonumber
-\end{equation}
-where $r_d$ is company cost of debt (proxied by YTM on long-term debt). 
-\item Risk-Based Models: $r_e$ is sum of compensation for time value of money and for bearing risk.
-\begin{enumerate}[label=\arabic*.]
+\end{method}
+
+\begin{method} \hlt{ERP Estimation: Risk-Based Models}\\
+Let $r_e$ be sum of compensation for time value of money and for bearing risk.
+\begin{enumerate}[label=\roman*.]
 \setlength{\itemsep}{0pt}
 \item Capital Asset Pricing Model (CAPM): single factor model,
 \begin{equation}
@@ -215,8 +236,13 @@ The five factor model adds profitability factor (robust vs weak profitability) (
 r_e = r_f + \beta_1 \text{ERP} + \beta_2 \text{SMB} + \beta_3 \text{HML} + \beta_4 \text{RMW} + \beta_5 \text{CMA} \nonumber
 \end{equation}
 \end{enumerate}
-\item Private Companies: as there is no market price data, CAPM and Fama-French is not suitable to be directly applied. Illiquidity, lack of transparency (no security filings and disclosures), and ownership structure with greater concentration of control, increases investment risk.\\
+\end{method}
+
+\begin{method} \hlt{ERP Estimation: Private Companies}\\
+As there is no market price data, CAPM and Fama-French is not suitable to be directly applied.\\
+Illiquidity, lack of transparency (no security filings and disclosures), and ownership structure with greater concentration of control, increases investment risk.\\
 Specific-company risk premium (SCRP) reflects factors such as geographic risk, key-person risk, and other firm-specific factors that may not be easy to diversity away.\\
+
 \begin{tabularx}{\textwidth}{X|X}
 \hline
 \rowcolor{gray!30}
@@ -236,8 +262,9 @@ Qualitative Factors & Quantitative Factors \\
 \hline
 \end{tabularx}
 \\
+
 Private company valuation also takes into account size premium (SP) and industry risk premium (IP).
-\begin{enumerate}[label=\arabic*.]
+\begin{enumerate}[label=\roman*.]
 \setlength{\itemsep}{0pt}
 \item Expanded CAPM: adds private company related risk premiums to CAPM
 \begin{equation}
@@ -257,8 +284,11 @@ ERP is not beta-adjusted, as this is the required return on equity for an averag
 \end{figure}
 Approach is suitable when set of comparable public companies are unavailable or incomparable.
 \end{enumerate}
-\item International Considerations: risks for emerging market require additional premiums.
-\begin{enumerate}[label=\arabic*.]
+\end{method}
+
+\begin{method} \hlt{ERP Estimation: International Considerations}\\
+Risks for emerging market require additional premiums.
+\begin{enumerate}[label=\roman*.]
 \setlength{\itemsep}{0pt}
 \item Country Spread Model: additional country risk premium (CRP) is to be added. The added risk could be due to economic conditions, risk of expropriation, political risk, or other risk.
 \begin{equation}
@@ -277,6 +307,5 @@ International CAPM (ICAPM): 2 factor model based on a global market index ($r_{g
 E[r_e] = r_f + \beta_{G}[E[r_{gm}] - r_f] + \beta_{C}[E[r_c] - r_f] \nonumber
 \end{equation}
 The first factor of ICAPM captures company relationship with local economy relative to global economy (lower $\beta_{G}$ indicates lower integration of company with global economy). Second factor captures sensitivity of company CF to changes in its local currency value.\\
-\end{enumerate}
 \end{enumerate}
 \end{method}
