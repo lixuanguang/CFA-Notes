@@ -1,0 +1,325 @@
+\subsection{Free Cash Flow Valuation}
+
+\begin{definition} \hlt{Free Cash Flow to Firm (FCFF)}\\
+Cash flow available to providers of capital after all operating expenses (including taxes, excluding interest expense), working capital investment and fixed capital investment has been made.
+\end{definition}
+
+\begin{definition} \hlt{Free Cash Flow to Equity (FCFE)}\\
+Cash flow available to holders of common equity after all operating expenses, interest and principal payments have been paid, and investments in working and fixed capital has been made.
+\end{definition}
+
+\begin{remark} \hlt{FCFF vs FCFE Approach to Valuation}\\
+In FCFF approach, value of firm is the value of discounted FCFF at WACC.\\
+In FCFE approach, value of firm is the value of discounted FCFE at required rate of return for equity.\\
+Both approaches should yield the same estimates if all inputs reflect identical assumptions.
+\end{remark}
+
+\begin{remark} \hlt{Circumstances of Using FCFF, FCFE}\\
+If company capital structure is relatively stable, using FCFE is more direct and simpler than using FCFF.\\
+However, there are two cases where FCFF model is chosen:
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Levered company with negative FCFE. In this case, using FCFF would be the easiest.\\
+Discount FCFF to find PV of operating assets, add value of excess cash (in relation to operating needs) and marketable securities and other significant non-operating assets to get total firm value. Then subtract market value of debt to obtain an estimate of intrinsic value of equity.
+\item Levered company with changing capital structure. If historical data are used to forecast FCF growth rates, FCFF growth might reflect fundamentals more clearly than FCFE growth.\\
+In addition, the required return on equity might be expected to be more sensitive to changes in financial leverage than changes in WACC, hence making the use of constant discount rate difficult to justify.
+\end{enumerate}
+\end{remark}
+
+\begin{method} \hlt{Adjusted Present Value (APV) Approach}\\
+Used when capital structure is expected to change.\\
+Firm value is calculated as sum of:
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item un-levered firm value (assumes debt is not used) (discounted FCFF value at un-levered cost of equity)
+\item NPV of any effects of debt on firm value (i.e., tax benefits of using debt and any costs of financial distress)
+\end{enumerate}
+\end{method}
+
+\begin{method} \hlt{FCFF Valuation Approach}\\
+Value of firm is PV of future FCFF discounted at WACC.
+\begin{align}
+\text{Firm Value} &= \sum\limits_{i=1}^{\infty} \frac{\text{FCFF}_t}{(1+\text{WACC})^t} \nonumber \\
+\text{Equity Value} &= \text{Firm Value} - \text{MV}_{\text{Debt}} \nonumber \\
+\text{WACC} &= \frac{\text{MV}_{\text{Debt}}}{\text{MV}_{\text{Debt}} + \text{MV}_{\text{Equity}}} r_d (1-t) + \frac{\text{MV}_{\text{Equity}}}{\text{MV}_{\text{Debt}} + \text{MV}_{\text{Equity}}}r \nonumber
+\end{align}
+where $r_d(1-t)$ is the after-tax cost of debt, $r$ is the after-tax cost of equity.
+\end{method}
+
+\begin{method} \hlt{FCFE Valuation Approach}\\
+Value of firm is PV of future FCFE discounted at required rate of return on equity, $r$.
+\begin{equation}
+\text{Equity Value} = \sum\limits_{t=1}^{\infty} \frac{\text{FCFE}_t}{(1+r)^t} \nonumber
+\end{equation}
+\end{method}
+
+\begin{method} \hlt{Constant Growth Models}\\
+Assumes FCF grows at a constant rate.
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item FCFF Model: assumes FCFF grows at a constant rate $g$.
+\begin{equation}
+\text{Firm Value} = \frac{\text{FCFF}_1}{\text{WACC}-g} = \frac{\text{FCFF}_0 (1+g)}{\text{WACC} - g} \nonumber
+\end{equation}
+\item FCFE Model: assumes FCFE grows at constant rate $g$.
+\begin{equation}
+\text{Equity Value} = \frac{\text{FCFE}_1}{r-g} = \frac{\text{FCFE}_0 (1+g)}{r - g} \nonumber \end{equation}
+\end{enumerate}
+\end{method}
+
+\begin{method} \hlt{Computing FCFF from Net Income}
+\begin{equation}
+\text{FCFF} = \text{NI} + \text{NCC} + \text{Int}(1-t) - \text{FCInv} - \text{WCInv} \nonumber
+\end{equation}
+where NI is net income, NCC is net non-cash charges, Int is interest expense, FCInv is fixed capital investment, WCInv is working capital investment.\\
+\end{method}
+
+\begin{remark} \hlt{Non-Cash Charges Treatment for FCFF}\\
+Expenses that reduce reported net income but do not involve cash inflows or outflows.
+\begin{flushleft}
+\begin{tabularx}{\textwidth}{p{28em}|X}
+\hline
+\rowcolor{gray!30}
+Non-Cash Item & Adjustment to NI to arrive at FCFF\\
+\hline
+Depreciation expense & Added back \\
+\hline
+Amortisation expense, impairment of intangibles & Added back \\
+\hline
+Restructuring charges (expense) & Added back \\
+\hline
+Restructuring charges (income from reversal) & Subtracted \\
+\hline
+Amortisation of long-term bond discounts & Added back \\
+\hline
+Amortisation of long-term bond premiums & Subtracted \\
+\hline
+Losses on non-operating activity (i.e., long-term assets) & Added back \\
+\hline
+Gains on non-operating activity (i.e., long-term assets) & Subtracted \\
+\hline
+Deferred taxes (increases of non-reversible deferred tax liabilities) & Added back \\
+\hline
+Deferred taxes (increases of non-reversible deferred tax assets) & Subtracted \\
+\hline
+\end{tabularx}
+\end{flushleft}
+\end{remark}
+
+\begin{method} \hlt{Fixed Capital Investment Treatment for FCFF}\\
+Not on IS, but represent outflow of cash, hence to remove from net income to estimate FCFF.
+\begin{equation}
+\text{FCInv} = \text{Capex} - \text{Proceeds from sales of long-term assets} \nonumber
+\end{equation}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item If no long-term assets were sold during the year:
+\begin{equation}
+\text{FCInv} = \text{PP\&E}_{End} - \text{PP\&E}_{Beginning} + \text{Depreciation} -\text{Gain on Sale} \nonumber
+\end{equation}
+\item If long-term assets were sold during the year, then
+\begin{enumerate}[label=\arabic*.]
+\setlength{\itemsep}{0pt}
+\item Determine Capex from CFS, i.e., 'Purchase of fixed assets', or 'Purchase of PP\&E' under CFI
+\item Determine proceeds from sales of fixed assets from CFS, i.e., 'Proceeds from disposal or fixed assets'
+\item Compute with the first equation of FCInv
+\item If Capex or sales proceeds are not given directly, find gain/loss on asset sales from IS and PP\&E figures from BS. Compute with the second equation of FCInv.
+\end{enumerate}
+\end{enumerate}
+\end{method}
+
+\begin{method} \hlt{Working Capital Investment Treatment for FCFF}
+\begin{equation}
+\text{WCInv} = \Delta\text{Working Capital} - \text{Cash} - \text{Cash Equiv} - \text{Notes Payable} - \text{Current portion of LT Debt} \nonumber
+\end{equation}
+Note that if working capital has a reduction, this will be added back as it is a cash inflow.
+\end{method}
+
+\begin{method} \hlt{Interest Expense Treatment for FCFF}\\
+A financing CF to bondholders, available to the firm before it makes any payments to capital suppliers.\\
+Only add after-tax interest expense, as paying interest reduces the tax bill.
+\end{method}
+
+\begin{flushleft}
+\begin{tabularx}{\textwidth}{p{22em}|X}
+\hline
+\rowcolor{gray!30}
+Statement of Cash Flows & FCFF, FCFE \\
+\hline
+Net Income (NI) & Net Income (NI) \\
+$+$ Non-Cash Charges (NCC) & $+$ Non-Cash Charges (NCC) \\
+\underline{$-$ WCInc} & \underline{$-$ WCInc} \\
+Cash Flow from Operations (CFO) & Cash Flow from Operations (CFO) \\
+& \hlt{$+$ Int(1-t)} \\
+\underline{$-$ FCInc} & \underline{$-$ FCInc} \\
+(Almost) FCFF & (Actual) FCFF \\
+$+$ Net Borrowing & $+$ Net Borrowing  \\
+& \hlt{$-$ Int(1-t)} \\
+FCFE & FCFE \\
+$-$ Dividends & $-$ Dividends \\
+\underline{$\pm$ Common Stock Issues (Repurchases)} & \underline{$\pm$ Common Stock Issues (Repurchases)} \\
+Net Change in Cash & Net Change in Cash\\
+\hline
+\end{tabularx}
+\end{flushleft}
+
+\begin{method} \hlt{Computing FCFF, FCFE from CFO}\\
+Depreciation is added back in full as it will be claimed in taxes, but doesn't represent an actual cashflow.\\
+Interest is not added back in full; by retaining the cash, there will be lower interest expense and higher tax.
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Compute almost FCFF:
+\begin{align}
+\text{Almost FCFF} &= (\text{NI} + \text{NCC} - \text{WCInv}) - \text{FCInv} \nonumber \\
+&= \text{CFO} - \text{FCInv} \nonumber
+\end{align}
+\item As interest expense is an CFO, but to reclassify as CFF, and this is tax deductible, to add it back to NI then subtract it out as CFF outflow. We may then have the actual FCFF:
+\begin{align}
+\text{Actual FCFF} &= (\text{NI} + \text{NCC} - \text{WCInv}) + \text{Int}(1-t) - \text{FCInv} \nonumber \\
+&= \text{CFO} + \text{Int}(1-t) - \text{FCInv} \nonumber
+\end{align}
+\end{enumerate}
+Note that any financial decisions that affect cash flows below FCFE (dividends, share repurchases, share issues etc) do not affect FCFF or FCFE.
+\end{method}
+
+\begin{method} \hlt{Computing FCFF from EBIT}\\
+Starting with EBIT, add back depreciation as it was subtracted out to get EBIT.\\
+As EBIT is before interest and taxes, do not have to remove interest (as it is CFF).\\
+Note that non-cash adjustments occur on IS below EBIT, do not have to adjust for them when calculating FCF starting with EBIT. The only non-cash charge that appears above EBIT is depreciation.
+\begin{equation}
+\text{FCFF} = \text{EBIT}(1-t) + \text{Dep} - \text{FCInv} - \text{WCInv} \nonumber
+\end{equation}
+\end{method}
+
+\begin{method} \hlt{Computing FCFF from EBITDA}\\
+EBITDA is before depreciation, hence to add back depreciation tax shield.\\
+Even though depreciation is non-cash expense, firm reduces its tax bill by expensing it.
+\begin{equation}
+\text{FCFF} = \text{EBITDA}(1-t) + \text{Dep}(t) - \text{FCInv} - \text{WCInv} \nonumber
+\end{equation}
+\end{method}
+
+\begin{method} \hlt{Computing FCFE from FCFF}\\
+Starting with FCFF, adjust for two cashflows to bondholders: after-tax interest expense, and any ST and LT borrowings. To subtract after-tax interest expense as paying interest reduces tax bill and reduces cash available to shareholders by interest paid minus the taxes saved.
+\begin{equation}
+\text{FCFE} = \text{Actual FCFF} - \text{Int}(1-t) + \text{Net Borrowing} \nonumber\text{FCFE} = \text{Actual FCFF} - \text{Int}(1-t) + \text{Net Borrowing} \nonumber
+\end{equation}
+\end{method}
+
+\begin{method} \hlt{Computing FCFE from CFO}\\
+Difference from FCFF is that after-tax interest expense is not aded back, and net borrowing is added back.
+\begin{align}
+\text{Actual FCFE} &= (\text{NI} + \text{NCC} - \text{WCInv}) - \text{FCInv} + \text{Net Borrowing} \nonumber \\
+&= \text{CFO} - \text{FCInv} + \text{Net Boorrowing} \nonumber
+\end{align}
+\end{method}
+
+\begin{method} \hlt{Treatment of FCF with Preferred Stock}\\
+Treat preferred stock like debt, except preferred dividends are not tax deductible.\\
+Any preferred dividends should be added back to FCF (approach assumes this is NI to common stockholders).\\
+WACC to be revised to reflect percent of total capital raised by preferred stock as cost of that capital source.\\
+FCFE to modify net borrowing to reflect new debt borrowing and net issuances by amount of preferred stock.
+\end{method}
+
+\begin{method} \hlt{Uses of CF to Verify FCFF, FCFE}\\
+Uses of CF may be used to verify FCFF and FCFE as follows.
+\begin{flushleft}
+\begin{tabularx}{\textwidth}{p{22em}|X}
+\hline
+\rowcolor{gray!30}
+Uses of FCFF $=$ & Uses of FCFE $=$ \\
+\hline
+\ \ \ Changes in Cash Balances & \ \ \ Changes in Cash Balances \\
+$+$ Net Payments to Debt Providers & \\
+\ \ \ ($+$ Int$(1-t)$ & \\
+\ \ \ \ $+$ principal payment excess of net borrowing) &  \\
+$+$ Net Payments to Equity Stakeholders & $+$ Net Payments to Equity Stakeholders \\
+\ \ \ ($+$ cash dividends & \ \ \ ($+$ cash dividends \\
+\ \ \ \ $+$ share repurchase excess of share issuance) & \ \ \ \ $+$ share repurchase excess of share issuance) \\
+\hline
+\end{tabularx}
+\end{flushleft}
+\end{method}
+
+\begin{method} \hlt{Forecasting FCFF and FCFE}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Historical Cash Flow: apply constant growth rate with same relationship with fundamental factors.
+\item Components-Based Projection: sales-based forecasting method, based on assumption that (FCInv - Dep) and WCInv has constant relationship to increases in size of company measured by increase in sales.\\
+If depreciation reflects annual cost for maintaining existing capital stock, incremental FCInv should be related to Capex required for growth. The inputs needed are then:
+\begin{enumerate}[label=\arabic*.]
+\setlength{\itemsep}{0pt}
+\item forecast of sales growth rates;
+\item forecasts of after-tax operating margin (FCFF) or profit margin (FCFE)
+\item estimate of relationship of incremental FCInv to sales increases
+\item estimate of relationship of WCInv to sales increases
+\item estimate of debt ratio
+\end{enumerate}
+For FCFE forecasting, forecast EBIT$(1-t)$ and subtract incremental FCInv and WCInv.\\
+To estimate FCInv and WCInv, multiple past proportion to sales increases by forecasted sales increases.
+\begin{align}
+\text{Incremental FCInv} &= \frac{\text{Capex} - \text{Depreciation expense}}{\text{Increase in sales}} \nonumber \\
+\text{Incremental WCInv} &= \frac{\text{Increase in working capital}}{\text{Increase in sales}} \nonumber
+\end{align}
+When depreciation is the only significant net non-cash charge, this yields same result as previous equations for estimating FCFF or FCFE.  This approach simply subtracts net Capex in excess of depreciation.\\
+For forecasting FCFE, assume that a specified percentage of sum of new investment in fixed capital and increase in working capital is financed based on target debt ratio.
+\begin{align}
+\text{FCFE} &= \text{NI} - (\text{FCInv} - \text{Dep}) - \text{WCInv} + \text{Net borrowing} \nonumber
+\end{align}
+By assuming a target debt ratio, net borrowing will not be forecasted.
+\begin{align}
+\text{Net borrowing} = DR(\text{FCInv} - \text{Dep}) + DR(\text{WCInv}) \nonumber
+\end{align}
+Hence, debt issuance and repayment on annual basis will not be forecasted.
+\begin{align}
+\text{FCFE} &= \text{NI} - (\text{FCInv} - \text{Dep}) - \text{WCInv} + DR(\text{FCInv} - \text{Dep}) + DR(\text{WCInv}) \nonumber \\
+\text{FCFE} &= \text{NI} - (1 - DR)(\text{FCInv} - \text{Dep}) - (1-DR)(\text{WCInv}) \nonumber
+\end{align}
+\end{enumerate}
+\end{method}
+
+\begin{remark} \hlt{Effect of Financing Decisions on FCF}\\
+Dividends and share repurchases are uses of CF, hence do not affect level of CF available.
+\begin{flushleft}
+\begin{tabularx}{\textwidth}{p{12em}|X|X}
+\hline
+\rowcolor{gray!30}
+Financing Decisions & FCFF & FCFE \\
+\hline
+Dividends & None & None \\
+Share repurchase & None & None \\
+Share issue & None & None \\
+Change in leverage & None & ST and LT effects partially offset$^{*}$\\
+\hline
+\end{tabularx}
+($^{*}$) Decrease in leverage through repayment of debt will decrease FCFE in current year and increase forecasted FCFE in future years as interest expense is reduced.
+\end{flushleft}
+\end{remark}
+
+\begin{remark} \hlt{FCFE vs DDM}\\
+FCFE approach takes a control perspective, assumes recognition of value should be immediate.\\
+DDM take minority perspective, value not be recognised until dividend policy affects firm's long-run profitability.
+\end{remark}
+
+\begin{remark} \hlt{Net Income as Proxy for FCFE}\\
+Net income includes non-cash charges like depreciation that have to be added back to arrive at FCFE.\\
+Net income ignores CF that don't appear on IS, such as WCInv and FCInv, Net Borrowings.
+\begin{equation}
+\text{FCFE} = \text{NI} + \text{NCC} - \text{FCInv} - \text{WCInv} + \text{Net Borrowing} \nonumber
+\end{equation}
+\end{remark}
+
+\begin{remark} \hlt{EBITDA as Proxy for FCFF}\\
+EBITDA doesn't reflect cash taxes paid by firm, and ignores CF effects of WCInv and FCInv.
+\begin{equation}
+\text{FCFF} = \text{EBITDA}(1-t) + (\text{Dep})t - \text{FCInv} - \text{WCInv} \nonumber
+\end{equation}
+\end{remark}
+
+\begin{remark} \hlt{Sources of Error in Valuation Analysis}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Estimation of future growth in FCFF and FCFE. Growth forecasts depend on firm's future profitability, which depends on sales growth, changes in profit margin, position in life cycle, competitive strategy, and overall profitability of the industry.
+\item Chosen base years for FCFF, FCFE growth forecasts. Representative base year to be chosen, or all of the subsequent analysis and valuation will be flawed.
+\end{enumerate}
+\end{remark}
