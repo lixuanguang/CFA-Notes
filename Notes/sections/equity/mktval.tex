@@ -1,0 +1,536 @@
+\subsection{Market-Based Valuation}
+
+\begin{definition} \hlt{Method of Comparables}\\
+Values stock based on average price multiple of the stock of similar companies.\\
+Based on Law of One Price, where two similar assets should sell at comparable price multiples.
+\end{definition}
+
+\begin{definition} \hlt{Justified Price Multiple}\\
+What a price multiple should be if the stock is fairly valued.
+\end{definition}
+
+\begin{flushleft}
+Summary of Price and Price Inverse Ratios
+\begin{tabularx}{\textwidth}{p{12em}|p{11em}|X}
+\hline
+\rowcolor{gray!30}
+Price Ratio & Inverse Price Ratio & Comments \\
+\hline
+Price to Earnings (P/E) & Earnings Yield (E/P) & Both forms commonly used \\
+\hline
+Price to Book (P/B) & Book to Market (B/P)$^{*}$ & B/P is favoured in research mostly \\
+\hline
+Price to Sales (P/S) & Sales to Price (S/P) & S/P rarely used except when all other ratios are stated in form of inverse price ratios \\
+\hline
+Price to Cash Flow (P/CF) & Cash Flow Yield (CF/P) & Both forms commonly used \\
+\hline
+Price to Dividends (P/D) & Dividend Yield (D/P) & D/P more commonly used even for non-dividend paying stocks. Both used in index valuation \\
+\hline
+\end{tabularx}
+\end{flushleft}
+$^{*}$ Book to Market is more common usage than Book to Price.
+
+\begin{remark} \hlt{International Considerations When Using Multiples}\\
+In an international context, use of comparable firms is challenging due to differences in accounting methods, cultures, risk, and growing opportunities.\\
+Differences in accounting treatments include: goodwill, deferred income taxes, foreign exchange adjustments R\&D, pension expense, tangible asset revaluations.
+Benchmarking is difficult as ratios for individual firms in the same industry may vary widely internationally, and country market ratios can vary significantly.\\ 
+The least affect ratios are P/FCFE, while P/B, P/E, P/EBITDA, EV/EBITDA will be more seriously affected as they are more influenced by management choice of accounting methods and estimates.
+\end{remark}
+
+\begin{method} \hlt{Use of Price Multiples in Terminal Value in DCF Model}\\
+Terminal value projected at end of investment horizon should reflect earnings growth that a firm can sustain over the long-run. Terminal price multiples may be used to estimate the terminal value.\\
+The two methods of estimating price multiple are: based on fundamentals, and based on comparables.\\
+For forecasting based on comparables,
+\begin{align}
+\text{Terminal Value}_n &= \text{Justified Leading Ratio} \times \text{Forecasted Fundamental}_{n+1} \nonumber \\
+\text{Terminal Value}_n &= \text{Justified Trailing Ratio} \times \text{Forecasted Fundamental}_{n} \nonumber
+\end{align}
+For forecasting based on comparables or benchmarks:
+\begin{align}
+\text{Terminal Value}_n &= \text{Benchmark Leading Ratio} \times \text{Forecasted Fundamental}_{n+1} \nonumber \\
+\text{Terminal Value}_n &= \text{Benchmark Trailing Ratio} \times \text{Forecasted Fundamental}_{n} \nonumber
+\end{align}
+Comparables approach uses market data exclusively. In contrast, fundamentals approach requires estimates of growth rate, required rate of return, and payout ratio. Comparables approach may face mis-pricing error in the benchmark, hence transferring the error to the estimated terminal value.
+\end{method}
+
+\subsubsection{P/E Ratio}
+
+\begin{remark} \hlt{Rationale for P/E Ratio in Valuation}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Earnings power, measured by EPS, is primary determinant of investment value
+\item P/E ratio is popular in investment community
+\item Empirical research shows P/E differences are significantly related to LT average stock returns
+\end{enumerate}
+\end{remark}
+
+\begin{remark} \hlt{Limitations of P/E Ratio in Valuation}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Earnings can be negative, which makes it meaningless
+\item Volatile, transitory portion of earnings makes interpretation of P/E ratio difficult
+\item Management discretion within allowed accounting practices can distort reported earnings, hence lessen the comparability of P/E across firms
+\end{enumerate}
+\end{remark}
+
+\begin{definition} \hlt{Trailing P/E Ratio}\\
+Uses earnings over most recent 12 months in denominator.\\
+Not useful for forecasting and valuation if firm's business has changed.
+\begin{equation}
+\text{Trailing P/E} = \frac{\text{Market Price per Share}}{\text{Trailing }12\text{-month EPS}} \nonumber
+\end{equation}
+When computing EPS used in denominator, to consider the following:
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item potential dilution of EPS (due to issuance of new shares)
+\item transitory, non-recurring components of earnings that are company specific
+\item transitory, cyclical components of earnings (due to business or industry cycles)
+\item differences in accounting methods (when different company stocks are prepared)
+\end{enumerate}
+\end{definition}
+
+\begin{remark} \hlt{Adjustments for Non-Recurring Items in Earnings}\\
+To estimate underlying earnings. Non-recurring items that appear on income from continuing operations portion of business IS includes gains and losses from sale of assets, asset write-downs, goodwill impairment, provisions for future losses, changes in accounting estimates etc.\\
+Earnings may be decomposed into cash flow and accrual components, where the cash flow component has a greater weight than accrual component of earnings in valuation.
+\end{remark}
+
+\begin{remark} \hlt{Adjustments for Business-Cycle Influences}\\
+P/E ratio may be easily influenced by Molodovsky effect, where P/E is high due to depressed EPS at the bottom of a business cycle, and P/E is low due to high EPS at the top of the cycle.\\
+May be addressed with normalised EPS (level of EPS the business could be expected to achieve under mid-cycle conditions). Methods to calculate normalised EPS as follows:
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Method of Historical Averaged EPS, which is computed as average EPS over most recent full cycle.\\
+Method does not account for changes in business size.
+\item Method of Average Return on Equity. EPS computed as average return on equity (ROE) from most recent full cycle, multiplied by current book value per share.\\
+Method accounts for growth or shrinkage of company size.
+\item If cyclical company has a loss, may use  total assets multiplied by estimate of long-run return on total assets, or shareholder's equity multiplied by an estimate of long-run return on total shareholder's equity.
+\end{enumerate}
+\end{remark}
+
+\begin{remark} \hlt{Adjustments for Accounting Differences}\\
+Any adjustments made to company's reported financials for purposes of financial statement analysis to be incorporated into analysis of ratio multiples.
+\end{remark}
+
+\begin{remark} \hlt{Adjustments for Extremely Low, Zero, or Negative Earnings}\\
+In a ranking, an inverse price ratio may be used, in this case the earnings yield (E/P) ratio. Securities are then correctly ranked from cheapest to most costly in terms of of amount of earnings per dollar.\\
+Earnings yield may be based on normalised EPS, expected next-year EPS or trailing EPS.
+\end{remark}
+
+\begin{definition} \hlt{Leading P/E Ratio}\\
+Uses next fiscal year or next four quarter's expected earnings.\\
+Not useful if earnings are volatile such that next year's earnings cannot be forecasted with degree of accuracy.
+\begin{equation}
+\text{Leading P/E} = \frac{\text{Market Price per Share}}{\text{Forecasted }12\text{-month EPS}} \nonumber
+\end{equation}
+\end{definition}
+
+\begin{definition} \hlt{Justified P/E Ratio}\\
+Based on forecasted fundamentals. Justified P/E is inversely related to stock's required rate of return, and positively related to growth rates of future expected cash flows.
+\begin{align}
+\text{Justified Forward P/E} &= \frac{D_1 / E_1}{r-g} = \frac{1-b}{r-g} \nonumber \\
+\text{Justified Trailing P/E} &= \frac{D_0 (1+g) / E_0}{r-g} = \frac{(1-b)(1+g)}{r-g} \nonumber
+\end{align}
+where $D_t$ is dividends at time $t$, $r$ is required rate of return, $g$ is dividend growth rate, $b$ is retention rate.
+\end{definition}
+
+\begin{remark} \hlt{Characteristics of Justified P/E Ratio}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Positively related to growth rate of expected cash flows
+\item Inversely related to stock's required rate of return, ceteris paribus
+\item Positively related to inflation pass-through rate. If two similar companies operate in same inflationary environment, firm with higher inflation pass-through rate (ability to pass some portion of higher costs to customers) should have higher ratio.
+\end{enumerate}
+\end{remark}
+
+\begin{remark} \hlt{Predicted P/E Based on Cross-Sectional Regression}\\
+Predicted P/E can be estimated from cross-sectional regressions of P/E on fundamentals.\\
+Limitations of cross-sectional regression is as follows:
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Method captures valuation relationships only for the specific stock over a particular period.
+\item Regression coefficients and explanatory power of regressions tend to change over time.
+\item Regressions based on this method are prone to multicollinearity.
+\end{enumerate}
+\end{remark}
+
+\begin{method} \hlt{Using Multiples in Method of Comparables}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Select and calculate the price multiple that will be used in the comparison
+\item Calculate value of multiples for the comparison asset or assets. For group of comparison assets, compute the median or mean value of the multiple, which will be the benchmark value.
+\item Use benchmark value, adjusted for differences in fundamentals, to estimate value of company stock.
+\item Assess if differences between estimated value and current price of company stock are explained by differences in fundamentals; modify conclusions on the relative valuation accordingly.
+\end{enumerate}
+\end{method}
+
+\begin{remark} Examples of P/E Benchmarks
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item P/E of another company in a peer group (similar industry with similar operating characteristics)
+\item Average or median P/E of peer group within the company's industry
+\item Average or median P/E for the industry
+\item P/E of an equity index
+\item Average historical P/E for the stock
+\end{enumerate}
+\end{remark}
+
+\begin{remark} \hlt{Usage of Earnings Yield (E/P)}\\
+Negative earnings make P/E meaningless.\\
+Either to use normalised EPS, and/or restate ratio as earnings yield, as price is never negative.
+\begin{equation}
+\text{Normalised EPS} = \text{Average ROE} \times \text{Book Value per Share} \nonumber
+\end{equation}
+High E/P suggests a cheap security, and low E/P suggests an expensive security.
+\end{remark}
+
+\begin{definition} \hlt{P/E-to-Growth (PEG) Ratio}\\
+Addresses impact of earnings growth on P/E.\\
+Standardises P/E ratio for stocks with different expected growth rates.
+\begin{equation}
+\text{PEG Ratio} = \frac{\text{P/E Ratio}}{\text{Expected Earnings Growth Rate}} \nonumber
+\end{equation}
+Stocks with lower PEG ratios are more attractive than stocks with higher PEG ratios.
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item PEG ratio assumes linear relationship between P/E and growth.
+\item PEG ratio does not factor in differences in risk, an important determinant of P/E ratio
+\item PEG ratio does not account for differences in duration of growth.
+\end{enumerate}
+\end{definition}
+
+\begin{method} \hlt{Fed and Yardeni Model}\\
+Fed model considers overall market to be overvalued when the earnings yield on S\&P 500 index is lower than yield on $10$-year US Treasury Bonds.\\
+Yardeni Model includes expected earnings growth rate in the analysis.
+\begin{equation}
+\text{CEY} = \text{CBY} - b \times \text{LTEG} \nonumber
+\end{equation}
+where CEY is current earnings yield of market, CBY is current Moody's A-rated corporate bond yield, LTEG is five-year consensus earnings growth rate, $b$ is constant assigned by market to earnings growth ($\approx 0.2$).\\
+Taking reciprocal of the model,
+\begin{equation}
+\frac{\text{P}}{\text{E}} = \frac{1}{\text{CBY} - b \times \text{LTEG}} \nonumber
+\end{equation}
+Note that this shows P/E ratio is negatively related to interest rates, and positively related to growth.
+\end{method}
+
+\subsubsection{P/B Ratio}
+
+\begin{definition} \hlt{Price-to-Book (P/B) Ratio}
+\begin{align}
+\text{P/B Ratio} &= \frac{\text{Equity}_{\text{Market Value}}}{\text{Equity}_{\text{Book Value}}} = \frac{\text{Market Price per Share}}{\text{Book Value per Share}} \nonumber \\
+\text{Book Value Per Share} &= \frac{\text{Common Shareholder Equity}}{\text{Common Shares Outstanding}} \nonumber \\
+&= \frac{(\text{Total Assets} - \text{Total Liabilities}) - \text{Preferred Stock}}{\text{Common Shares Outstanding}} \nonumber
+\end{align}
+\end{definition}
+
+\begin{remark} \hlt{Advantages of Using Price-to-Book (P/B) Ratio}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Book value is a cumulative amount which is usually positive, hence can be used in cases where P/E cannot
+\item Book value is more stable than EPS, hence is more useful than P/E when EPS is too high/low/volatile
+\item Book value is an appropriate measure of net asset value for firms that primarily hold liquid assets.
+\item P/B can be useful in valuing companies that are expected to go out of business
+\item Empirical research shows P/B help explain differences in LT average stock returns.
+\end{enumerate}
+\end{remark}
+
+\begin{remark} \hlt{Disadvantages of Using Price-to-Book (P/B) Ratio}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item P/B does not reflect value of intangible economic assets (i.e., human capital)
+\item P/B can be misleading when there are significant differences in asset size of firms from business models
+\item Different accounting conventions can obscure the true investment in the firm made by shareholders
+\item Inflation and technological change can cause book and market value of assets to differ significantly
+\end{enumerate}
+\end{remark}
+
+\begin{remark} \hlt{Adjustments for P/B Ratio}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Tangible book value may be used, where intangible assets such as goodwill may be excluded in valuation.
+\item Balance sheet may be adjusted for significant off-balance-sheet assets and liabilities, and for differences between fair and recorded value of assets and liabilities.
+\item Book values needed to be adjusted to ensure comparability, such as adjusting for LIFO, FIFO inventories.
+\end{enumerate}
+\end{remark}
+
+\begin{definition} \hlt{Justified P/B Ratio}\\
+Using sustainable growth relation where $g = \text{ROE} \times b$, also noticing that $E_1 = B_0 \times \text{ROE}$, that
+\begin{equation}
+\text{Justified P/B Ratio} = \frac{\text{ROE} - g}{r - g} \nonumber
+\end{equation}
+where $r$ is required return on equity, $g$ is expected growth rate in dividends and earnings.
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item P/B increases as ROE increases, ceteris paribus
+\item The larger the spread between ROE and $r$, the higher the $P/B$ ratio, as the more value the firm is creating through its investment activities, hence its higher market value.
+\end{enumerate}
+If two stocks have the same $P/B$, the one with higher ROE is relatively undervalued.
+\end{definition}
+
+\begin{remark} \hlt{Justified P/B Based on Residual Income Valuation}
+\begin{equation}
+\text{Justified P/B Ratio} = 1 + \frac{\text{PV of Expected Future Residual Earnings}}{B_0} \nonumber
+\end{equation}
+There is no special assumptions on growth.
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item If PV of expected future residual earnings is zero, then the business just earns its required return on investment in every period.
+\item If PV of expected future residual earnings is positive, the justified P/B is greater than $1$.
+\end{enumerate}
+\end{remark}
+
+\begin{remark} \hlt{P/B Valuation Based on Comparables}\\
+Forecasts of book value are not widely disseminated by financial data vendors.\\
+Trailing book value to be used in calculating P/B Ratios.\\
+Evaluation of relative P/B to consider differences in ROE, risk, expected earnings growth.
+\end{remark}
+
+\subsubsection{P/S Ratio}
+
+\begin{definition} \hlt{Price-to-Sales (P/S) Ratio}
+\begin{equation}
+\text{P/S Ratio} = \frac{\text{Equity}_{\text{Market Value}}}{\text{Total Sales}} = \frac{\text{Market Price per Share}}{\text{Sales per Share}} \nonumber
+\end{equation}
+\end{definition}
+
+\begin{remark} \hlt{Advantages of Using Price-to-Sales (P/S) Ratio}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item P/S is meaningful, even for distressed firms, as sales revenue is always positive
+\item Sales revenue is not as easy to manipulate or distort as EPS and book value, which are significantly affected by accounting decisions
+\item P/S is not as volatile as P/E, as sales are more stable
+\item P/S are more appropriate for valuing stocks in mature or cyclical industries, and start-up companies with no record of earnings. It is often used to value investment management companies and partnerships.
+\item Empirical research finds that differences in P/S are related to long-run average returns
+\end{enumerate}
+\end{remark}
+
+\begin{remark} \hlt{Disadvantages of Using Price-to-Sales (P/S) Ratio}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item High growth in sales may not indicate high operating profits as measured by earnings and cash flow
+\item P/S ratios do not capture differences in cost structures across companies
+\item Revenue recognition forecasts may still distort sales forecasts
+\item Share price reflects of debt financing on profitability and risk, but P/S compares price to sales, which is a re-financing income measure, and thus is a logical mismatch
+\end{enumerate}
+\end{remark}
+
+\begin{remark} \hlt{Determining Sales for P/S Ratio}\\
+Annual sales from most recent fiscal year is usually used.\\
+To evaluate company's revenue recognition practices, in particular those that speed up recognition of revenues.
+\end{remark}
+
+\begin{definition} \hlt{Justified P/S Ratio}
+\begin{align}
+\text{Justified P/S Ratio} &= \frac{E_0}{S_0} \frac{(1-b)(1+g)}{r-g} \nonumber \\
+&= \text{PM}_0 \times \text{Justified Trailing P/E} \nonumber \\
+g &= b \times \text{PM}_0 \times \frac{\text{Sales}}{\text{Total Assets}} \times \frac{\text{Total Assets}}{\text{Shareholders Equity}} \nonumber
+\end{align}
+where PM$_0 = \frac{E_0}{S_0}$ is net profit margin, $b$ is retention ratio.\\
+Hence, P/S ratio will increase if profit margin increases, or if earnings growth rate increases.
+\end{definition}
+
+\begin{remark} \hlt{P/S Valuation Based on Comparables}\\
+For relative valuations on P/S multiples calculated on forecasted sales, own sales forecasts or forecasts supplied by data vendors may be used.\\
+To also gather information on profit margins, expected earnings growth, and risk.\\
+Quality of accounting merits investigation.
+\end{remark}
+
+\subsubsection{P/CF Ratio}
+
+\begin{definition} \hlt{Price-to-Cash-Flow (P/CF) Ratio}
+\begin{equation}
+\text{P/CF Ratio} = \frac{\text{Equity}_{\text{Market Value}}}{\text{Cash Flow}} = \frac{\text{Market Price per Share}}{\text{Cash Flow per Share}} \nonumber
+\end{equation}
+where cash flow may refer to earnings-plus-non-cash-charges (CF), adjusted CFO, FCFE, or EBITDA.
+\end{definition}
+
+\begin{remark} \hlt{Advantages of Price-to-Cash Flow (P/CF) Ratio}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Cash flow is less subject to manipulation by management than earnings
+\item Cash flow is more stable than earnings, hence P/CF is more stable than P/E
+\item Using P/CF rater than P/E addresses issues of differences in accounting conservatism between companies (differences in quality of earnings)
+\item Differences in P/CF may be related to differences in LT average returns, by empirical evidence.
+\end{enumerate}
+\end{remark}
+
+\begin{remark} \hlt{Disadvantages of Price-to-Cash Flow (P/CF) Ratio}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item When CFO is defined as EPS plus non-cash charges, items affecting actual CFO such as non-cash revenue and net changes in working capital are ignored. Hence, aggressive recognition of revenue (front-end loading) will not be accurately captured in this definition as the measure will not reflect divergence between revenues as reported, and actual cash collections related to revenue.
+\item Theory views FCFE rather than CF as the appropriate variable for price-based valuation multiples. FCFE may be more volatile than CF for many businesses, and is frequently more negative than CF.
+\item CF measures may be enhanced. For example, CFO may be enhanced by securitising accounts receivables to speed up company's operating cash inflow, or by outsourcing payment of accounts payable to slow down operating cash outflow.
+\item CFO under IFRS may not be comparable to CFO under GAAP due to higher flexibility under IFRS.
+\end{enumerate}
+\end{remark}
+
+\begin{method} \hlt{Determination of Cash Flow}\\
+Some definitions of cash flows available for use in calculating P/CF ratio are:
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item earnings-plus-non-cash charges (CF)
+\item adjusted cash flow (adjusted CFO)
+\item free cash flow to equity (FCFE)
+\item earnings before interest, taxes, depreciation, and amortisation (EBITDA)
+\end{enumerate}
+\end{method}
+
+\begin{definition} \hlt{Earnings-Plus-Non-Cash-Charges (CF)}
+\begin{equation}
+\text{CF} = \text{Net Income} + \text{Depreciation} + \text{Amortisation} \nonumber
+\end{equation}
+Approach ignores some items that affect cash flow, such as non-cash revenue and changes in net working capital.
+\end{definition}
+
+\begin{definition} \hlt{Adjusted Cash Flow from Operations (Adjusted CFO)}\\
+CFO is adjusted for non-recurring cashflows.\\
+GAAP requires interest paid, interest received, and dividends to be classified as CFO.\\
+IFRS is more flexible, where interest paid may be classified as either CFO or CFF, while interest and dividends received can be classified as either CFO or CFI.\\
+To take note when comparing firms reporting under different standards.
+\end{definition}
+
+\begin{definition} \hlt{Free Cash Flow to Equity (FCFE)}\\
+Preferred by theory, but is more volatile than straight cash flow.
+\begin{align}
+\text{FCFE} &= \text{CFO} - \text{FCInv} + \text{Net Borrowing} \nonumber \\
+\text{Net Borrowing} &= \text{Long and Short-Term Debt Issues} - \text{Long and Short-Term Debt Repayments} \nonumber
+\end{align}
+\end{definition}
+
+\begin{definition} \hlt{Earnings Before Interest, Taxes, Depreciation, and Amortisation (EBITDA)} \\
+Pre-tax, pre-interest measure that represents flow to both equity and debt.\\
+Better suited as indicator of total company value than just equity value.
+\end{definition}
+
+\begin{definition} \hlt{Justified Price-to-Cash Flow (P/CF) Ratio}\\
+Find value of stock using the most suitable DCF model, and dividing that number by chosen definition of CF.
+\begin{equation}
+\text{Justified P/CF} = \frac{\text{CF}(1+g)}{r-g} \nonumber
+\end{equation}
+P/CF will increase if required return decreases, or if growth rate increases.
+\end{definition}
+
+\subsubsection{P/D Ratio and Dividend Yield}
+
+\begin{definition} \hlt{Dividend Yield (D/P)}
+\begin{align}
+\text{Trailing D/P} &= \frac{4 \times \text{Most Recent Quarterly Dividend}}{\text{Market Price per Share}} \nonumber \\
+\text{Leading D/P} &= \frac{\text{Forecasted Dividends for Next Four Quarters}}{\text{Market Price per Share}} \nonumber
+\end{align}
+\end{definition}
+
+\begin{remark} \hlt{Advantages of Using Dividend Yield}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Dividend yield is a component of total return
+\item Dividends are less risky than capital appreciation as a component of total return
+\end{enumerate}
+\end{remark}
+
+\begin{remark} \hlt{Disadvantages of Using Dividend Yield}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Focus on dividend yield is incomplete as it ignores capital appreciation
+\item Dividend displacement of earnings suggests that dividends paid now displaces future earnings, which implies a trade-off between current and future cash flows.
+\item Relative safety of dividends presupposes that market prices reflect in a bias way differences in the relative risk of the components of return.
+\end{enumerate}
+\end{remark}
+
+\begin{definition} \hlt{Justified D/P Ratio}
+\begin{equation}
+\text{Justified D/P Ratio} = \frac{r-g}{1+g} \nonumber
+\end{equation}
+Dividend yield is positively related to required rate of return, and negatively related to forecasted growth rate in dividends. Choosing high dividend yield stocks reflect a value rather than growth investment strategy.
+\end{definition}
+
+\begin{definition} \hlt{D/P Ratio Valuation Based on Comparables}\\
+Determine if differences in expected growth explain the differences in dividend yield.\\
+To consider safety of the dividend with payout ratio. High payout relative to other companies in same industry may indicate a less secure dividend as it is less covered by earnings.\\
+Balance sheet metrics such as interest coverage ratio and ratio of net debt to EBITDA are also used.
+\end{definition}
+
+\subsubsection{EV/EBITDA Ratio}
+
+\begin{definition} \text{Enterprise Value-EBITDA (EV/EBITDA) Ratio}
+\begin{align}
+\text{EV/EBITDA Ratio} &= \frac{\text{EV}}{\text{EBITDA}} \nonumber \\
+\text{EV} &= \text{Equity}_{\text{Market Value}} + \text{Debt}_{\text{Market Value}} - \text{Cash and Investments} \nonumber \\
+\text{EBITDA} &= \text{Recurring earnings} + \text{Interest} + \text{Taxes} + \text{Depreciation} + \text{Amortisation} \nonumber \\
+&= \text{EBIT} + \text{Depreciation} + \text{Amortisation} \nonumber
+\end{align}
+EV requires subtraction of cash and investments as the acquirer's net price paid for acquisition target will be lowered by amount of target's liquid stocks.\\
+If values of preferred stock and/or minority interests are provided, to include in EV calculations.
+\end{definition}
+
+\begin{remark} \hlt{Advantages of EV/EBITDA Ratio}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item More appropriate than P/E when comparing firms with different financial leverage
+\item Useful for valuing capital-intensive businesses with high levels of depreciation and amortisation
+\item EBITDA is frequently positive when EPS is negative
+\end{enumerate}
+\end{remark}
+
+\begin{remark} \hlt{Disadvantages of EV/EBITDA Ratio}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item EBITDA will overestimate CFO if working capital is growing. EBITDA ignores effects of differences in revenue recognition policy on CFO.
+\item FCFF captures amount of capital expenditures, hence is more strongly linked with valuation theory than EBITDA. EBITDA will be an adequate measure if capital expenses equal depreciation expenses.
+\end{enumerate}
+\end{remark}
+
+\begin{definition} \hlt{Justified EV/EBITDA Ratio}\\
+The justified EV/EBITDA ratio is positively related to growth rate in FCFF and EBITDA, and negatively related to firm's overall risk level and WACC.\\
+In analysing ratios such as EV/EBITDA, Return on Invested Capital (ROIC, operating profit after tax divided by invested capital) is the relevant measure of profitability, as EBITDA flows to all providers of capital.
+\end{definition}
+
+\begin{remark} \hlt{Total Invested Capital (TIC)}\\
+Alternative measure to company's overall value.
+\begin{equation}
+\text{TIC} = \text{Equity}_{\text{Market Value}} + \text{Debt}_{\text{Market Value}} \nonumber
+\end{equation}
+Unlike EBITDA, TIC includes cash and short-term investments.
+\end{remark}
+
+\begin{remark} \hlt{EV/EBITdA Valuation Based on Comparables}\\
+Lower EV/EBITDA value relative to peers indicate the company is relatively undervalued.\\
+In addition to EV/EBITDA and TIC/EBITDA, the denominators may also be EBIT, FCFF etc.\\
+EV/S ratio is appropriate for comparing companies with significantly different capital structures.
+\end{remark}
+
+\subsubsection{Momentum Valuation Indicators}
+
+\begin{definition} \hlt{Momentum Indicators}\\
+Relates either market price or a fundamental variable to the time series of historical or expected value.
+\end{definition}
+
+\begin{definition} \hlt{Earnings Surprise}\\
+Difference between reported earnings and expected earnings.
+\begin{equation}
+\text{UE}_t = \text{EPS}_t - E[\text{EPS}_t] \nonumber
+\end{equation}
+where UE$_t$ is unexpected earnings for quarter $t$.\\
+This is usually scaled by a measure that expresses the variability of analyst EPS forecasts.\\
+Positive earnings surprises may lead to persistent positive abnormal returns.
+\end{definition}
+
+\begin{definition} \hlt{Standardised Unexpected Earnings (SUE)}\\
+Magnitude of unexpected earnings is scaled by a measure of the size of historical forecast errors or surprises.\\
+The smaller the historical size of forecast errors, the more meaningful a given size of EPS forecast error.
+\begin{equation}
+\text{SUE}_t = \frac{\text{EPS}_t - E[\text{EPS}_t]}{\sigma[\text{EPS}_t - E[\text{EPS}_t]]} \nonumber
+\end{equation}
+where EPS$_t$ is actual EPS for time $t$, $E[\text{EPS}_t]$ is expected EPS for time $t$, $\sigma[\text{EPS}_t - E[\text{EPS}_t]]$ is standard deviation of $[\text{EPS}_t - E[\text{EPS}_t]]$ over some historical time period.
+\end{definition}
+
+\begin{definition} \hlt{Relative Strength Indicators}\\
+Compares stock price or return performance during a given time period with its own historical performance, or with some group of peer stocks.\\
+Patterns of persistence or reversal may exist in stock returns.
+\end{definition}
+
+\begin{definition} \hlt{Weighted Harmonic Mean}
+\begin{equation}
+X_{\text{WH}} = \frac{1}{\sum\limits_{i=1}^n (w_i / X_i)} \nonumber
+\end{equation}
+where $w_i$ are portfolio value weights summing to $1$.\\
+Mitigates impact of large outliers, but may aggravate impact of small outliers.
+\end{definition}

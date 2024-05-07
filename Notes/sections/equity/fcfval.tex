@@ -202,7 +202,7 @@ Even though depreciation is non-cash expense, firm reduces its tax bill by expen
 \begin{method} \hlt{Computing FCFE from FCFF}\\
 Starting with FCFF, adjust for two cashflows to bondholders: after-tax interest expense, and any ST and LT borrowings. To subtract after-tax interest expense as paying interest reduces tax bill and reduces cash available to shareholders by interest paid minus the taxes saved.
 \begin{equation}
-\text{FCFE} = \text{Actual FCFF} - \text{Int}(1-t) + \text{Net Borrowing} \nonumber\text{FCFE} = \text{Actual FCFF} - \text{Int}(1-t) + \text{Net Borrowing} \nonumber
+\text{FCFE} = \text{FCFF} - \text{Int}(1-t) + \text{Net Borrowing} \nonumber
 \end{equation}
 \end{method}
 
@@ -210,7 +210,7 @@ Starting with FCFF, adjust for two cashflows to bondholders: after-tax interest 
 Difference from FCFF is that after-tax interest expense is not aded back, and net borrowing is added back.
 \begin{align}
 \text{Actual FCFE} &= (\text{NI} + \text{NCC} - \text{WCInv}) - \text{FCInv} + \text{Net Borrowing} \nonumber \\
-&= \text{CFO} - \text{FCInv} + \text{Net Boorrowing} \nonumber
+&= \text{CFO} - \text{FCInv} + \text{Net Borrowing} \nonumber
 \end{align}
 \end{method}
 
@@ -323,3 +323,49 @@ EBITDA doesn't reflect cash taxes paid by firm, and ignores CF effects of WCInv 
 \item Chosen base years for FCFF, FCFE growth forecasts. Representative base year to be chosen, or all of the subsequent analysis and valuation will be flawed.
 \end{enumerate}
 \end{remark}
+
+\begin{method} \hlt{Single-Stage FCFF Model}\\
+Useful for stable firms in mature industries.\\
+Model assumes FCFF grows at constant rate $g$ forever, and growth rate is less than WACC.
+\begin{align}
+\text{Firm Value} &= \frac{\text{FCFF}_1}{\text{WACC}-g} = \frac{\text{FCFF}_0 (1+g)}{\text{WACC}-g} \nonumber \\
+\text{WACC} &= \frac{\text{MV}_{\text{Debt}}}{\text{MV}_{\text{Debt}} + \text{MV}_{\text{Equity}}} r_d (1-t) + \frac{\text{MV}_{\text{Equity}}}{\text{MV}_{\text{Debt}} + \text{MV}_{\text{Equity}}}r \nonumber
+\end{align}
+Payments to stockholders are not tax deductible, and payments to debt-holders are tax deductible. Target capital structure is used, rather than actual weights.
+\end{method}
+
+\begin{method} \hlt{Single-Stage FCFE Model}\\
+Used for international valuation, especially for countries with high inflationary expectations, where estimation of nominal growth rates and required returns is difficult. Real inflation-adjusted values are estimated for inputs.
+\begin{align}
+\text{Equity Value} &= \frac{\text{FCFE}_1}{r-g} = \frac{\text{FCFE}_0 (1+g)}{r-g} \nonumber
+\end{align}
+\end{method}
+
+\begin{remark} \hlt{Variations of Multistage FCFF and FCFE Models}\\
+Basic valuation principle: value always estimated as PV of expected FCF at appropriate discount rate.
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item FCFF vs FCFE: value of firm is PV of FCFF discounted at WACC.\\
+Value of equity is PV of FCFE discounted at required return on equity.
+\item Two-Stage vs Three-Stage Models: model future growth pattern into two stages or three. Several variations on the approach depending on how the growth is modelled within stages.
+\item Forecasting Growth in Total FCF versus Components of FCF: simple FCF model looks a lot like multistage DDM models. Benefit of FCF is that the approach may be defined by forecasting the values and/or growth rates in the components of FCF over the first stage, then calculate FCF in each year using one of the formulas. Variations include using EPS instead of sales.
+\end{enumerate}
+\end{remark}
+
+\begin{method} \hlt{Two-Stage FCFF and FCFE Models}\\
+General expression for FCFF and FCFE model is as follows: 
+\begin{align}
+\text{Firm Value} &= \sum\limits_{t=1}^n \frac{\text{FCFF}_t}{(1+\text{WACC})^t} + \frac{\text{FCFF}_{n+1}}{(\text{WACC} - g)(1+\text{WACC})^n} \nonumber \\
+\text{Equity Value} &= \sum\limits_{t=1}^n \frac{\text{FCFE}_t}{(1+r)^t} + \frac{\text{FCFE}_{n+1}}{(r - g)(1+r)^n} \nonumber
+\end{align}
+\end{method}
+
+\begin{method} \hlt{Terminal Value Calculation}\\
+A single-stage model or multiple approach may be used.\\
+FCFF or FCFE may be forecasted at the point which cash flows begin to grow at the LT stable growth rate, which the single-stable model can then be used.\\
+Valuation multiples may also be used.
+\begin{align}
+\text{Terminal Value}_n &= \text{Trailing P/E} \times \text{Earnings}_n \nonumber \\
+\text{Terminal Value}_n &= \text{Leading P/E} \times \text{Forecasted Earnings}_{n+1} \nonumber
+\end{align}
+\end{method}

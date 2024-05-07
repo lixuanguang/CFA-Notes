@@ -1,0 +1,287 @@
+\subsection{Residual Income Valuation}
+
+\begin{definition} \hlt{Residual Income}\\
+Net profit of firm less a charge that measure stockholder's opportunity cost of capital.\\
+Approach recognises the cost of equity capital in measurement of income, as opposed to accounting net income (which includes a cost of debt, but does not reflect dividends or other equity capital-related funding costs).\\
+Accounting income may overstate returns from perspective of equity investors, but residual income explicitly deducts all capital costs.
+\end{definition}
+
+\begin{definition} \hlt{Capital Charge}\\
+Company's total cost of capital in money terms.
+\begin{align}
+\text{Residual Income} &= \text{Net Income} - \text{Equity Capital Charge} \nonumber \\
+&= \text{NOPAT} - (\text{Equity Capital Charge} + \text{Debt Capital Charge}) \nonumber
+\end{align}
+\end{definition}
+
+\begin{definition} \hlt{Equity Charge}\\
+Estimated cost of equity capital in money terms.
+\begin{equation}
+\text{Equity Charge} = \text{Equity Capital} \times \text{Cost of Equity Capital} \nonumber
+\end{equation}
+\end{definition}
+
+\begin{definition} \hlt{Return on Invested Capital (ROIC)}\\
+Amount of after-tax net operating profits as a percentage of total assets or capital.
+\begin{equation}
+\text{Residual Income} = (\text{ROIC} - \text{Effective Capital Charge}) \times \text{Beginning Capital} \nonumber
+\end{equation}
+\end{definition}
+
+\begin{definition} \hlt{Economic Value Added (EVA)}\\
+Value added for shareholders by management in a given year.
+\begin{align}
+\text{EVA} &= \text{NOPAT} - (\text{WACC} \times \text{Total Capital}) \nonumber \\
+&= [\text{EBIT}(1-t)] - \text{WACC} \nonumber \\
+\text{Total Capital} &= \text{Net Working Capital} + \text{Net Fixed Assets} \nonumber \\
+&= \text{Book Value of Long-Term Debt} + \text{Book Value of Equity} \nonumber
+\end{align}
+where NOPAT is net operating profit after tax.\\
+Note that beginning-of-year total capital is used for computation.
+\end{definition}
+
+\begin{remark} \hlt{Adjustments to EVA}\\
+To make the following adjustments to financial statements before computing NOPAT and Total Capital:
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item R\&D expenses are capitalised and amortised rather than expensed.\\
+R\&D expenses, net of estimated amortisation, is added back to earnings to compute NOPAT.
+\item Add back charges on strategic investments that will generate returns in the future.
+\item Eliminate deferred taxes and consider only cash taxes as an expense.
+\item Treat operating lease as capital leases and adjust non-recurring items.
+\item Add LIFO reserve to invested capital and add back change in LIFO reserve to NOPA>
+\end{enumerate}
+\end{remark}
+
+\begin{definition} \hlt{Market Value Added (MVA)}\\
+Measures value created by management's decisions since firm's inception.
+\begin{equation}
+\text{MVA} = \text{Market Value of Company} - \text{Accounting book value of total capital} \nonumber
+\end{equation}
+\end{definition}
+
+\begin{definition} \hlt{Clean Surplus Relation} \\
+The relationship among earnings, dividends, and book value is as follows:
+\begin{equation}
+B_t = B_{t-1} + E_t - D_t \nonumber
+\end{equation}
+\end{definition}
+
+\begin{method} \hlt{Computing Residual Income from Accounting Information}
+\begin{equation}
+\text{RI}_t = E[\text{EPS}_t] - (r \times \text{BVPS}_{t-1}) = (E[\text{ROE}] - r) \times \text{BVPS}_{t-1} \nonumber
+\end{equation}
+where $E[\text{EPS}_t]$ is expected EPS for year $t$, $r$ is required return on equity, $\text{BVPS}_{t-1}$ is book value per share for year $t-1$, $E[\text{ROE}]$ is expected return on new investments (expected return on equity).
+\end{method}
+
+\begin{method} \hlt{General Residual Income Model}
+\begin{equation}
+V_0 = B_0 + \sum\limits_{t=1}^{\infty} \frac{\text{RI}_t}{(1+r)^t} = B_0 + \sum\limits_{t=1}^{\infty} \frac{E_t - r B_{t-1}}{(1+r)^t} = B_0 + \sum\limits_{t=1}^{\infty} \frac{(\text{ROE}_t - r) B_{t-1}}{(1+r)^t} \nonumber
+\end{equation}
+where $B_0$ is current book value of equity,
+\end{method}
+
+\begin{remark} \hlt{RI Model vs DDM, FCFE Models}\\
+Value is recognised earlier in RI model than other present-value based approaches, as it is less sensitive to terminal value estimates, hence reducing forecast error. This is because intrinsic values estimated with RI models include the firm's current book value, which usually represents a substantial portion of estimated intrinsic value.
+\end{remark}
+
+\begin{remark} \hlt{Single Stage Residual Income Model}\\
+Assuming constant dividends and earnings growth rate, the RI model will highly fundamental drivers.\\
+Assuming stock is correctly priced ($P_0 = V_0$), value is then
+\begin{equation}
+V_0 = B_0 \left(1 + \frac{\text{ROE} - r}{r - g} \right) \nonumber
+\end{equation}
+Note that if same input as Gordon growth model is used, both models will give same value estimates.\\
+The second term is present value of expected future residual income.
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item If ROE $= r$, the justified market value of the stock equals its book value.\\
+If ROE $> r$, the firm will have positive residual income, and valued more than book value.
+\item The term $\frac{\text{ROE} - r}{r - g} B_0$ is additional value generated by firm's ability to produce returns in excess of cost of equity, and hence is present value of firm's expected economic profits (residual income).
+\end{enumerate}
+\end{remark}
+
+\begin{remark} \hlt{RI Model Relation to P/B Ratio}\\
+\begin{equation}
+\frac{P_0}{B_0} =\frac{\text{ROE} - g}{r - g} = 1 + \frac{\text{ROE} - r}{r - g} \nonumber
+\end{equation}
+Stock's justified P/B is directly related to future residual income.
+\end{remark}
+
+\begin{definition} \hlt{Tobin's $q$}\\
+Assets are valued at replacement costs, which takes into account effects of inflation.
+\begin{equation}
+\text{Tobin's } q = \frac{\text{Debt}_{\text{Market Value}} + \text{Equity}_{\text{Market Value}}}{\text{Replacement Cost of Total Assets}} \nonumber
+\end{equation}
+Tobin's $q$ is expected to be higher the greater the productivity of a company's assets.
+\end{definition}
+
+\begin{method} \hlt{Continuing Residual Income}\\
+Residual income after the forecast horizon. May be made under following assumptions:
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Residual income continues indefinitely at a positive level
+\item Residual income is zero from terminal year onward
+\item Residual income declines as zero as ROE reverts to cost of equity through time
+\item Residual income reflects reversion of ROE to some mean level
+\end{enumerate}
+\end{method}
+
+\begin{method} \hlt{Continuing Residual Income with Premium over Book Value}\\
+Assumes at end of time horizon $T$, a certain premium over book value $P_T - B_T$ exists for the company.
+\begin{align}
+V_0 &= B_0 + \sum\limits_{t=1}^{T} \frac{E_t - r B_{t-1}}{(1+r)^t} + \frac{P_T - B_T}{(1+r)^T} \nonumber \\
+V_0 &= B_0 + \sum\limits_{t=1}^{T} \frac{(\text{ROE}_t - r) B_{t-1}}{(1+r)^t} + \frac{P_T - B_T}{(1+r)^T} \nonumber
+\end{align}
+The longer the forecast period, the greater the chance that the company's residual income will converge to zero.\\
+For longer forecast periods, the last term may be treated as zero.\\
+For shorter forecast periods, a forecast of the premium should be calculated.
+\end{method}
+
+\begin{method} \hlt{Continuing Residual Income with Residual Income Fading}
+\begin{equation}
+V_0 = B_0 + \sum\limits_{t=1}^{T-1} \frac{E_t - r B_{t-1}}{(1+r)^t} + \frac{E_t - r B_{t-1}}{(1+r-\omega)(1+r)^{T-1}} \nonumber
+\end{equation}
+where $0 \leq \omega \leq 1$ is a persistence factor.\\
+Factor equalling one implies residual income will persist at the same level indefinitely\\
+Factor equalling zero implies residual income will not continue after initial forecast horizon.
+\end{method}
+
+\begin{flushleft}
+\begin{tabularx}{\textwidth}{p{25em}|X}
+\hline
+\rowcolor{gray!30}
+Low RI Persistence & High RI Persistence \\
+\hline
+Extreme accounting rates of return (ROE) & Low dividend payout \\
+\hline
+Extreme levels of special items (i.e., non-recurring items) & High historical persistent in industry \\
+\hline
+Extreme levels of accounting accruals & \\
+\hline
+\end{tabularx}
+\end{flushleft}
+
+\begin{method} \hlt{Implicit Growth Rate in Residual Income}\\
+Rearranging the single-stage residual income model and solving for growth rate
+\begin{equation}
+g = r - \frac{B_0 \times (\text{ROE} - r)}{V_0 - B_0} \nonumber
+\end{equation}
+Solving for $g$ gives market expectations of residual income growth implied by current market price, under assumption that intrinsic value is equal to market price.
+\end{method}
+
+\begin{remark} \hlt{Advantages of Residual Income Models}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Terminal value do not market up large portion of total present value, relative to other models
+\item Residual income models uses readily available accounting data
+\item Can be applied to firms that do not pay dividends, or do not have positive expected near-term FCF
+\item Applicable even when cash flows are volatile
+\item The models focus on economic profitability, rather than just accounting profitability
+\end{enumerate}
+\end{remark}
+
+\begin{remark} \hlt{Disadvantages of Residual Income Models}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Model rely on accounting data, which can be manipulated by management
+\item Accounting data used as inputs may require significant adjustments
+\item Models require either that the clean surplus relation holds, or the analyst makes appropriate adjustments when clean surplus relation does not hold
+\item Model use of accounting income assumes cost of debt capital is reflected appropriately by interest expense
+\end{enumerate}
+\end{remark}
+
+\begin{remark} \hlt{Appropriateness of Application of Residual Income Models}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Firm does not pay dividends, or its dividends are unpredictable
+\item Firm's expected FCF are negative within the analyst's comfortable forecast horizon
+\item Great uncertainty exists in forecasting terminal values using other approaches
+\end{enumerate}
+\end{remark}
+
+\begin{remark} \hlt{Inappropriateness of Application of Residual Income Models}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Significant departures from clean surplus accounting exists
+\item Significant determinants of residual income, such as book value and ROE, are unpredictable
+\end{enumerate}
+\end{remark}
+
+\begin{remark} \hlt{Violations of Clean Surplus Relationship}\\
+Relationship may not hold when items are charged directly to shareholder's equity, bypassing the IS.\\
+To adjust net income to account for these items if they are not expected to reverse in the future.\\
+Items that can bypass IS include:
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Unrealised changes in fair value for 'available-for-sale' investments under GAAP, and 'equity instruments measured at fair value through OCI' under IFRS.
+\item Foreign currency adjustments
+\item Certain pension adjustments
+\item Portion of gains and losses on certain hedging instruments
+\item Changes in revaluation surplus related to PP\&E or intangible assets (IFRS only)
+\item Change in fair value attributable to changes in liability credit risk (IFRS only)
+\end{enumerate}
+\end{remark}
+
+\begin{remark} \hlt{Effects of Violations of Clean Surplus Relationship}\\
+Net income is not correct, but book value is still correct.\\
+If future OCI is expected to be significant relative to net income, and if year-to-year amounts of OCI are not expected to net to zero, incorporate these items to that residual income forecasts are close to the case of clean surplus relation being held. To incorporate explicit assumptions about future amounts of OCI.
+\end{remark}
+
+\begin{remark} \hlt{Variations from Fair Value}\\
+As accrual method of accounting may cause BS items to be reported at book values significantly different from market values, to make adjustments to BS to reflect fair value:
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Operating leases: to be capitalised by increasing assets and liabilities by the present value of expected future operating lease payments. Interest expense in IS should be close to true cost of debt.
+\item Special Purpose Entities (SPEs): whose assets and liabilities are not reflected in financial statements of parent company to be consolidated
+\item Reserves and allowances: to be adjusted. For example, allowance for bad debts (offsets to account receivable) should reflect the expected loss
+\item Inventory: for companies that use LFI, should be adjusted to FIFO by adding LIFO reserve to inventory and equity, assuming no deferred tax impact
+\item Pension asset or liability: to be adjusted to reflect funded status of the plan, which is equal to difference between fair value of plan assets and projected benefit obligation (PBO)
+\item Deferred tax liabilities: to be eliminated and reported as equity if the liability is not expected to reverse (i.e., if deferred tax liability results from different depreciation methods for tax and financial statement reporting purposes, and if company is growing)
+\end{enumerate}
+\end{remark}
+
+\begin{remark} \hlt{Intangible Asset Effects on Book Value}\\
+Intangible assets requiring special attention are: intangibles recognised at recognition, and R\&D expenditures.\\
+Recognition of an identifiable intangible asset (i.e., license) in group accounts that were not previously recorded in investee company BS creates distortion in valuation under RI model. Amortisation of such assets reduces combined ROE, hence results in lower valuation of combined entity compared to sums of the values of individual entities prior to acquisition. To remove distortion, amortisation of intangibles capitalised during acquisition should be removed prior to computing ROE used for RI valuation.\\
+For R\&D expenditures, the ROE estimate for a mature company should reflect the long-term productivity of the company's R\&D expenditures: productive R\&D expenditures increase ROE and residual income, vice versa.
+\end{remark}
+
+\begin{remark} \hlt{Non-Recurring Items and Other Aggressive Accounting Practices}\\
+Non-recurring items should not be included in RI forecasts.\\
+Items that need adjustments in measuring recurring earnings include:
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Unusual items
+\item Extraordinary items (applicable under GAAP only)
+\item Restructuring charges
+\item Discontinued Operations
+\item Accounting charges
+\end{enumerate}
+Firms may engage in aggressive accounting practices that overstate book value of assets and earnings, i.e., by accelerating revenues to the current period, or deferring expenses to a later period.
+\end{remark}
+
+\begin{remark} \hlt{International Considerations}\\
+In applying models to global valuation settings, consider:
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item the availability of reliable earnings forecasts
+\item systematic violations of the clean surplus assumption
+\item 'poor quality' accounting rules that result in delayed recognition of value changes
+\end{enumerate}
+\end{remark}
+
+\subsubsection{Question Bank}
+
+\begin{qnbank}{\color{white}space}\\
+Total assets $\$3,000,000$, financed with twice as much debt as equity.\\
+Pretax cost of debt is $6\%$, cost of equity capital is $10\%$.\\
+EBIT of $\$300,000$, at a tax rate of $40\%$.\\
+To compute residual income:
+\begin{align}
+\text{EBIT} - \text{Interest} &= 300,000 - (2,000,000 \times 0.06) = 180,000 = \text{Pre-Tax Income} \nonumber \\
+\text{Pre-Tax Income} - \text{Tax Expense} &= 180,000 - 72,000 = 108,000 = \text{Net Income} \nonumber \\
+\text{Equity Capital} \times \text{Required return on equity} &= \frac{1}{3}(3,000,000) \times 0.1 = 100,000 = \text{Equity Charge} \nonumber \\
+\text{Net Income} - \text{Equity Charge} &= 108,000 - 100,000 = 8,000 = \text{Residual Income} \nonumber
+\end{align}
+\end{qnbank}
