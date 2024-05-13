@@ -402,3 +402,85 @@ The quoted amount is $PV$, for bank certificates of deposit, repurchase agreemen
 \item Bond Equivalent Yield (BEY) is a MM rate stated on a $365$-day AOR basis. This instrument is now comparable with other MM instruments expressed on a BEY basis.
 \end{enumerate}
 \end{method}
+
+\subsubsection{Arbitrage-Free Valuation Framework}
+
+\begin{definition} \hlt{Value Additivity Arbitrage}\\
+Value of the whole differs from the sum of value of parts.
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Stripping: portfolio of strips trading less than intact bond. To purchase the strips, combine them, then sell them as a bond.
+\item Reconstitution: bond is worth less than its components. To purchase the bond, break it into portfolio of strips, then sell the components.
+\end{enumerate}
+\end{definition}
+
+\begin{definition} \hlt{Dominance Arbitrage}\\
+One asset trades at lower price than another asset with identical characteristics.
+\end{definition}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.25]{/fi/bintree}
+\caption{Binomial interest rate tree}
+\end{figure}
+
+\begin{method} \hlt{Binomial Interest Rate Tree}\\
+Assumes interest rates have equal probability of taking one of two possible values in the next period.\\
+Starting point $i_0$ of tree is current $1$-period spot rate.\\
+A lognormal random walk is assumed for the implied interest rate, as lognormal properties allows for non-negativity of interest rates and higher volatility at higher interest rates. Note that
+\begin{equation}
+i_{1, H} = i_{i,L} e^{2 \sigma} \nonumber
+\end{equation}
+where $\sigma$ is the standard deviation of interest rates. Two vertical-adjacent nodes differ by factor of $e^{2 \sigma}$.
+\end{method}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{/fi/backwardinduc}
+\caption{Backward induction of binomial tree}
+\end{figure}
+
+\begin{method} \hlt{Backward Induction of Binomial Tree}\\
+for $t$ in range $(0, T-1, -1)$: \# Computing from second last layer to the first \\
+{\color{white}space} for $n$ in layer$\_t\_$nodes:
+\begin{equation}
+\text{v}(t,n) = \frac{\text{PMT}(t+1,n)+ [0.5 \text{v}(t+1, nH) + 0.5 \text{v}(t+1, nL)]}{1 + i(t, n)} \nonumber
+\end{equation}
+where $\text{v}(t,n)$ is value of node at time $t$ at position $n$, $\text{v}(t+1,nH)$ and $\text{v}(t+1,nL)$ is value of node at next time step $t+1$ at positions up ($H$) and down ($L$), $\text{PMT}(t+1,n)$ is beginning coupon payment for next time step, $i(t,n)$ is interest rate at time $t$ at position $n$ in decimal. \\
+Note that at last layer $T$, the value at node $n$ is as follows:
+\begin{equation}
+\text{v}(T, n) = \frac{\text{PMT}(T,n) + \text{Redemption Value}(T,n)}{1 + i(T, n)} \nonumber
+\end{equation}
+\end{method}
+
+\begin{remark} \hlt{Calibration of Software for Binomial Tree}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Interest rate tree should generated arbitrage-free values for benchmark security. Value of bonds produced by tree much be equal to their market pice.
+\item Vertically-adjacent rates are $e^{2 \sigma}$ values apart
+\item The middle forward rate in a period is approximately equal to the implied (from benchmark spot rate curve) one-period forward rate for that period
+\end{enumerate}
+\end{remark}
+
+\begin{method} \hlt{Path-Wise Valuation}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Specify list of all potential paths along the tree
+\item Determine the present value of a bond along each potential path
+\item Calculate the average across all possible paths.
+\end{enumerate}
+\end{method}
+
+\begin{method} \hlt{Monte Carlo Simulation}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Simulate numerous paths of interest rates under a volatility assumption and probability distribution
+\item Generate spot rates from the simulated interest rates
+\item Calculate present value from the cash flow along each interest rate path
+\item Take the average of the present value across all interest rate paths
+\end{enumerate}
+Simulated paths should be calibrated so benchmark interest rate paths value benchmark securities at market price (arbitrage-free valuation). Calibration process involves adding/subtracting a constant to all rates when value from simulated paths is too high/low relative to market prices. This will result in a drift adjusted model.\\
+Upper and lower bounds on interest rates may be imposed; bounds are based on notion of mean reversion.
+\end{method}
+
+\subsubsection{Valuation of Bonds with Embedded Options}

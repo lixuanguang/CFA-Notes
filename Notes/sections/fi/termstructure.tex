@@ -37,7 +37,7 @@ A yield-to-maturity that makes the present value of a bond’s cash flows equal 
 Solve for $PMT$ given a sequence of spot rates $Z_t$. Between coupon dates, set the flat price to $100$.\\
 Par rate is then $PMT/100$.
 \begin{equation}
-100 = \sum\limits_{t=1}^N \frac{PMT}{(1+Z_t)^t} + \frac{PMT}{(1+Z_N)^N} \nonumber
+100 = \sum\limits_{t=1}^N \frac{PMT}{(1+Z_t)^t} + \frac{FV}{(1+Z_N)^N} \nonumber
 \end{equation}
 \end{method}
 
@@ -96,7 +96,7 @@ Inverted & Above Spot Curve & Below Spot Curve \\
 \end{flushleft}
 
 \begin{definition} \hlt{Discount Factor}\\
-Price of a $\$1$ par zero-coupon bond after $N$ periods, denoted $PV_N$.\\
+Price of a $\$1$ par zero-coupon bond after $N$ periods.\\
 The $N$-period discount factor (denoted $DF_N$) is the discount function.
 \begin{equation}
 DF_N = \frac{1}{(1+Z_N)^N} \nonumber
@@ -106,6 +106,12 @@ In relation to forward rate $F_{A, B-A}$, given the forward contract price $DF_{
 \begin{equation}
 DF_{A, B-A} = \frac{1}{\left(1 + F_{A, B-A} \right)^{B-A}} \nonumber
 \end{equation}
+\end{definition}
+
+\begin{definition} \hlt{Forward Pricing Model}
+\begin{align}
+DF_B &= DF_A \times F_{A, B-A} \nonumber
+\end{align}
 \end{definition}
 
 \begin{method} \hlt{Bootstrapping}\\
@@ -205,7 +211,7 @@ Increase in TED spread signals greater perceived credit and liquidity risk.
 An OIS is an interest rate swap where periodic floating rate of the swap equals geometric average of a daily unsecured overnight rate (or overnight index rate).\\
 The OIS rate roughly reflects the federal funds rate and includes minimal counterparty risk.\\
 MRR-OIS Spread is the amount by which MRR exceeds OIS rate.\\
-The spread indicates level of credit risk and liquidity risk in the banking system.
+The spread indicates level of credit risk and liquidity risk of money market securities.
 \end{definition}
 
 \subsubsection{Term Structure Theory}
@@ -215,7 +221,7 @@ The hypothesis is that investor's expectations determine the shape of the intere
 Forward rates are solely a function of expected future spot rates, and every maturity strategy has the same expected return over a given investment horizon.\\
 Long-term interest rates equal the mean of future expected short-term rates.\\
 Given an investment horizon, investor would be indifferent between investing in a single bond or splitting the investment into a sequence of bonds to hold.\\
-Underlying principle is based on risk neutrality. Investors don't demand a risk premium for maturity strategies that differ from their investment horizon.
+Underlying principle is based on risk neutrality. Investors are unaffected by uncertainty, and don't demand a risk premium for maturity strategies that differ from their investment horizon.
 \end{remark}
 
 \begin{remark} \hlt{Implications of Unbiased/Pure Expectations Theory}\\
@@ -237,7 +243,7 @@ Theory does not hold, as short-holding-period returns of long maturity bonds can
 \begin{remark} \hlt{Liquidity Preference Theory}\\
 Theory addresses shortcomings of pure expectations theory. Forward rates reflect investors' expectations of future spot rates, and liquidity premium compensates investors for exposure to interest rate risk.\\
 Liquidity premium is positively related to maturity.\\
-Forward rates are upwardly biased estimates of market's expectation of future rates due to inclusion of liquidity premium.\\
+Forward rates are upwardly biased estimates of market's expectation of future rates due to liquidity premium.\\
 Positive-sloping yield curve indicates that either:
 \begin{enumerate}[label=\roman*.]
 \setlength{\itemsep}{0pt}
@@ -256,7 +262,7 @@ Various market participants only deal in securities of a particular maturity as 
 
 \begin{remark} \hlt{Preferred Habitat Theory}\\
 Similar to segmented markets theory in that borrowers and lenders have strong preferences for particular maturities, but does not asset that yields at difference maturities are determined independently of each other.\\
-If expected additional returns to be gained become large enough, investors will deviate from their preferred maturities or habitats, as investors will accept additional risk in return for additional expected returns. 
+If expected additional returns to be gained become large enough, investors will deviate from their preferred maturities or habitats, as investors will accept additional risk in return for additional expected returns.\\
 \end{remark}
 
 \subsubsection{Yield Curve Factor Models}
@@ -336,3 +342,69 @@ Expectation of steepening of yield curve may lead investors to long short-term b
 Trades may be designed to be duration-neutral so change in level of interest rates does not affect value of the portfolio. Investors with long-only mandates may rotate between bullet portfolio (portfolio concentrated in a single maturity) and a barbell portfolio (portfolio with short and long maturities).\\
 Expectation of bullish flattening of yield curve may lead investor to rotate out of bullet into barbell portfolio.
 \end{remark}
+
+\subsubsection{Term Structure Models}
+
+\begin{definition} \hlt{Equilibrium Term Structure Models}\\
+Describe changes in term structure using fundamental economic variables that drive interest rates.
+\end{definition}
+
+\begin{remark} \hlt{Cox-Ingersoll-Ross Model (CIR Model)}\\
+A short-rate model that describes interest rate movements as driven by only one source of market risk. Has mean reversion of interest rate towards long run value, and avoids possibility of negative interest rates.\\
+When rate is close to zero, standard deviation becomes very small, which dampens the effect of random shock on the rate; evolution becomes dominated by drift factor, which pushes the rate upward to equilibrium.
+\begin{equation}
+dr_t = a(b-r_t) dt + \sigma \sqrt{r_d} dW_t \nonumber
+\end{equation}
+\end{remark}
+
+\begin{remark} \hlt{Vasicek Model}\\
+Similar to CIR model, except it may accept negative rate.\\
+Stochastic term follows random normal distribution. Interest rates are calculated assuming constant volatility.
+\begin{equation}
+dr_t = a(b-r_t) dt + \sigma dW_t \nonumber
+\end{equation}
+\end{remark}
+
+\begin{definition} \hlt{Arbitrage-Free Term Structure Models}\\
+Assumes bonds trading in market are correctly price. Model is calibrated to value bonds consistent with market price. Models do not justify current yield curve, but take the curve as given.
+\end{definition}
+
+\begin{remark} \hlt{Ho-Lee Model}\\
+Calibrated using market prices to find time-dependent drive term $\theta_t$ that generates current term structure. Can be used to price zero-coupon bonds and to determine spot price.\\
+Assumes changes in yield curve are consistent with a no-arbitrage condition.\\
+Assumes constant volatility and a normal distribution of interest rates.
+\begin{equation}
+dr_t = \theta_t dt + \sigma dW_t \nonumber
+\end{equation}
+\end{remark}
+
+\begin{remark} \hlt{Kalotay-Williams-Fabozzi Mdel (KWF Model)}\\
+Does not assume mean reversion. Assumes constant volatility and constant drift.\\
+Assumes short-term rate is log-normally distributed.
+\begin{equation}
+d \ln (r_t) = \theta dt + \sigma dW_t \nonumber
+\end{equation}
+\end{remark}
+
+\begin{remark} \hlt{Gauss$+$ Model}\\
+Multi-factor model that incorporates short-term, medium-term, and long-term rates, where the long-term rate is designed to be mean reverting and depends on macroeconomic variables. Medium-term rates revert to long-term rate, while short-term rate is non-random (consistent with central bank controlling the short-term of curve).\\
+Results in a humped-shape volatility curve across tenors, with medium-rates being most volatile.
+\end{remark}
+
+\begin{flushleft}
+Term Structure Model Summary
+\begin{tabularx}{\textwidth}{p{4em}|p{8em}|p{6em}|p{16em}|X}
+\hline
+\rowcolor{gray!30}
+Model & Type & Short Rate & Drift Term & Volatility \\
+\hline
+CIR & Equilibrium & $dr_t$ & Mean reversion at speed $a$ & Varies with $\sqrt{r}_d$ \\
+\hline
+Vasicek & Equilibrium & $dr_t$ & Mean reversion at speed $a$ & Constant \\
+\hline
+Ho-Lee & Arbitrage-Free & $dr_t$ & Time dependent & Constant \\
+\hline
+KWF & Arbitrage-Free & $d \ln (r_t)$ & Time dependent & Constant \\
+\hline
+\end{tabularx}
+\end{flushleft}
