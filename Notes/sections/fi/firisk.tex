@@ -348,14 +348,55 @@ When benchmark rates are low, effective duration of putable and non-putable bond
 When benchmark rates are high, put option is more valuable to investor, since the ability to sell the bond back to the issuer at par limits the price depreciation as rates rise.
 \end{remark}
 
-\begin{remark} \hlt{Relation to Full Price of Bond}
+\begin{remark} \hlt{Computing the Effective Duration and Convexity in Practice}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Given price $PV_0$, compute implied OAS to the benchmark yield curve at appropriate interest rate volatility
+\item Shift benchmark curve down, generate new interest rate tree, revalue bond using OAS earlier for $PV_{-}$.
+\item Shift benchmark curve up, generate new interest rate tree, revalue bond using OAS earlier for $PV_{+}$.
+\item Compute bond's effective duration and convenxity
+\end{enumerate}
+\end{remark}
+
+\begin{remark} \hlt{Effective Durations of Callable, Putable, Straight Bonds}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Effective duration of callable $\leq$ Effective duration of straight
+\item Effective duration of putable $\leq$ Effective duration of straight
+\item Effective duration of zero-coupon $\approx$ Maturity of the bond
+\item Effective duration of fixed-rate coupon bond $<$ Maturity of the bond
+\item Effective duration of floater $\approx$ time (in years) to next reset
+\end{enumerate}
+Effective duration of straight bonds is relatively unaffected by changes in interest rates.\\
+Increase in interest rates will increase effective duration of callable bond, decrease that of putable bond.
+\end{remark}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{/fi/effdurofoptionbonds}
+\caption{Effective Durations of Option-Free, Callable and Putable Bonds}
+\end{figure}
+
+\begin{remark} \hlt{Effective Convexities of Callable, Putable, Straight Bonds}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Straight bonds have positive effective convexity; increase in value of option-free bond is higher when rates fall than decrease in value when rates increase by equal amount
+\item Callable bonds unlikely to be called when rates are high, hence have positive convexity. When underlying call option is near its money, effective convexity turns negative; upside potential of the bond's price is limited to the call while downside is not protected
+\item Putable bonds exhibit positive convexity throughout
+\end{enumerate}
+\end{remark}
+
+\begin{remark} \hlt{Relation to Full Price of Bond}\\
+The following relation holds in relation to the full price of the bond.
 \begin{equation}
 \% \Delta PV^{\text{Full}} \approx (-\text{EffDur} \times \Delta \text{Curve}) + \left[ \frac{1}{2} \times \text{EffConv} \times (\Delta \text{Curve})^2 \right] \nonumber
 \end{equation}
 \end{remark}
 
 \begin{definition} \hlt{Key Rate Duration}\\
-Measure of bond’s sensitivity to change in benchmark yield at a specific maturity (sensitivity to \hlt{shaping risk}).
+Measure of bond’s sensitivity to change in benchmark yield at a specific maturity (sensitivity to \hlt{shaping risk}).\\
+Better at capturing interest rate sensitivity than simple effective duration for embedded option bonds.\\
+Used to identify interest rate risk from changes in shape of the yield curve.
 \begin{align}
 \text{KeyRateDur}_k &= - \frac{1}{PV} \times \frac{\Delta PV}{\Delta r_k} \nonumber \\
 \text{EffDur} &= \sum\limits_{k=1}^n \text{KeyRateDur}_k \nonumber \\
@@ -366,9 +407,42 @@ where $r_k$ represents the $k$th key rate.
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.5]{/fi/keyrateshiftone}
-\includegraphics[scale=0.43]{/fi/keyrateshifttwo}
+\includegraphics[scale=0.57]{/fi/keyrateshiftone}
+\includegraphics[scale=0.47]{/fi/keyrateshifttwo}
 \caption{Key rate shift at single point, and across the benchmark curve}
+\end{figure}
+
+\begin{remark} 
+\label{rem:genresultkeyratedur}
+\hlt{General Results on Key Rate Duration}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item If option-free bond is trading at par, bond's maturity-matched rate is only rate that affect bond's value. Its maturity key rate duration is same as its effective duration, and all other key rate durations are zero.
+\item If option-free bond is not trading at par, the maturity-matched rate is still the most important rate.
+\item Bonds with low or zero coupon may have negative key rate durations for horizons other than maturity.
+\item Callable bond with low coupon is unlikely to be called; hence bond's maturity-matched rate is the most critical (i.e., highest key rate duration corresponds to bond's maturity).
+\item All else equal, higher coupon bonds are more likely to be called, hence time-to-exercise rate will dominate the time-to-maturity rate.
+\item Putable bonds with highest coupon rates are unlikely to be put, hence are most sensitive to maturity-matched rates.
+\item All else equal, lower coupon bonds are more likely to be put, hence time-to-exercise rate will tend to dominate the time-to-maturity rate.
+\end{enumerate}
+\end{remark}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{/fi/keyratedurex}
+\caption{Reference for Remark \ref{rem:genresultkeyratedur} (i) to (iii), KRDur for $10$-Year Option-Free Bonds at $4\%$ Flat Curve}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{/fi/keyratedurex2}
+\caption{Reference for Remark \ref{rem:genresultkeyratedur} (iv) and (v), KRDur for $10$-Year Callable Bonds at $4\%$ Flat, $15\%$ Vol}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{/fi/keyratedurex3}
+\caption{Reference for Remark \ref{rem:genresultkeyratedur} (vi) and (vii), KRDur for $10$-Year Putable Bonds at $4\%$ Flat, $15\%$ Vol}
 \end{figure}
 
 \begin{flushleft}

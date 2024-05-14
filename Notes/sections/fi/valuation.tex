@@ -440,7 +440,7 @@ where $\sigma$ is the standard deviation of interest rates. Two vertical-adjacen
 \caption{Backward induction of binomial tree}
 \end{figure}
 
-\begin{method} \hlt{Backward Induction of Binomial Tree}\\
+\begin{method} \hlt{Backward Induction of Binomial Tree for Straight Bonds}\\
 for $t$ in range $(0, T-1, -1)$: \# Computing from second last layer to the first \\
 {\color{white}space} for $n$ in layer$\_t\_$nodes:
 \begin{equation}
@@ -484,3 +484,186 @@ Upper and lower bounds on interest rates may be imposed; bounds are based on not
 \end{method}
 
 \subsubsection{Valuation of Bonds with Embedded Options}
+
+\begin{remark} \hlt{Embedded Options}\\
+Allows issuer to manage interest rate risk, and/or issue bonds at an attractive coupon rate.
+\end{remark}
+
+\begin{remark} \hlt{Types of Bond Options}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Callable bond: gives issuer option to call back the bond. Investor is short the option.\\
+Callable bonds usually have call protection period in which the bond cannot be called.
+\item Putable bond: allows investor to put the bond back to issuer prior to maturity. Investor is long put.
+\item Extendible bond: allows investor to extend maturity of bond.\\
+May be evaluated as a putable bond with longer maturity.
+\item Estate put: includes provision that allows heirs of investor to put the bond back to issuer upon death of investor. Value of contingent put option is inversely the investor's life expectancy.
+\item Sinking fund bonds: require issuer to set aside funds periodically to retire the bond.\\
+Reduces the credit risk of the bond over time. Sinkers typically have several related issuer options (call provisions, acceleration provisions, delivery options).
+\end{enumerate}
+\end{remark}
+
+\begin{remark} \hlt{Value of Callable Bonds}\\
+Investor is long bond but short the call option. Value of call option decreases the value of the callable bond.
+\begin{equation}
+v_{\text{Call Option}} = v_{\text{Straight Bond}} - v_{\text{Callable Bond}} \nonumber
+\end{equation}
+\end{remark}
+
+\begin{remark} \hlt{Value of Putable Bonds}\\
+Investor is long both bond and putable option. Value of put option increases the value of putable bond.
+\begin{equation}
+v_{\text{Put Option}} = v_{\text{Putable Bond}} - v_{\text{Straight Bond}} \nonumber
+\end{equation}
+\end{remark}
+
+\begin{remark} \hlt{Interest Rate Volatility on Value of Callable or Putable Bond}\\
+If interest rate volatility increases, values of both call and put options increase, hence value of callable bond decreases, while value of putable bond increases.
+\end{remark}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.35]{/fi/volchangecallbond}
+\includegraphics[scale=0.35]{/fi/volchangeputbond}
+\caption{Effect of change in interest rate volatility on value of callable and putable bonds}
+\end{figure}
+
+\begin{remark} \hlt{Interest Rate Level on Value of Callable or Putable Bond}\\
+As interest rates decrease, short call in callable bond limits bond's upside, hence value of callable bond rises less rapidly than value of otherwise equivalent straight bond.\\
+As interest rtes increase, long put in putable bond hedges against loss in value, hence value of putable bond falls less rapidly than value of otherwise equivalent straight bond.\\
+Call option value is inversely correlated to level of interest rates.\\
+Put option is directly correlated to level of interest rates.
+\end{remark}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.44]{/fi/flatyieldcurvelvcallbond}
+\includegraphics[scale=0.4]{/fi/flatyieldcurvelvputbond}
+\caption{Value of callable and putable bond under different flat yield curve levels}
+\end{figure}
+
+\begin{remark} \hlt{Yield Curve Shape on Value of Callable or Putable Bond}\\
+Value of embedded call option increases as interest rates decline.\\
+When yield curve is upward sloping, distant one-period forward rates are higher than near one-period forward rates. Higher interest rate scenario limits probability of call option bing in the money, hence value of call option will be lower for upward sloping yield curve. As upward-sloping yield curve flattens, call option value increases.\\
+Value of put option increases with interest rates. Upward sloping yield curve indicates higher probability of put option going in the money. Put option value declines as yield curve flattens.
+\end{remark}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.35]{/fi/yieldcurveshapecallbond}
+\includegraphics[scale=0.35]{/fi/yieldcurveshapeputbond}
+\caption{Value of putable bond under different flat yield curve shapes}
+\end{figure}
+
+\begin{method} \hlt{Backward Induction of Binomial Tree for Bonds with Embedded Options}\\
+One-period forward rates are used, instead of spot rates.
+for $t$ in range $(0, T-1, -1)$: \# Computing from second last layer to the first \\
+{\color{white}space} for $n$ in layer$\_t\_$nodes:
+\begin{align}
+\text{v}(t,n) = \frac{\text{PMT}(t+1,n)+ [0.5 \text{v}(t+1, nH) + 0.5 \text{v}(t+1, nL)]}{1 + i(t, n)} \nonumber
+\end{align}
+{\color{white}space} {\color{white}space} if option is callable:
+\begin{equation}
+\text{v}(t,n) = \min \{\text{Strike}, \text{v}(t,n) \} \nonumber
+\end{equation}
+{\color{white}space} {\color{white}space} if option is putable:
+\begin{equation}
+\text{v}(t,n) = \max \{\text{Strike}, \text{v}(t,n) \} \nonumber
+\end{equation}
+where $\text{v}(t,n)$ is value of node at time $t$ at position $n$, $\text{v}(t+1,nH)$ and $\text{v}(t+1,nL)$ is value of node at next time step $t+1$ at positions up ($H$) and down ($L$), $\text{PMT}(t+1,n)$ is beginning coupon payment for next time step, $i(t,n)$ is interest rate at time $t$ at position $n$ in decimal. \\
+Note that at last layer $T$, the value at node $n$ is as follows:
+\begin{equation}
+\text{v}(T, n) = \frac{\text{PMT}(T,n) + \text{Redemption Value}(T,n)}{1 + i(T, n)} \nonumber
+\end{equation}
+\end{method}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{/fi/backwardinduccallable}
+\includegraphics[scale=0.4]{/fi/backwardinducputable}
+\caption{Backward induction with adjustment of node values for callable and putable bonds}
+\end{figure}
+
+\begin{remark} \hlt{Option-Adjusted Spreads (OAS) for Risky Callable and Putable Bonds}\\
+Constant spread added to all one-period rates in the tree such that the calculated value equals market price. This spread is only added to the tree after adjustment for the embedded option.\\
+If OAS for a bond is higher than OAS of its peers for the same credit risk, it is undervalued, vice versa.
+\end{remark}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{/fi/oas}
+\caption{Option-adjusted spread}
+\end{figure}
+
+\begin{remark} \hlt{Interest Rate Volatility on OAS}\\
+Higher volatility lead to increased value of call option, hence decreasing the value of the call option. Hence when estimated volatility of benchmark rates used is higher, the computed value of callable bond will be lower, hence close to its true market price. The OAS that needs to be added to benchmark rates to correctly price the bond is therefore lower.\\
+Hence, as assumed level of volatility used in interest rate tree increases, the computed OAS for a callable bond decreases. The computed OAS for a putable bond increases as the assumed level of volatility increases.
+\end{remark}
+
+\begin{flushleft}
+Relationship Between Volatility and OAS
+\begin{tabularx}{\textwidth}{p{5em}|X|X|X|X|X|X}
+\hline
+\rowcolor{gray!30}
+Volatility & Call & Put & Callable & Putable & OAS$_{\text{Call}}$ & OAS$_{\text{Put}}$ \\
+\hline
+High & High & High & Low & High & Low & High \\
+\hline
+Low & Low & Low & High & Low & High & Low \\
+\hline
+\end{tabularx}
+\end{flushleft}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.45]{/fi/voloas}
+\caption{Interest rate volatility on OAS for a callable bond}
+\end{figure}
+
+\begin{remark} \hlt{Value of Floored Floater}\\
+Capped floater protects investor against declining interest rates, hence is an investor option.\\
+Investor is long bond long option, hence value of floor increases value of floored floater relative to straight bond.
+\begin{equation}
+v_{\text{Floored Floater}} = v_{\text{Straight Bond}} + v_{\text{Embedded Floor}} \nonumber
+\end{equation}
+\end{remark}
+
+\begin{remark} \hlt{Value of Capped Floater}\\
+Capped floater protects issuer against rising interest rates, hence is an issuer option.\\
+Investor is long bond short option, hence value of cap decreases value of capped floater relative to straight bond.
+\begin{equation}
+v_{\text{Capped Floater}} = v_{\text{Straight Bond}} - v_{\text{Embedded Cap}} \nonumber
+\end{equation}
+\end{remark}
+
+\begin{method} \hlt{Backward Induction of Binomial Tree for Floored Floater and Capped Floater}\\
+One-period forward rates are used, instead of spot rates. \\
+for $t$ in range $(0, T-1, -1)$: \# Computing from second last layer to the first \\
+{\color{white}space} for $n$ in layer$\_t\_$nodes: \\
+{\color{white}space} {\color{white}space} if option is floored floater:
+\begin{equation}
+\text{PMT}(t,n) = \min \{\text{Min Interest Rate} \times 100, \text{Coupon Rate} \times 100\} \nonumber
+\end{equation}
+{\color{white}space} {\color{white}space} if option is capped floater:
+\begin{equation}
+\text{PMT}(t,n) = \max \{\text{Min Interest Rate} \times 100, \text{Coupon Rate} \times 100\} \nonumber
+\end{equation}
+{\color{white}space} Then compute value:
+\begin{align}
+\text{v}(t,n) = \frac{\text{PMT}(t+1,n)+ [0.5 \text{v}(t+1, nH) + 0.5 \text{v}(t+1, nL)]}{1 + i(t, n)} \nonumber
+\end{align}
+where $\text{v}(t,n)$ is value of node at time $t$ at position $n$, $\text{v}(t+1,nH)$ and $\text{v}(t+1,nL)$ is value of node at next time step $t+1$ at positions up ($H$) and down ($L$), $\text{PMT}(t+1,n)$ is beginning coupon payment for next time step, $i(t,n)$ is interest rate at time $t$ at position $n$ in decimal. \\
+Note that at last layer $T$, the value at node $n$ is as follows:
+\begin{equation}
+\text{v}(T, n) = \frac{\text{PMT}(T,n) + \text{Redemption Value}(T,n)}{1 + i(T, n)} \nonumber
+\end{equation}
+Redemption value to be computed using the floored or capped floater PMT computation earlier.
+\end{method}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{/fi/backwardinducfloor}
+\includegraphics[scale=0.4]{/fi/backwardinduccap}
+\caption{Backward induction with adjustment of node values for floor and cap floater bonds}
+\end{figure}
+
