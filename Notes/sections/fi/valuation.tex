@@ -667,3 +667,84 @@ Redemption value to be computed using the floored or capped floater PMT computat
 \caption{Backward induction with adjustment of node values for floor and cap floater bonds}
 \end{figure}
 
+\begin{remark} \hlt{Convertible Bonds}\\
+Investor has right to convert the bond into fixed number of shares during the conversion period at conversion price, hence enjoying the upside of the issuer stock at cost of lower yield. Existing shareholders face dilution.\\
+Offer document will indicate how the initial conversion ratio would be modified to account for corporate actions such as stock splits or stock dividends. \\
+Offer documents may provide contingent put option in event of change-of-control events such as mergers; this may be exercised for a specific period of time after change of control. Alternatively, a lower conversion price may be specified in event of change of control. Conversion ratio may be adjusted upward if company pays dividend in excess of specified threshold dividend, hence protecting bondholders in event that the company pays out an unusually large dividend, which cause the ex-dividend price of stock to decline.\\
+Other put options such as hard puts (i.e., redeemable for cash) or soft puts (i.e., issuer decides whether to redeem the bond for cash, stock, subordinated debentures, or combination of the three) may be embedded.
+\end{remark}
+
+\begin{remark} Convertible Bonds Terminology
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item \hlt{Conversion Value}: value of common stock that the bond maybe converted.
+\begin{equation}
+\text{Conversion Value} = \text{Market Price of Stock} \times \text{Conversion Ratio} \nonumber
+\end{equation}
+\item \hlt{Straight/Investment Value}: value of convertible bond if it were not convertible
+\item \hlt{Minimum Value}: greater of its conversion value or straight value.\\
+If convertible bond sells for less than its conversion value, then it could be purchased, immediately converted into common stock, and the stock sold for more than cost of the bond.
+\item \hlt{Market Conversion Price/Conversion Parity Price}: price that convertible bondholder would pay for the stock if the bond is bought and immediately converted.
+\begin{equation}
+\text{Market Conversion Price} = \frac{\text{Market Price of Convertible Bond}}{\text{Conversion Ratio}} \nonumber
+\end{equation}
+\item \hlt{Market Conversion Premium Per Share}: market conversion price minus current market price.
+\begin{equation}
+\text{Market Conversion Premium Ratio} = \frac{\text{Market Conversion Premium per Share}}{\text{Market Price of Common Stock}} \nonumber
+\end{equation}
+\item \hlt{Premium Over Straight Value}: measure of downside risk, which is limited by bond's underlying straight value as price of convertible bond will not fall below this value.\\
+The greater the premium over straight value, the less attractive the convertible bond.\\
+Straight value is not constant, and varies with changes in interest rate and credit spread of bond.
+\begin{equation}
+\text{Premium Over Straight Value} = \frac{\text{Convertible Bond Price}}{\text{Straight Value}} - 1 \nonumber
+\end{equation}
+\end{enumerate}
+\end{remark}
+
+\begin{remark} \hlt{Contingent Convertibles}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Contingent Convertible Bonds ('CoCos'): pay higher coupon than otherwise identical non-convertible bonds, but are deeply subordinated and may be converted into equity or face principal write-downs if regulatory capital ratios are breached.
+\item Convertible Contingent Convertible Bonds ('CoCoCos'): combined traditional convertible bond and a 'CoCo'. Convertible at discretion of investor, hence offering upside potential if share price increases. Also converted into equity or face principal write-downs in event of regulatory capital breach.
+\end{enumerate}
+\end{remark}
+
+\begin{remark} \hlt{Value of Convertible Bonds in Arbitrage-Free Framework}\\
+Investing in non-callable/non-putable convertible bond is equivalent to buying an option-free bond and a call option on amount of common stock equal to conversion ratio.
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Non-Callable/Non-Putable Convertible Bond
+\begin{equation}
+\text{Bond Value} = \text{Straight Value} + \text{Call Option on Stock} \nonumber
+\end{equation}
+\item Callable Convertible Bond: includes call option that gives issuer right to call the bond
+\begin{equation}
+\text{Bond Value} = \text{Straight Value} + \text{Call Option on Stock} - \text{Call Option on Bond} \nonumber
+\end{equation}
+\item Convertible Bond that is Callable and Putable
+\begin{equation}
+\text{Bond Value} = \text{Straight Value} + \text{Call Option on Stock} - \text{Call Option on Bond} + \text{Put Option on Bond} \nonumber
+\end{equation}
+\end{enumerate}
+\end{remark}
+
+\begin{remark} \hlt{Difficulties of Valuing Convertible Bonds}\\
+More difficult to value than callable bonds. To consider all of the factors that affect the value of callable bond, including interest rates and interest rate volatility, plus all of the factors that affect issuer’s common stock price and options on its common stock, such as its price volatility.
+\end{remark}
+
+\begin{remark} \hlt{Characteristics of Underlying Stock Price and Risk-Return of Convertible Bond}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item If stock price falls, return on convertible bonds exceed those of the stock, as convertible bond's price has floor equal to straight bond value. As stock price approaches zero, convertible value will move towards the present value of estimated recovery.
+\item If stock price rises, bond will underperform due to conversion premium.
+\item If stock price is stable, return on convertible bond may exceed stock return due to coupon payments received from the bond, assuming no change in interest rates or credit risk of issuer.
+\item If stock price is so low that it has little or no effect on convertible's price, bond trades as though it is a straight bond, and is referred to as a busted convertible.
+\item If stock price is so high that convertible behaves as though it is an equity, the convertible is a common stock equivalent.
+\end{enumerate}
+\end{remark}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{/fi/convertiblebehavior}
+\caption{Price behaviour of convertible bond and underlying common stock}
+\end{figure}
