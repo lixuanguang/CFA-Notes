@@ -186,7 +186,7 @@ Third, when multiple bonds can be delivered for forward, a cheapest-to-deliver b
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.5]{/derivatives/bondfuttime}
+\includegraphics[scale=0.45]{/derivatives/bondfuttime}
 \caption{Timeline for bond futures and forwards}
 \end{figure}
 
@@ -217,3 +217,129 @@ Priced similar to forwards, except with adjustment for mark-to-market, as forwar
 \text{Value of futures} = \text{Current futures price} - \text{previous mark-to-market price} \nonumber
 \end{equation}
 \end{remark}
+
+\begin{remark} \hlt{Swap Contracts}\\
+Agreement to exchange a series of cash flows at certain periodic dates.\\
+May be synthetically created as a portfolio of underlying instruments or forward contracts.
+\end{remark}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{/derivatives/irswapasport}
+\caption{Interest rate swap, receive-floating, pay-fixed, as portfolio of bonds}
+\end{figure}
+
+\begin{remark} \hlt{Swap Fixed Rate}\\
+The fixed rate such that the present value of the floating-rate payments is equal to that of fixed-rate payments.\\
+The swap fixed rate may be computed as follows:
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Compute present value factors for each rate in the MRR term structure corresponding to the swap tenor
+\begin{equation}
+PV_i(1) = \frac{1}{1 + Rspot_i\left(\frac{NAD_i}{360} \right)} \nonumber
+\end{equation}
+where $NAD_i$ is number of accrued days during payment period for time $i$, $Rspot_i$ is spot interest rate.
+\item Next, compute the periodic swap fixed rate,
+\begin{equation}
+r_{\text{FIX}, \text{Periodic}} = \frac{1 - PV_T(1)}{\sum\limits_{i=1}^n PV_i(1)} \nonumber 
+\end{equation}
+where $PV_T(1)$ is the final discount factor.
+\item The annualised swap fixed rate is then
+\begin{equation}
+r_{\text{FIX}, \text{Annual}} = r_{\text{FIX}, \text{Periodic}} \times \text{Number of settlement periods in a year} \nonumber
+\end{equation}
+\end{enumerate}
+\end{remark}
+
+\begin{remark} \hlt{Market Value of Interest Rate Swap}\\
+Party that is fixed-rate payer benefits if rates increase as they are paying the lower (older) fixed rate while receiving the higher (newer) floating rate, vice versa.\\
+Value of swap is calculated as present value of difference in payments under new rate, relative to old rate.
+\begin{equation}
+V_{\text{Swap}, t} = \sum\limits_{i=1}^n PV_i \times (r_{\text{FIX}, \text{New}} - r_{\text{FIX}, \text{Old}}) \times \frac{NAD}{360} \times NA \nonumber
+\end{equation}
+where $NA$ is notional amount.
+\end{remark}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{/derivatives/swapreplic}
+\caption{Interest rate swaps and replicating and offsetting portfolios}
+\end{figure}
+
+\begin{remark} \hlt{Features of Currency Swaps}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Currency swaps involve an exchange of notional amounts at initiation and expiration of swap
+\item Payment on each leg of swap is in different currency unit, and payments are not netted
+\item Each leg of swap can be either fixed or floating
+\end{enumerate}
+Note that with currency swaps, there are two yield curves and two swap fixed rates, one for each currency.
+\end{remark}
+
+\begin{remark} \hlt{Pricing of Currency Swaps}\\
+Fixed swap rate does not depend on notional amounts, hence fixed swap rates are found in same manner as that in an interest rate swap. Let $a,b$ be two different currencies, then
+\begin{align}
+r_{\text{Fix}, a} &= \frac{1 - PV_{n,a}(1)}{\sum\limits_{i=1}^n PV_{i,a}(1)} \nonumber \\
+r_{\text{Fix}, b} &= \frac{1 - PV_{n,b}(1)}{\sum\limits_{i=1}^n PV_{i,b}(1)} \nonumber
+\end{align}
+\end{remark}
+
+\begin{remark} \hlt{Value of Currency Swaps}\\
+The value to any party in a currency swap is present value of cash flows expected to receive minus present value of cash flows expected to pay. Let $S_t$ be spot exchange rate that converts currency $b$ into currency $a$.
+\begin{equation}
+V_{\text{Swap}} = NA_a \left(r_{\text{Fix}, a} \sum\limits_{i=1}^n PV_{(i, a)}(1) + PV_{(n, a)}(1) \right) - S_t NA_b \left(r_{\text{Fix}, b} \sum\limits_{i=1}^n PV_{(i, b)}(1) + PV_{(n, b)}(1) \right) \nonumber
+\end{equation}
+\end{remark}
+
+\begin{remark} \hlt{Pricing Equity Swaps}\\
+To price an $N$-period pay-fixed equity swap, the same formula for a plain vanilla swap may be used.
+\begin{equation}
+r_{\text{Fix}} = \frac{1 - PV_{n}(1)}{\sum\limits_{i=1}^n PV_{i}(1)} \nonumber
+\end{equation}
+\end{remark}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{/derivatives/equityswapreplic}
+\caption{Receive-fixed, pay-equity swap offset with equity and bond portfolio}
+\end{figure}
+
+\begin{method} \hlt{Valuation of Equity Swaps on Settlement Date}\\
+Use the valuation formula discussed in valuation of interest rate swaps.\\
+Fixed-rate side is priced and valued like an interest rate swap.\\
+Equity side can be valued by multiplying notional amount of contract by $1 +$ percentage equity appreciation since last payment date.\\
+Difference in values is then used to value the swap.
+\end{method}
+
+\begin{method} \hlt{Valuation of Equity Swaps Between Settlement Dates}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Pay-fixed, receive-equity:
+\begin{enumerate}[label=\arabic*.]
+\setlength{\itemsep}{0pt}
+\item Compute value of fixed side, where
+\begin{align}
+V_{\text{Fix}}(1) &= r_{\text{Fix}} \times \frac{NAD}{360} \times \sum\limits_{i=1}^n PV_{i}(1) + PV_{n}(1) \nonumber \\
+V_{\text{Fix}}(NA) &= NA \times V_\text{Fix}(1) \nonumber
+\end{align}
+where $NAD$ is number of accrued days during payment period for time $i$, $NA$ is notional amount.\\
+Value of fixed-rate side of swap per $\$1$ notional is sum of PV of coupons and PV of principal.
+\item Compute value of receive-equity side, where
+\begin{equation}
+V_{\text{Equity}} = NA \times \frac{p_n}{p_1} \nonumber
+\end{equation}
+where $p_t$ is price of equity at time $t$.
+\item Compute value of swap after $n$ days as
+\begin{equation}
+V_{\text{Swap}} = V_{\text{Fix}}(NA) - V_{\text{Equity}} \nonumber
+\end{equation}
+which may then be discounted back to period $1$.
+\end{enumerate}
+\item Pay-equity$_A$ receive-equity$_B$ swap: value at time $n$ is
+\begin{equation}
+V_{\text{Swap}} = NA \times (r_B - r_A) \nonumber
+\end{equation}
+where $r_A$, $r_B$ is return of equity $A$ and $B$ respectively. Value may be discounted back to period $1$.
+\end{enumerate}
+\end{method}
+
