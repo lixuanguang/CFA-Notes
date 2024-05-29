@@ -57,7 +57,7 @@ F_T = f_T = S_T \nonumber
 \begin{equation}
 F_0 = S_0 \times (1+r_f)^T \nonumber
 \end{equation}
-where $F_0$ is forward price, $S_0$ is spot price at inception of contract, $r_f$ is annual risk free rate.
+where $F_0$ is forward price, $S_0$ is spot price at inception of contract, $r_f$ is annual risk free rate, $T$ is in $360$ basis.
 \end{definition}
 
 \begin{flushleft}
@@ -91,8 +91,7 @@ In the case that forward is overpriced, to engage in carry arbitrage
 \item Borrow funds to purchase the underlying
 \item Purchase the underlying
 \end{enumerate}
-In the case that the forward is underpriced, to engage in reverse carry arbitrage
-In the case that forward is overpriced, to engage in carry arbitrage
+In the case that the forward is underpriced, to engage in reverse carry arbitrage.
 \begin{enumerate}[label=\roman*.]
 \setlength{\itemsep}{0pt}
 \item Buy forward contract on underlying
@@ -103,16 +102,16 @@ In the case that forward is overpriced, to engage in carry arbitrage
 
 \begin{remark} \hlt{Value of Forward Contract}
 \begin{equation}
-V_t = PV(F_t - F_0) = \frac{F_t - F_0}{(1+r)^{T-t}} = S_t - \frac{F_0}{(1-r)^{T-t}} \nonumber
+V_t = PV(F_t - F_0) = \frac{F_t - F_0}{(1+r)^{T-t}} = S_t - \frac{F_0}{(1+r)^{T-t}} = (F_t - F_0)e^{-r(T-t)} \nonumber
 \end{equation}
 where $V_t$ is value of forward contract at time $t$, $PV$ is present value, $F_t$ is price of forward contract at time $t$.\\
-Basis of $T = t/365$ is used for Equity Forward Contracts.\\
+Basis of $T = t/360$ is used for Equity Forward Contracts.\\
 If the forward contract has cost of carry $CC_0$ and cost of benefit $CB_0$, then the price of contract is
 \begin{equation}
-F_0 = FV(S_0 + CC_0 - CB_0) \nonumber
+F_t = FV(S_t + CC_t - CB_t) = S_t e^{(r + CC_t - CB_t)(T-t)}\nonumber
 \end{equation}
 The value of the forward contract will use the adjusted price of contract as input.\\
-$FV$ will use exponential in the case of continuous compounding.
+$FV$ will use \hlt{exponential in the case of continuous compounding}.
 \end{remark}
 
 \begin{remark} \hlt{Forward Rate Agreements (FRA)}\\
@@ -160,7 +159,7 @@ TA - NA = NA \times (L_m t_m) \nonumber
 \end{enumerate}
 The annualised FRA is then
 \begin{equation}
-FRA_0 = \left(\frac{1 + L_T t_T}{1 + L_h t_h} - 1 \right)/t_m \nonumber
+FRA_g = \left(\frac{1 + L_T t_T}{1 + L_h t_h} - 1 \right)/t_m \nonumber
 \end{equation}
 \end{method}
 
@@ -181,7 +180,8 @@ V_g = NA \times \frac{FRA_g - FRA_0}{1 + D_{(T-g)} t_{(T_g)}} \nonumber
 \begin{remark} \hlt{Characteristics of Fixed-Income Forwards}\\
 Fixed-income forwards have to adjust for accrued interest in valuation.\\
 In addition, fixed-income forwards may have more than one bond that can be delivered by seller. As bonds trade at different prices based on maturity and stated coupon, a conversion factor $CF$ has to be applied to make all deliverable bonds approximately equal in price.\\
-Third, when multiple bonds can be delivered for forward, a cheapest-to-deliver bond emerges after adjusting for the conversion factor.
+Third, when multiple bonds can be delivered for forward, a cheapest-to-deliver bond emerges after adjusting for the conversion factor.\\
+Bond futures are quoted similarly to spot bond market, whether in clean or dirty price.
 \end{remark}
 
 \begin{figure}[H]
@@ -197,10 +197,10 @@ AI = \frac{NAD}{NTD} \times \frac{C}{n} \nonumber
 \end{equation}
 The fixed-income forwards prices is then
 \begin{align}
-F_0 &= FV(B_0 - AI_0 - PVCI) \nonumber \\
+F_0 = FV(B_0 - AI_0 - PVCI) &= \frac{FV(B_0+AI_0) - AI_T - FVCI_{0,T}}{CF} \nonumber \\
 Q_0 &= \frac{F_0}{CF} \nonumber
 \end{align}
-where $B_0$ is full bond price at initiation, $AI_0$ is accused interest at initiation, $PVCI = CB_0$ is present value of all coupon interest paid over forward contract horizon from $t = 0$ to $t = T$, $Q_0$ is quoted futures price, $CF$ is the conversion factor.
+where $B_0$ is full bond price at initiation, $AI_t$ is accused interest at time $t$, $PVCI = CB_0$ is present value of all coupon interest paid over forward contract horizon from $t = 0$ to $t = T$, $Q_0$ is quoted futures price, $CF$ is the conversion factor.
 \end{method}
 
 \begin{method} \hlt{Value of Fixed-Income Forwards}\\
@@ -253,11 +253,11 @@ r_{\text{FIX}, \text{Annual}} = r_{\text{FIX}, \text{Periodic}} \times \text{Num
 
 \begin{remark} \hlt{Market Value of Interest Rate Swap}\\
 Party that is fixed-rate payer benefits if rates increase as they are paying the lower (older) fixed rate while receiving the higher (newer) floating rate, vice versa.\\
-Value of swap is calculated as present value of difference in payments under new rate, relative to old rate.
+Value of pay-fixed swap is PV of difference in payments under new rate, relative to old rate.
 \begin{equation}
-V_{\text{Swap}, t} = \sum\limits_{i=1}^n PV_i \times (r_{\text{FIX}, \text{New}} - r_{\text{FIX}, \text{Old}}) \times \frac{NAD}{360} \times NA \nonumber
+V_{\text{Swap}, t} = - NA \times (r_{\text{FIX},t} - r_{\text{FIX}, 0}) \times \frac{NAD}{360} \times \sum\limits_{i=1}^n PV_i \nonumber
 \end{equation}
-where $NA$ is notional amount.
+where $NA$ is absolute value of notional amount. Receive-fixed swap has negative value of pay-fixed swap.
 \end{remark}
 
 \begin{figure}[H]
@@ -285,14 +285,15 @@ r_{\text{Fix}, b} &= \frac{1 - PV_{n,b}(1)}{\sum\limits_{i=1}^n PV_{i,b}(1)} \no
 \end{remark}
 
 \begin{remark} \hlt{Value of Currency Swaps}\\
-The value to any party in a currency swap is present value of cash flows expected to receive minus present value of cash flows expected to pay. Let $S_t$ be spot exchange rate that converts currency $b$ into currency $a$.
+The value to any party in a currency swap is present value of cash flows expected to receive minus present value of cash flows expected to pay. Let $S_t$ be spot exchange rate that converts currency $b$ into $a$. Pay $b$ receive $a$.
 \begin{equation}
-V_{\text{Swap}} = NA_a \left(r_{\text{Fix}, a} \sum\limits_{i=1}^n PV_{(i, a)}(1) + PV_{(n, a)}(1) \right) - S_t NA_b \left(r_{\text{Fix}, b} \sum\limits_{i=1}^n PV_{(i, b)}(1) + PV_{(n, b)}(1) \right) \nonumber
+V_{\text{Swap}} = NA_a \left(r_{\text{Fix}, a} \sum\limits_{i=1}^n PV_{(i, a)}(1) + PV_{(n, a)}(1) \right) - S_t NA_b \left(r_{\text{Fix}, b} \sum\limits_{i=1}^n PV_{(i, b)}(1) + PV_{(n, b)}(1) \right), \ NA_a = S_0 \times NA_b \nonumber
 \end{equation}
 \end{remark}
 
 \begin{remark} \hlt{Pricing Equity Swaps}\\
-To price an $N$-period pay-fixed equity swap, the same formula for a plain vanilla swap may be used.
+To price an $N$-period pay-fixed equity swap, the same formula for a plain vanilla swap may be used.\\
+Equity-for-equity swap do not need to be priced, can be replicated by equity-for-fixed and fixed-for-equity swap. 
 \begin{equation}
 r_{\text{Fix}} = \frac{1 - PV_{n}(1)}{\sum\limits_{i=1}^n PV_{i}(1)} \nonumber
 \end{equation}
@@ -306,9 +307,9 @@ r_{\text{Fix}} = \frac{1 - PV_{n}(1)}{\sum\limits_{i=1}^n PV_{i}(1)} \nonumber
 
 \begin{method} \hlt{Valuation of Equity Swaps on Settlement Date}\\
 Use the valuation formula discussed in valuation of interest rate swaps.\\
-Fixed-rate side is priced and valued like an interest rate swap.\\
-Equity side can be valued by multiplying notional amount of contract by $1 +$ percentage equity appreciation since last payment date.\\
-Difference in values is then used to value the swap.
+Fixed-rate side is priced and valued like an interest rate swap, $V_{\text{Fix}}(C_0)$.\\
+Equity side can be valued with $NA_E \times \frac{S_{t}}{S_{t-1}}$, where $NA_E$ is notional amount, $S_t$ is spot value of equity at $t$.\\
+Difference in values is then used to value the swap, $V_{\text{EQ},t} = V_{\text{Fix}}(C_0) - (NA_E \times \frac{S_{t}}{S_{t-1}}) - PV(Par-NA_{\text{E}})$
 \end{method}
 
 \begin{method} \hlt{Valuation of Equity Swaps Between Settlement Dates}
@@ -319,10 +320,10 @@ Difference in values is then used to value the swap.
 \setlength{\itemsep}{0pt}
 \item Compute value of fixed side, where
 \begin{align}
-V_{\text{Fix}}(1) &= r_{\text{Fix}} \times \frac{NAD}{360} \times \sum\limits_{i=1}^n PV_{i}(1) + PV_{n}(1) \nonumber \\
+V_{\text{Fix}}(1) &= \frac{r_{\text{Fix}}}{n} \times \left( \sum\limits_{i=1}^n PV_{i}(1)\right) + PV_{n}(1) \nonumber \\
 V_{\text{Fix}}(NA) &= NA \times V_\text{Fix}(1) \nonumber
 \end{align}
-where $NAD$ is number of accrued days during payment period for time $i$, $NA$ is notional amount.\\
+where $n$ is payment frequency per year, $NA$ is notional amount.\\
 Value of fixed-rate side of swap per $\$1$ notional is sum of PV of coupons and PV of principal.
 \item Compute value of receive-equity side, where
 \begin{equation}
@@ -333,13 +334,12 @@ where $p_t$ is price of equity at time $t$.
 \begin{equation}
 V_{\text{Swap}} = V_{\text{Fix}}(NA) - V_{\text{Equity}} \nonumber
 \end{equation}
-which may then be discounted back to period $1$.
 \end{enumerate}
 \item Pay-equity$_A$ receive-equity$_B$ swap: value at time $n$ is
 \begin{equation}
 V_{\text{Swap}} = NA \times (r_B - r_A) \nonumber
 \end{equation}
-where $r_A$, $r_B$ is return of equity $A$ and $B$ respectively. Value may be discounted back to period $1$.
+where $r_A$, $r_B$ is return of equity $A$ and $B$ respectively. 
 \end{enumerate}
 \end{method}
 
