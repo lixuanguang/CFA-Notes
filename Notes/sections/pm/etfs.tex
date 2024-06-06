@@ -1,2 +1,221 @@
 \subsection{Exchange-Traded Funds}
 
+\begin{definition} \hlt{Exchange-Traded Funds (ETFs)}\\
+Represents shares in an index-tracking portfolio that trades on secondary markets.\\
+ETFs may be based on direct investments on underlying securities, use derivatives, invest via American Depositary Receipts (ADRs), or use leverage. Issuer of ETF allocates portfolio based on stated index or style and may redeem or create new shares in kind.\\
+If shareholder wants to cash out, shares are sold on the exchange; issuer is not involved.
+\end{definition}
+
+\begin{remark} \hlt{Primary Market of ETFs}\\
+Authorised participants (APs) are designated, which are market makers. APs are permitted to create or redeem shares for a service fee payable to ETF manager. The creation/redemption process is in-kind where APs deliver a basket of securities to the issuer in exchange for a number of ETF shares. APs may also redeem ETF shares for a basket of securities. The ETF manager publicly discloses the creation basket (list of required in-kind securities) each business day, which serves as key input in determining the net asset value (NAV) of the ETF. The redemption basket is the list of securities that APs receive upon redemption of ETF share.\\
+The lot size is specified by the creation unit (usually equal to $50,000$ shares) for the process.
+\end{remark}
+
+\begin{remark} \hlt{Purpose of In-Kind Creation/Redemption Process}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Lower cost: the process does not require ETF manager to trade holdings, hence does not incur any transaction cost. ETF manager collects service charge from APs to cover any incidentals.
+\item Tax efficiency: the process is not a taxable event, as ETF manager does not need to trade holdings hence incur no capital gains taxes. ETF managers ma also choose to publish customised redemption baskets, targeting low-basis stocks, hence increasing the tax efficiency of remaining holdings of ETF.
+\item Keep market prices in line with NAV: APs will engage in arbitrage if ETFs trade at price significantly different from NAV. If ETF trades at premium, APs sell the ETF, purchase the creation basket and recreate those shares. If ETF trades at discount, APs buy ETF and redeem the shares.
+\end{enumerate}
+\end{remark}
+
+\begin{definition} \hlt{Arbitrage Gap}\\
+APs incur transaction cost and service costs in the creation/redemption process.\\
+Illiquid holdings may lead to wider arbitrage gap due to market risk borne by the AP.\\
+ETFs of foreign markets may have wider arbitrage gap due to time zone difference, where there may be a difference in NAV and last closing price when foreign market is open.\\
+The costs incurred in the process are passed on to transaction shareholders in form of bid-ask spreads.
+\end{definition}
+
+\begin{remark} \hlt{ETFs on Secondary Markets}\\
+ETFs trade on secondary markets like equities.\\
+In US, the National Security Clearing Corporation (NSC) ensures transactions are guaranteed. The Depository Trust Company (DTC), a subsidiary of NSCC, transfers securities from seller's broker to buyer's broker at end of $2$-day settlement. Individual client-level ownership records are maintained by brokers. Market makers may use up to $6$ days to settle their trades.\\
+European markets are fragmented across many exchanges and countries, and investors are mostly institutional. Majority of trades occur in OTC markets. European ETFs are listed on multiple exchanges and may have multiple classes. Added complexity in settlement may widen the quoted bid-ask spreads.
+\end{remark}
+
+\begin{remark} Expense Ratios of ETFs\\
+ETFs charge lower fees than mutual funds, as ETF shares are held and transacted through brokers. ETFs also do not communicate directly with individual investors, and index-based portfolio management do not require the same resources as active managers. \\
+Actual costs to manage ETF vary by portfolio complexity (number of securities held, frequency of rebalancing, difficulty in maintaining portfolio exposures), issuer sizes (economies of scale), and competitive landscape.
+\end{remark}
+
+\begin{definition} \hlt{Tracking Difference}\\
+Divergence between ETF's return (based on NAV) and return on tracked index.\\
+Measure provides indication of ETF's ability to follow underlying benchmark.
+\end{definition}
+
+\begin{definition} \hlt{Tracking Error}\\
+Annualised standard deviation of daily tracking difference. Does not indicate if the ETF under- or over-performed the index, nor does it reveal the distribution of relative differences in return.
+Alternative approach is to use rolling holding periods, which represent both central tendencies and variability. Cumulative effect of portfolio management and expenses over longer periods is visible. 
+\end{definition}
+
+\begin{definition} \hlt{Rolling Holding Periods}\\
+Series of rolling holding periods represent both central tendencies and variability.\\
+Cumulative effect of portfolio management and expenses over longer periods is visible.\\
+Annual metric may be compared to expense ratio; ETFs generally underperform benchmark by expense ratio.
+\end{definition}
+
+\begin{remark} \hlt{Sources of Tracking Error}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Fees and Expenses: reduces return relative to index
+\item Representative Sampling and Optimisation: funds may hold only a representative sample of index securities as the underlying may be illiquid and hence costly to hold. May lead to greater tracking error. \\
+Median value may become un-predictive of future median values, especially if market regimes shift.\\
+Portfolio may underperform in certain market regimes and outperform in others due to size bias.
+\item Depository Receipts (DRs): if local market shares are illiquid, DRs may be held.\\
+Differences in trading hours and security prices may create discrepancies between portfolio and index.\\
+An ETF may also hold other ETFs, inheriting the tracking errors of these ETFs.
+\item Index Changes: index provider will periodically change index constituents or weights to comply with its index methodology. Managers will use creation/redemption process to rebalance portfolio to reflect change in index. Delays in process contributes to tracking error. As changes to index are infrequent, this is smallest contributor to total tracking error.
+\item Fund Accounting Practices: time when NAV is calculated versus when index provider performs this computation may lead to differences in calculated returns. ETFs with foreign-currency denominated holdings may use forex rates at different timestamp than that of index provider.
+\item Regulatory and Tax Requirements: tax rates for foreign investors and domestic investors differ, leading to difference in after-tax returns between ETF and index
+\item Asset Manager Operations: managers may lower costs by lending shares to short sellers, and by foreign dividend capture (working with foreign governments to minimise taxes on distributions received). Hence ETF performance improve relative to index.
+\end{enumerate}
+\end{remark}
+
+\begin{remark} \hlt{Characteristics of ETF Bid-Ask Spreads}\\
+Bid-ask spread is primarily affected by liquidity and market structure of underlying securities.
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Larger, actively traded ETFs have narrow bid-offer spreads and is highly liquid. The bid-ask spreads for liquid ETFs may be significantly tighter than spreads on underlying securities.
+\item US equity and fixed-income ETFs have tightest asset-weighted spreads, while international ETFs are wider as underlyings trade in different market structures, making it difficult to price simultaneously. 
+\item ETFs representing longer-term strategies (asset allocation and alternatives) have wider spreads
+\item Fixed-income ETFs have wider spreads compared to equity ETFs
+\end{enumerate}
+Market maker may offset ETF transaction in secondary market, or via creation/redemption in primary market. Quoted spreads depend on whether dealer is reasonably assured of completing an offsetting trad in near future in secondary market. Larger trades require OTC, where the spread may vary based on liquidity conditions and volatility. Spreads widen in volatile times or when significant new information is expected to be released.
+\end{remark}
+
+\begin{flushleft}
+ETF Bid-Ask Spreads Computation
+\begin{tabularx}{\textwidth}{X}
+\hline
+$\pm$ Creation/redemption fees and other direct trading costs (i.e., brokerage, exchange fees)\\
+$+$ Bid-ask spreads of underlying securities\\
+$+$ Compensation (to market maker) for risk of hedging or carrying positions until close\\
+$+$ Market marker's desired profit spread\\
+$-$ Discount based on probability of offsetting the trade in secondary market \\
+\hline
+$=$ Bid-Ask Spread \\
+\hline
+\end{tabularx}
+\end{flushleft}
+
+\begin{remark} \hlt{ETF Premiums and Discounts to NAV}\\
+Indicated NAVs (iNAVs) are intraday fair value estimates of ETF based on creation basket for that day.\\
+ETF trading at price above (below) NAV is trading at premium (discount).
+\begin{equation}
+\text{ETF Premium/Discount } \% = \frac{ETF Price - NAV per Share}{NAV per Share} \nonumber
+\end{equation}
+ETF prices may be more informative than NAV or iNAV when market for underlying is closed, underlying securities are highly volatile or illiquid, or there is time lag between pricing of ETF and pricing of underlying.
+\end{remark}
+
+\begin{remark} \hlt{Sources of Premiums or Discounts of ETF}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Timing Differences: NAV is poor value indicator for ETF with foreign security underlying due to differences in exchange closing time between underlying and the exchange that the ETF trades. NAV may be based on market estimate of foreign securities price if local market was still open.\\
+Similarly, OTC bonds that do not trade on exchange will not have closing price. Fair value estimates are determined by pricing services that base estimates on comparables. If bid prices are low due to higher risk of carrying these bonds in inventory, closing ETF price will be higher than NAV based on these fair value estimates.
+\item Stale Pricing: thinly traded ETFs may not reflect current prices, hence value differ from NAV.\\
+Situation may be compounded if days or weeks elapse between the ETF's trades.
+\end{enumerate}
+\end{remark}
+
+\begin{remark} \hlt{Costs of Owning ETF}\\
+ETF	costs include management feeds and trading costs. As market is highly competitive and ETFs are passively managed, management fees are lower than those for mutual funds.\\
+Trading costs include brokerage or commission feeds and bid-ask spreads. Large order may incur price-impact costs depending on liquidity of secondary market. Premium/discount may be part of trading cost.\\
+Portfolio turnover of ETFs result in implicit cost which acts as drag on returns. ETFs that track stable indices will have lower portfolio turnover costs.\\
+As trading costs are only incurred at time of transaction, annualised trading cost diminishes over longer holding period. For investors that trade frequently, spread and commission are more important parts of total cost. For long-term investors, management feeds are more important.
+\begin{align}
+\text{Total Cost} &= \text{Round-Trip Trading Cost} + \text{Management Fees} \nonumber \\
+\text{Round-Trip Trading Cost} &= \text{Round-Trip Commission} + \text{Spread} \nonumber
+\end{align}
+For shorter holding periods, trading costs dominates costs of ETF ownership. Short-term tactical traders may prefer to trade in high-liquidity, lower trading cost ETFs despite higher management fees. Long-term investors are more likely to invest in ETFs with low management fees.
+\end{remark}
+
+\begin{flushleft}
+Cost Factor Comparison of ETFs and Mutual Funds
+\begin{tabularx}{\textwidth}{p{10em}|p{12em}|p{7em}|X|X}
+\hline
+\rowcolor{gray!30}
+Fund Cost Factor & Function of Holding Period & Explicit/Implicit & ETFs & Mutual Funds \\
+\hline
+Management Fee & Y & E & X (often less) & X \\
+Tracking Error & Y & I & X (often less) & (index funds) \\
+Commissions & N & E & X (some free) & \\
+Bid-Ask Spread & N & I & X & \\
+Prem/Dis to NAV & N & I & X & \\
+Portfolio Turnover & Y & I & X (often less) & X \\
+Taxable G\&L & Y & E & X (often less) & X \\
+Security Lending & Y & I & X (often more) & X \\
+\hline
+\end{tabularx}
+\end{flushleft}
+
+\begin{remark} \hlt{ETF Risks: Counterparty Risk}\\
+Exchange-traded notes (ETNs) have high counterparty risk, as these are unsecured debt obligations of the institution that issues them, and are structured as a promise to pay  returns on an index minus fund expenses.\\
+If an issuer wants to issue unsecured debt at fixed interest rate, and the rate is significantly higher than swap fixed rate for same maturity, an ETN may be issued that pays return on an equity index. Issuer enter into pay-fixed, receive-equity swap; index return used to service ETF, effective borrowing cost is swap fixed rate.\\
+However, issuer may default, resulting in losses for the ETN investor. To estimate the CDS spread of the issuer; large CDS spreads indicate high counterparty risk (one-year CDS spread $> 5\%$ is very risky).
+\end{remark}
+
+\begin{remark} \hlt{ETF Risks: Settlement Risk}\\
+ETFs using OTC derivatives has counterparty risk of the contract. The risk may be mitigated by frequent (daily or weekly) settlement, and by requiring collateral to be posted.
+\end{remark}
+
+\begin{remark} \hlt{ETF Risks: Security Lending}\\
+ETFs may lend securities to short sellers for a fee. These lending agreements are over-collateralised, the collateral invested in short-term risk-free securities. Lending fees are lucrative and passed on to ETF investors, offsetting fund's operating expenses. The risk of security borrower default is borne by ETF investors.
+\end{remark}
+
+\begin{remark} \hlt{ETF Risks: Fund Closures}\\
+Fund sells underlying positions and returns cash to investors with tax consequences.
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Regulations: commodity funds are under constant regulatory scrutiny, with impossible position limits. ETN structure may be banned, forcing products to close and reopen as traditional ETFs.
+\item Competition: some funds fail to attract sufficient assets and are shut down.\\
+Fund's AUM and average daily liquidity are indications of market support.
+\item Corporate Actions: M\&A between ETF providers may prompt fund closures, as new owners may close underperforming ETFs and invest in new, higher-growth opportunities.
+\item Creation and Redemption Halts: ETN issuer no longer wants to add debt to index balance sheet.\\
+When creations are halted, ETN may trade at premium as arbitrage mechanism breaks down.
+\item Change in Investment Strategy: easier to repurpose low-asset ETF. May result in complete overhaul, changing exposure to countries, industries, or even asset classes.
+\end{enumerate}
+\end{remark}
+
+\begin{remark} \hlt{ETF Risks: Investor-Related Risk}\\
+ETFs based on complex strategies may introduce risk to investors that they may not understand.\\
+Leverage and inverse ETFs must reset or adjust exposure daily to deliver target return. If ETFs are held for longer than one-day period, investor will not see the return multiple over the holding period.\\
+Leveraged ETFs are not intended to be buy-and-hold products for more than one-month horizon; if planned to hold long-term, must rebalance funds periodically to maintain desired net exposure.
+\end{remark}
+
+\begin{remark} \hlt{ETFs for Efficient Portfolio Management}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Portfolio Liquidity Management: ETFs used to invest excess cash balances quickly (cash equitisation), allowing investors to be fully invested in target benchmark exposure and minimising potential cash drag.\\
+Cash drag refers to fund's mis-tracking relative to index that results from holding uninvested cash.\\
+ETFs may be used to transact small cash flows from dividends, income, or shareholder activity, and hence incur lower trading costs rather than liquidating underlying securities.
+\item Portfolio Rebalancing: ETFs are cost-effective in rebalancing portfolios to target specific asset class weights. ETFs may also be shorted to quickly reduce the weight of specific sector or asset class.
+\item Portfolio Completion: ETFs used to fill temporary gaps in portfolio allocation due to manager turnover, or when existing manager's allocation differ from investor's desired exposure. Investor may retain manager but use tactical ETF strategy to maintain exposure in desired market segment.
+\item Transition Management: new manager may temporarily invest in ETFs when winding down portfolio allocation of old manager, so as to maintain market exposure in transition period.
+\end{enumerate}
+ETFs may not be suited for very large asset owners, as separately managed accounts (SMAs) may operate at lower costs than ETF fees. SMAs may be customised while ETF allocations are rigit. SMA holdings do not need to be publicly disclosed, as opposed to ETFs.
+\end{remark}
+
+\begin{remark} \hlt{ETFs for Asset Class Exposure Management} \\
+Wide variety of ETFs covering different asset class, subclass and sector, allow implementation of wide variety of strategies. ETFs provide significant cost advantages relative to investing in underlying securities.\\
+FI ETFs are more efficient (lower cost, more continuous pricing, agency market) and liquid than underlying.
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Core Exposure to an Asset Class or Sub-Asset Class: portfolio allocation to passive indices of chosen asset class or subclass can be cost-efficiently implemented. Portfolios can be diversified by investing in different sectors of equity asset class, commodities, bonds etc. Targeted strategic allocation can be implemented for an investor based on suitability.
+\item Tactical Strategies: tactical adjustment around target weights for asset classes or sub-asset class may be made. Thematic ETFs may be used to select sub-sectors that are expected to outperform. ETFs selected for short-term tactical strategies are selected based on lower trading cost and liquidity.
+\end{enumerate}
+\end{remark}
+
+\begin{remark} \hlt{ETFs for Active Investing} \\
+Quantitative ETFs have active weights as stock selection and weighting are chosen by set of rules disclosed in index methodology. Smart beta ETFs may use quantitative screens or weights based on company fundamentals.
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Smart Beta ETFs: benchmarked to an index with predefined rules for screening and weighting. Strategy index based on return drivers, and for each factor, competing ETF offerings may differ based on criteria used to represent the factor and weights applied to constituent holdings.\\
+Smart beta ETFs provide longer-term buy0and0hold exposure to desired factor, and used to add risk factor allocation that might not be present in a benchmark or portfolio.\\
+Multi-factor ETFs combine several factors, and adjust weights dynamically as market opportunities and risk change. Strategy design includes factor selection, factor strategy construction, weighting scheme across factors. Typically has lower return volatility than single-factor, but may have less return potential.\\
+Success of active ETFs depends on if factor performance well relative to expectations, and how effective the ETF is at delivering the benchmark factor return.
+\item Risk Management: some ETFs are constructed to provide higher or lower risk relative to passive index. Low-volatility ETFs offer lower target volatility profile. Currency-hedged global ETFs provide international exposure without the currency risk. Smart-beta fixed-income ETFs hold long positions and hedge duration risk with futures or shorts in government bonds, hence hedging interest rate risk.
+\item Alternatively Weighted ETFs: weight constituents by means other than market capitalisation, such as equal weighting or weights based on fundamentals.
+\item Discretionary Active ETFs: actively managed, similar to closed-end mutual funds. Fixed-income ETFs provide exposure to senior bank loans, mortgage securities, and floating rate notes. Liquid alternative ETFs attempt to deliver absolute return and risk diversification, and replicate broad hedge fund indexes (strategies include long-short, managed futures, private equity, merger arbitrage).
+\item Dynamic Asset Allocation and Multi-Asset Strategies: dynamic top-down asset allocation ETFs invest based on risk-return forecasts. Used for discretionary asset allocation or global macro strategies.
+\end{enumerate}
+\end{remark}
