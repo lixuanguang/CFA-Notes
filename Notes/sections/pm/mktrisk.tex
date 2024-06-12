@@ -315,3 +315,101 @@ Gross position risk measures correlation risk for the portfolio.
 
 \subsubsection{Backtesting and Simulations}
 
+\begin{remark} \hlt{Backtesting}\\
+Process of using historical data to emulate investment process and assess the risk and return.\\
+Also helps investors to refine and improve investment process.\\
+Relies on assumption that the future follows past trends to a degree.\\
+Note, methodologies that perform well in backtest sometimes fail to deliver outperformance in actual use.
+\end{remark}
+
+\begin{remark} \hlt{Portfolio Construction Procedures}\\
+Equity strategies typically use factor-based models, which represent unique sources of risk based on economic fundamentals. Goal of factor-based strategy is to identify signals to assemble portfolios that will outperform the overall market. To avoid data-mining trap, if a factor perform well in a backtest but doesn't have logical or economic reasoning backing it, the factor should be rejected. To formulate a theory and appropriate investing rules and procedures, then use historical data (training and sample) to measure performance.\\
+It is more common to construct stock selection model that linearly combines several factors. Factor portfolios may be combined together with a benchmark portfolio (factors are weighted equally), or with risk parity portfolio (each factors contributes equally to risk).
+\end{remark}
+
+\begin{method} \hlt{Backtesting Process}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Strategy Design: identify investment goals and hypothesis.\\
+For active strategy, goal is to achieve high risk-adjusted returns while managing downside risks.\\
+Investment hypothesis is a method, which can be a trading rule, security selection criterion, portfolio etc.\\
+Next, to transform hypothesis into rules and processes, specifying key parameters:
+\begin{enumerate}[label=\arabic*.]
+\setlength{\itemsep}{0pt}
+\item Investment Universe: all assets which a position can be taken in while executing the strategy.
+\item Definition of Return: either consolidated in local currency, or left as foreign currency. Choice of currency depends on whether the strategy requires hedging of currency exposures.\\
+If goal is excess return, benchmark must be specified, which should relate to the investment universe.
+\item Rebalancing Frequency and Transaction Cost: monthly rebalancing is typical, and higher frequencies are also common. Higher frequency rebalancing leads to higher transaction costs, and price data will be biased by bid-ask spreads, asynchronous trading across the world, missing days from holidays.\\
+Consideration of transaction costs is crucial as market anomalies disappear when these are included.
+\item Start and End Date: long data history is preferred to maximise confidence on the results.\\
+Financial market data is non-stationary, hence likely to contain various distinct regimes. Hence, discrete time intervals should additionally be individually analysed.
+\end{enumerate}
+\item Historical Investment Simulation: portfolio is constructed and rebalanced according to predetermined frequency. Portfolio construction will be guided by investment strategy and constraints (geography, size, liquidity, limits on shorting).
+\begin{enumerate}[label=\arabic*.]
+\setlength{\itemsep}{0pt}
+\item Rolling Window Backtesting: to evaluate viability of a factor, use a walk-forward (rolling window) system. Model parameters are fixed in advance to avoid overfitting. Strategy will be accepted if it performs well in out-of-test periods and makes logical sense.\\
+Methodology implicitly assumes same pattern of past performance is expected to repeat over time. Results may not reflect dynamic nature of financial markets and possible extreme downside risk.
+\item Backtesting Performance of Factor Allocation Strategies: to execute rolling window process twice. First, construct the factor portfolio using walk-forward approach, where each factor portfolios is long-short. Then use either benchmark or risk parity weighting to form a multi-factor portfolio. Then a second rolling window process is sued to determine covariances and create the risk parity portfolio. Both portfolios (which are long-only in terms of factor portfolios) are rebalanced monthly to maintain risk parity or equal weighting as appropriate. These portfolios are then analysed out-of-sample to determine returns on each portfolio.
+\end{enumerate}
+\item Analysis of Backtesting Output:
+\begin{enumerate}[label=\arabic*.]
+\setlength{\itemsep}{0pt}
+\item Long-Short Hedged Portfolio Approach: from Fama French ($1993$). First, select a factor and rank investment universe by the factor in quantiles, and invest in each quantile based on a weighting scheme (equally or by market cap). Then long top quintile, short bottom quintile to form long-short hedged portfolio. Rolling window backtesting can then be applied, with portfolio rebalanced monthly. The series of out-of-sample performance data can then be analysed using metrics such as Value at Risk (VaR), Conditional Value at Risk (CVaR), Maximum Drawdown.
+\item Comparing Results of Backtesting Methodologies: different backtesting methodologies may produce results that are different. There is no perfect methodology to use.\\
+Ideally, multiple methods should suggest similar results
+\end{enumerate}
+\end{enumerate}
+\end{method}
+
+\begin{remark} \hlt{Issues in Strategy Backtesting}
+\begin{enumerate}[label=\arabic*.]
+\setlength{\itemsep}{0pt}
+\item Survivorship Bias: driving conclusions from data that reflects only entities that have survived to date.\\
+To use point-in-time data which is the most complete data for any given prior time period.\\
+Entities may appear via IPOs, spin-offs, outperformance; entities may disappear due to privatisation, acquisition, prolonged under- or outperformance that changes market cap.
+\item Look-Ahead Bias: from using data that was unknown or unavailable during historical periods over when the backtest was conducted. To use point-in-time data.\\
+Reporting lag refers to situation where data describing a period is only available after the period ends.\\
+Data revisions refers to situations where macro data are revised multiple times, companies restate financial statements. Databases only keep latest numbers.\\
+Index addition is when data vendors add new companies to databases, and backtesting with current database will be using information on companies that were not in the database during backtesting period.
+\item Data Snooping Bias: substituting sound portfolio construction by backtesting many strategies and choosing the best-performing strategy. Occurs when analysis is performed until a significant result is found.\\
+Forms include performing interim analyses whether to continue collecting data, using many variables and deciding which to report later, dropping outliers only after performing analyses etc.\\
+Mitigated by setting a much higher hurdle than typical critical $t$-statistics.\\
+Alternatively, use cross-validation, such as rolling window backtesting.
+\end{enumerate}
+\end{remark}
+
+\begin{remark} \hlt{Historical Scenario Analysis}\\
+Backtesting of strategy on various regimes, taking into consideration the various structural breaks.\\
+Typical types of regime change includes recession versus expansions, low versus high volatility periods, trade agreement and no-trade agreement environments.\\
+Note risk and return of various strategies vary depending on the regime.\\
+Probability density plot may reveal information on sensitivity of return distributions in different regimes.
+\end{remark}
+
+\begin{remark} \hlt{Historical Simulation}\\
+Randomly draw past returns from long historical period, without order of occurrence. Similar to rolling-window backtesting, except the time sequence in which returns occured is not taken into account. Bootstrapping (random sampling with replacement) used if number of simulations required is larger than size of historical dataset.
+\end{remark}
+
+\begin{remark} \hlt{Monte Carlo Simulation}\\
+Overcomes issue of only drawing from past data. Assigns statistical distribution from each variable, then draw random observations from this multivariate distribution, where parameters of the distribution are calibrated with past asset return data. Method is flexible, as it allows for a variety of distributions, catering for non-normality, tail dependence, fat tails etc. However, method is complex and requires significant computing power.\\
+May be used to evaluate strategy's downside risk, and validate results of backtesting.
+\end{remark}
+
+\begin{method} \hlt{Steps of Simulation Analysis}
+\begin{enumerate}[label=\arabic*.]
+\setlength{\itemsep}{0pt}
+\item Select target variable for analysis, typically return and its distribution
+\item Specify key decisions variables, which are often returns of each underlying asset, weight.
+\item Specify number of trials, typically between $1000$ and $10000$. The greater the number of trials, the more stable the predictions of performance and variance of performance.
+\item Define distributional properties of each key variable, and also take tail dependence and correlations between variables into account.
+\item Use random number generator to draw $N$ random numbers for each variable.
+\item For each set of simulated key decision variables, compute the value.
+\item Repeat steps $5$ to $6$ until completing desired number of trials ($N$).
+\item Compute metrics of the $N$ simulated values of the target variable, such as mean, volatility, Sharpe ratio, various downside metrics (CVaR, maximum drawdown etc.)
+\end{enumerate}
+\end{method}
+
+\begin{remark} \hlt{Sensitivity Analysis}\\
+Enables understanding of how target variable varies due to changes in one of various input variables.\\
+To quantify risk of misspecification, conduct sensitivity analysis by calibrating a different distribution to the factor return data, then running the process again.\\
+Process is similar to that for Monte Carlo simulation, except data is fitted to multivariate $t$-distribution which allows for fat tails and skewness. After generating the samples, use risk measures such as Sharpe ratio or CVaR.
+\end{remark}
