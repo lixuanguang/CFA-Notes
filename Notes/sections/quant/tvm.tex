@@ -36,4 +36,65 @@ PV = \frac{A}{r} \nonumber
 \end{equation}
 \end{definition}
 
+\begin{definition} \hlt{Internal Rate of Return (IRR)}\\
+The interest rate at which a series of cash inflows and outflows sum to zero when discounted to present value.\\
+Series of cash flows such that the net present value (NPV) is zero.
+\end{definition}
 
+\begin{definition} \hlt{Money-Weighted Rate of Return}\\
+The IRR on a portfolio, taking into account all cash inflows and outflows.
+\end{definition}
+
+\begin{definition} \hlt{Time-Weighted Rate of Return}\\
+Measures compound growth, rate at which $\$1$ compounds over specific performance horizon.
+\begin{enumerate}[label=\arabic*.]
+\setlength{\itemsep}{0pt}
+\item Value the portfolio immediately preceding significant additions or withdrawals. Form sub-periods over the evaluation period that correspond to dates of deposits and withdrawals.
+\item Compute the holding period return $HPR$ of the portfolio for each sub-period.
+\item Compute the total return for the entire measurement period,
+\begin{equation}
+r = \sqrt[1/n]{\prod\limits_{i=1}^n (1+HPR_i)} - 1 \nonumber
+\end{equation}
+\end{enumerate}
+\end{definition}
+
+\begin{definition} \hlt{Annualised Returns}
+\begin{equation}
+r = (1+HPR)^{365/\text{Days}} - 1 \nonumber
+\end{equation}
+\end{definition}
+
+\begin{definition} \hlt{Present Value of Cash Flow Given Frequent Compounding}
+\begin{equation}
+PV = FV_N \left(1 + \frac{r}{m} \right)^{-mN} \nonumber
+\end{equation}
+where $r$ is quoted annual interest rate, $N$ is number of years, $m$ is compounding periods per year.
+\end{definition}
+
+\begin{definition} \hlt{Continuously Compounded Return}\\
+Given HPR, the associated continuously compounded return is
+\begin{equation}
+r_{\text{CC}} = \ln(1+HPR) = \ln \left(\frac{\text{Ending Value}}{\text{Beginning Value}} \right) \nonumber
+\end{equation}
+\end{definition}
+
+\newpage
+
+\begin{definition} {\color{white}space}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Gross Return: total return on security portfolio before deducing fees for management and admin fees
+\item Net Return: return after management and admin fees have been deducted
+\item Pre-Tax Nominal Return: return before paying taxes
+\item After-Tax Nominal Return: return after tax liability is deducted
+\item Real Return: nominal return after adjusting for inflation.
+\begin{equation}
+(1 + \text{Real Return}) = \frac{(1 + \text{Nominal Risk-Free Rate}) (1 + \text{Risk Premium})}{(1 + \text{Inflation Premium})} \nonumber
+\end{equation}
+\item Leveraged Return: return that is a multiple of return on underlying asset
+\begin{equation}
+r_{\text{Leveraged}} = \frac{r(V_0 + V_B) - r_B V_B}{V_0} \nonumber
+\end{equation}
+$r$ is un-levered rate of return, $V_0$ is un-levered amount, $r_B$ is cost of borrowing, $V_B$ is borrowed amount.
+\end{enumerate}
+\end{definition}

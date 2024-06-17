@@ -1,17 +1,5 @@
 \subsection{Hypothesis Testing}
 
-\begin{definition} \hlt{One-tailed and Two-tailed Tests of Single Mean}
-\begin{enumerate}[label=\roman*.]
-\setlength{\itemsep}{0pt}
-\item Two-tailed test $H_0: \theta = \theta_0$ against $H_{\alpha} : \theta \neq \theta_0$.\\
-Reject $H_0$ if test statistic $z < - z_{\alpha/2}$ or $z > z_{\alpha/2}$.
-\item Right-tailed test $H_0: \theta \leq \theta_0$ against $H_{\alpha} : \theta > \theta_0$.\\
-Reject $H_0$ if test statistic $z > z_{\alpha}$.
-\item Left-tailed test $H_0: \theta \geq \theta_0$ against $H_{\alpha} : \theta < \theta_0$.\\
-Reject $H_0$ if test statistic $z < - z_{\alpha}$.
-\end{enumerate}
-\end{definition}
-
 \begin{definition}
 The \hlt{test statistic} is as follows:
 \begin{equation}
@@ -19,21 +7,19 @@ The \hlt{test statistic} is as follows:
 \end{equation}
 \end{definition}
 
-\begin{definition} \hlt{Type I and Type II Errors}\\
-
-\begin{tabular}{|c|c|c|}
+\begin{flushleft}
+Type I and Type II Errors
+\begin{tabularx}{\textwidth}{p{11em}|X|X}
 \hline
 \rowcolor{gray!30}
 Decision & $H_0$ True & $H_0$ False \\
 \hline
-Do not reject $H_0$ & Correct Decision & Type II Error \\
+Fail to reject $H_0$ & Correct Decision, $1-\alpha$ & Type II Error, $\beta$ \\
 \hline
-Reject $H_0$ & Type I Error & Correct Decision \\
+Reject $H_0$ & Type I Error, $\alpha$ & Correct Decision, $1-\beta$ \\
 \hline
-\end{tabular}
-\end{definition}
-
-\hfill
+\end{tabularx}
+\end{flushleft}
 
 \begin{definition} {\color{white}space}
 \begin{enumerate}[label=\roman*.]
@@ -44,106 +30,91 @@ Reject $H_0$ & Type I Error & Correct Decision \\
 \end{enumerate}
 \end{definition}
 
-\begin{definition} \hlt{One-tailed and Two-tailed Tests of Two Mean}
-\begin{enumerate}[label=\roman*.]
-\setlength{\itemsep}{0pt}
-\item Two-tailed test $H_0: \mu_1 - \mu_2 = 0$ against $H_{\alpha} : \mu_1 - \mu_2 \neq 0$.\\
-Reject $H_0$ if test statistic $t > t_{\alpha/2}$ or if $t < t_{1 - \alpha/2}$, with $df = v$.
-\item Right-tailed test $H_0: \mu_1 - \mu_2 \leq 0$ against $H_{\alpha} : \mu_1 - \mu_2 > 0$.\\
-Reject $H_0$ if test statistic $t > t_{1 - \alpha}$, with $df = v$.
-\item Left-tailed test $H_0: \mu_1 - \mu_2 \geq 0$ against $H_{\alpha} : \mu_1 - \mu_2 < 0$.\\
-Reject $H_0$ if test statistic $t < t_{\alpha}$, with $df = v$.
-\end{enumerate}
-\end{definition}
-
-\begin{definition} \hlt{One-tailed and Two-tailed Tests of Single Variance}
-\begin{enumerate}[label=\roman*.]
-\setlength{\itemsep}{0pt}
-\item Two-tailed test $H_0: \sigma^2 = \sigma_0^2$ against $H_{\alpha} : \sigma^2 \neq \sigma_0^2$.\\
-Reject $H_0$ if test statistic $> \chi_{\alpha/2}^2$ or if test statistic $< \chi_{1 - \alpha/2}^2$, with $df = n-1$.
-\item Right-tailed test $H_0: \sigma^2 \leq \sigma_0^2$ against $H_{\alpha} : \sigma^2 > \sigma_0^2$.\\
-Reject $H_0$ if test statistic $> \chi_{\alpha}^2$, with $df = n-1$.
-\item Left-tailed test $H_0: \sigma^2 \geq \sigma_0^2$ against $H_{\alpha} : \sigma^2 < \sigma_0^2$.\\
-Reject $H_0$ if test statistic $< \chi_{1-\alpha}^2$, with $df = n-1$.
-\end{enumerate}
-\end{definition}
-
-\begin{definition} \hlt{One-tailed and Two-tailed Tests of Two Variances}
-\begin{enumerate}[label=\roman*.]
-\setlength{\itemsep}{0pt}
-\item Two-tailed test $H_0: \sigma_1^2 = \sigma_2^2$ against $H_{\alpha} : \sigma_1^2 \neq \sigma_2^2$.\\
-Reject $H_0$ if test statistic $> F_{\alpha/2}$.
-\item Right-tailed test $H_0: \sigma_1^2 \leq \sigma_2^2$ against $H_{\alpha} : \sigma_1^2 > \sigma_2^2$.\\
-Reject $H_0$ if test statistic $> F_{\alpha}$.
-\item Left-tailed test $H_0: \sigma_1^2 \geq \sigma_2^2$ against $H_{\alpha} : \sigma_1^2 < \sigma_2^2$.\\
-Reject $H_0$ if test statistic $< F_{1 - \alpha}$.
-\end{enumerate}
-\end{definition}
-
-\begin{method}\hlt{Statistical Test Summaries}
-\begin{enumerate}[label=\roman*.]
-\setlength{\itemsep}{0pt}
-\item \hlt{Test of Single Mean} \\
-\begin{tabular}{|c|c|c|c|}
+\begin{flushleft}
+Parametric Test Statistics Summaries
+\begin{tabularx}{\textwidth}{p{12em}|X|X|X}
 \hline
 \rowcolor{gray!30}
-Sample & Variance & Small Sample & Large Sample \\
-\hline 
-Normal & Known & $z = \frac{\overline{X} - \mu_0}{\sigma /\sqrt{n}}$ & $z = \frac{\overline{X} - \mu_0}{s /\sqrt{n}}$\\
+Aim of Test & Test Statistic & Distribution & $df$ \\
 \hline
-Normal & Unknown & $t_{n-1} = \frac{\overline{X} - \mu_0}{s/\sqrt{n}}$ & $t_{n-1} = \frac{\overline{X} - \mu_0}{s/\sqrt{n}}$ or $z = \frac{\overline{X} - \mu_0}{s /\sqrt{n}}$ \\
+Test of single mean & $t = \frac{\overline{X} - \mu_0}{s /\sqrt{n}}$ & $t$-distributed & $n-1$\\
 \hline
-Non-normal & Known & Not Available & $z = \frac{\overline{X} - \mu_0}{s /\sqrt{n}}$ \\
+Test of diff in means & $t = \frac{(\overline{X}_1 - \overline{X}_2) - (\mu_1 - \mu_2)}{\sqrt{\frac{s_p^2}{n_1} + \frac{s_p^2}{n_2}}}$, & $t$-distributed & $n_1 + n_2 -2$
+ \\
+& $s_p^2 = \frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{n_1 + n_2 - 2}$ & &\\
 \hline
-Non-normal & Unknown & Not Available & $t_{n-1} = \frac{\overline{X} - \mu_0}{s/\sqrt{n}}$ or $z = \frac{\overline{X} - \mu_0}{s /\sqrt{n}}$ \\
+Test of mean of diff & $t = \frac{\overline{d} - \mu_{d0}}{s_{\overline{d}}}$ & $t$-distributed & $n-1$ \\
 \hline
-\end{tabular}
-\item \hlt{Test of Two Mean} \\
-\begin{tabular}{|c|c|c|c|}
+Test of single var & $\chi^2 = \frac{(n-1)s^2}{\sigma_0^2}$ & $\chi^2$-distributed & $n-1$ \\
+\hline
+Test of diff in var & $F = \frac{s^2_{\text{Before}}}{s^2_{\text{After}}}$ & $F$-distributed & $n_1 -1, n_2 - 1$ \\
+\hline
+Test of correlation & $t = \frac{r \sqrt{n-2}}{\sqrt{1-r^2}}$ & $t$-distributed & $n-2$\\
+\hline
+Test of indep (categorical) & $\chi^2 = \sum\limits_{i=1}^m \frac{(O_{ij} - E_{ij})^2}{E_{ij}}$ & $\chi^2$-distributed & $(r-1)(c-1)$\\
+\hline
+\end{tabularx}
+where $\mu_0, \mu_{d0}, \sigma_0^2$ is hypothesised values of mean, mean difference, variance.\\
+$\overline{X}, \overline{d}, s^2, r$ is sample mean, mean of differences, variance, standard deviation, correlation.\\
+$O_{ij}, E_{ij}$ is observed and expected frequencies, with $r$ as number of rows, $c$ as number of columns.
+\end{flushleft}
+
+\begin{flushleft}
+Parametric Tests of Two Mean
+\begin{tabularx}{\textwidth}{p{4em}|p{8.5em}|p{22em}|X}
 \hline
 \rowcolor{gray!30}
-Sample & Variance & Test Statistics & Degrees of Freedom \\
-\hline 
-Normal & Equal, Unknown & $t = \frac{(\overline{X}_1 - \overline{X}_2) - (\mu_1 - \mu_2)}{\sqrt{\frac{s_p^2}{n_1} + \frac{s_p^2}{n_2}}}$, where $s_p^2 = \frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{n_1 + n_2 - 2}$ & $df = n_1 + n_2 -2$ \\
-& &  is pooled estimator of common variance & \\
+Sample & Variance & Test Statistics & $df$ \\
 \hline
-Normal & Unequal, Unknown & $t = \frac{(\overline{X}_1 - \overline{X}_2) - (\mu_1 - \mu_2)}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$ & $df = \frac{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}{\frac{(s_1^2 / n_1)^2}{n_1} + \frac{(s_2^2 / n_2)^2}{n_2}}$ \\
+Normal & Equal, Unknown & $t = \frac{(\overline{X}_1 - \overline{X}_2) - (\mu_1 - \mu_2)}{\sqrt{\frac{s_p^2}{n_1} + \frac{s_p^2}{n_2}}}$, $s_p^2 = \frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{n_1 + n_2 - 2}$ & $n_1 + n_2 -2$ \\
 \hline
-Normal & Paired, Unknown & $t = \frac{\overline{d} - \mu_{d0}}{s_{\overline{d}}}$, where $\overline{d} = \frac{1}{n} \sum\limits_{i=1}^n d_i$, $s_{\overline{d}} = \frac{1}{\sqrt{n}} \frac{\sum\limits_{i=1}^n (d_i - \overline{d})^2}{n-1}$ & $df = n-1$ \\
+Normal & Unequal, Unknown & $t = \frac{(\overline{X}_1 - \overline{X}_2) - (\mu_1 - \mu_2)}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$ & $\frac{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}{\frac{(s_1^2 / n_1)^2}{n_1} + \frac{(s_2^2 / n_2)^2}{n_2}}$ \\
 \hline
-\end{tabular}
-\item \hlt{Correlation Test}: Assess correlation strength of two variables, $H_0: \rho = 0$ against $H_1 : \rho \neq 0$.\\
-Test statistic is $t = \frac{r \sqrt{n-2}}{\sqrt{1-r^2}}$, where $r$ is the sample correlation.\\
-Degrees of freedom is $df = n-2$.
-\item \hlt{Test of Single Variance Equality}: compare variance of population $\sigma^2$ against hypothesised value $\sigma_0^2$.\\
-Test statistic is $\chi^2 = \frac{(n-1)s^2}{\sigma_0^2}$, where sample variance is $s^2 = \frac{\sum\limits_{i=1}^n (X_i - \overline{X})^2}{n-1}$.\\
-Degrees of freedom is $df = n-1.$
-\item \hlt{Test of Two Variance Equality}: for two populations with normal distribution.\\
-Test statistic is $F = \frac{s_1^2}{s_2^2}$.\\
-Degrees of freedom for numerator is $df_1 = n_1 - 1$, for denominator is $df_2 = n_2 - 1$.
-\item \hlt{Spearman Rank Test}: If the assumption that two variables are uncorrelated is not valid, use the test.
-\begin{enumerate}[label=\arabic*.]
+Normal & Paired, Unknown & $t = \frac{\overline{d} - \mu_{d0}}{s_{\overline{d}}}$, where $\overline{d} = \frac{1}{n} \sum\limits_{i=1}^n d_i$, $s_{\overline{d}} = \frac{1}{\sqrt{n}} \frac{\sum\limits_{i=1}^n (d_i - \overline{d})^2}{n-1}$ & $n-1$ \\
+\hline
+\end{tabularx}
+\end{flushleft}
+
+\begin{remark} \hlt{Parametric and Nonparametric Tests}\\
+Parametric tests make specific assumptions about distribution of population producing the sample.\\
+Nonparametric test makes minimal assumptions about the population, used when:
+\begin{enumerate}[label=\roman*.]
 \setlength{\itemsep}{0pt}
-\item Rank observations on $X$ from large to small. For ties, assign average of ranks. Do same for $Y$.
+\item data do not meet distributional assumptions
+\item there are outliers
+\item data are given in ranks or use an ordinal scale
+\item relevant hypotheses do not concern a parameter
+\end{enumerate}
+\end{remark}
+
+\begin{flushleft}
+Parametric versus Nonparametric Test
+\begin{tabularx}{\textwidth}{p{12em}|X|X}
+\hline
+\rowcolor{gray!30}
+Aim of Test & Parametric Test & Non-Parametric Test \\
+\hline
+Test of single mean & $t$-distributed test & Wilcoxon signed-rank test\\
+& $z$-distributed test & \\
+\hline
+Test of diff in means & $t$-distributed test & Mann-Whitney $\mathcal{U}$ test \\
+& & Wilcoxon rank sum test \\
+\hline
+Test of mean diff (paired) & $t$-distributed test & Wilcoxon signed-rank test \\
+& & Sign test \\
+\hline
+\end{tabularx}
+\end{flushleft}
+
+\begin{remark} \hlt{Spearman Rank Correlation Coefficient Test}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item  Rank observations on $X$ from large to small. For ties, assign average of ranks. Do same for $Y$.
 \item Calculate difference $d_p$, between the ranks of each pair of observations on $X$ and $Y$.
 \item With sample size $n$, test statistic is $r_s = 1 - \frac{\sum\limits_{i=1}^n d_i^2}{n (n^2 - 1)}$.\\
 If $n>30$, use t-test instead, where $t = \frac{(n-2)^{1/2} r_s}{(1- r_s^2)^{1/2}}$ with degrees of freedom $df = n-2$.
 \end{enumerate}
-\item \hlt{Parametric vs Non-Parametric Tests}\\
-\begin{tabular}{|c|c|c|}
-\hline
-\rowcolor{gray!30}
- & Parametric & Non-Parametric \\
-\hline 
-Tests on single mean & t-test, z-test & Wilcoxon signed-rank test \\
-\hline
-Tests on differences between means & t-test, approx t-test & Mann-Whitney U test \\
-\hline
-Tests on mean differences (paired) & t-test & Wilcoxon signed-rank test, sign test \\
-\hline
-\end{tabular}
-\end{enumerate}
-\end{method}
+\end{remark}
 
 
 
