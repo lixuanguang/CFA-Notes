@@ -2,6 +2,8 @@
 
 \subsubsection{Multiple Regression}
 
+Reject $H_0$ if $p$-value $<$ significance level, or if $F$- or $t$- etc. statistics $>$ critical value.
+
 \begin{method} \hlt{Logistic Regression: Changing One Variable, Keeping Others Constant}\\
 Compute the dependent variable with original independent variable values first.\\
 Compute the dependent variable with one of the independent variables increased by one unit.\\
@@ -24,6 +26,7 @@ If question only gives coefficient value $\beta_i$ and respective standard error
 \item Square, then sum the errors.
 \item Divide by number of forecasts, then take the square root.
 \end{enumerate}
+The smaller the RMSE, the more accurate the model.
 \end{method}
 
 ANOVA Table\\
@@ -96,4 +99,67 @@ If time series is not covariance stationary (i.e. no finite mean reverting level
 \begin{method} \hlt{Use of Durbin-Watson (DW) to Test Autocorrelations}\\
 DW statistic cannot be used for regression that has a lagged value of dependent variable.\\
 To test for autocorrelations, examine the $t$-statistic of autocorrelations.
+\end{method}
+
+\begin{method} \hlt{Random Walk}\\
+Has undefined mean-reverting level, hence is not covariance stationary.\\
+Has unit root of $\beta_1 = 1$, hence regression cannot be used.\\
+Tested with Dickey-Fuller Unit Root Test.\\
+If unit root exists, difference the time series to transform into covariance-stationary time series.
+\end{method}
+
+\begin{method} \hlt{Two Time Series}\\
+Both time series must be tested for unit root. If neither series has unit root, linear regression may be used.
+\end{method}
+
+\subsubsection{Big Data and Machine Learning}
+
+\begin{method} \hlt{Building Structured Data-Based ML Models}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Conceptualisation of modelling task
+\item Data collection
+\item Data preparation and wrangling:\\
+\text{Winsorisation}: replaces extreme values and outliers with min and max of non-outlier points.
+\item Data exploration
+\item Model training
+\end{enumerate}
+\end{method}
+
+\begin{method} \hlt{Building Text-Based ML Models}
+\begin{enumerate}[label=\roman*.]
+\setlength{\itemsep}{0pt}
+\item Text problem formulation
+\item Data (text) curation
+\item Text preparation and wrangling
+\begin{enumerate}[label=\arabic*.]
+\setlength{\itemsep}{0pt}
+\item Preprocessing: Remove extra white space, all html tags.\\
+Replace punctuations with annotations to preserve grammatical meaning in text.\\
+\hlt{Lemmatisation}: convert inflected forms of word into morphological root.
+\item Tokenisation: Splits given text into separate tokens.
+\item Normalisation: to create the bag-of-words (BOW)
+\item Pruning: remove tokens with very low and very high term-frequency (TF) values.
+\end{enumerate}
+\item Text exploration
+\item Model training
+\end{enumerate}
+\end{method}
+
+\begin{method} \hlt{Purpose of Feature Selection and Feature Engineering}\\
+Feature selection used to minimise model overfitting.\\
+Feature engineering used to prevent under-fitting in training of model.
+\end{method}
+
+\begin{definition} \hlt{Slight Regularisation}\\
+Prediction error on training dataset is small, prediction error on cross-validation data set is significantly larger. Difference in error is variance, due to too many features and model complexity. Results in model overfitting.
+\end{definition}
+
+\begin{method} \hlt{Model Selection}\\
+Governed by usage of supervised or unsupervised learning, type of data, size of data.
+\end{method}
+
+\begin{method} \hlt{Model Evaluation}\\
+Measures goodness of fit for validation of the model.\\
+Includes error analysis, receiver operating characteristics (ROC) plots, RMSE calculations.
 \end{method}
