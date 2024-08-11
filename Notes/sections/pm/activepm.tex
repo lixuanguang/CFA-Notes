@@ -32,12 +32,12 @@ where $w$ is weight, $R_{A,i}$ is active return.
 \setlength{\itemsep}{0pt}
 \item Asset Allocation Return: deviations of asset class portfolio weights from benchmark weights.
 \begin{equation}
-R_{\text{Asset Allocation}} = \sum\limits_{j=1}^M w_{P, j} R_{A, j} \nonumber
+R_{\text{Asset Allocation}} = \sum\limits_{j=1}^M \Delta w_j R_{B,j} \nonumber
 \end{equation}
 where $j$ is asset class, such as bonds, equity, etc.
 \item Security Selection Return: value added from security selection within asset class portfolios.
 \begin{equation}
-R_{\text{Security Selection}} = \sum\limits_{j=1}^M \Delta w_j R_{B,j} \nonumber
+R_{\text{Security Selection}} = \sum\limits_{j=1}^M w_{P, j} R_{A, j} \nonumber
 \end{equation}
 \end{enumerate}
 Note that active return is then $R_A = R_{\text{Asset Allocation}} + R_{\text{Security Selection}}$.

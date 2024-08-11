@@ -119,13 +119,13 @@ An OTC forward contract where the underlying is an interest rate on a deposit.\\
 The fixed-rate payer is long FRA, the fixed-rate receiver is short FRA.\\
 Long position will profit when market reference rate (MRR) rises above rate in FRA.\\
 FRAs are settled in cash for the difference between fixed interest payment established on initiation date and a floating interest payment established on FRA expiration date.\\
-FRAs are identified by $h \times m$, and payoff is based on spot $m$-day MRR observed in $h$-days from FRA initiation.
+FRAs identified by $h \times (h+m)$, payoff is based on spot $m$-day MRR observed in $h$-days from FRA initiation.
 \end{remark}
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.35]{/derivatives/hmfra}
-\caption{A $h \times m$ FRA}
+\caption{A $h \times (h+m)$ FRA}
 \end{figure}
 
 \begin{remark} \hlt{FRA Settlement Terminologies}\\
@@ -155,11 +155,11 @@ TA - NA = NA \times (L_m t_m) \nonumber
 \setlength{\itemsep}{0pt}
 \item Long position incurs gain when rates rise, incurs loss when rates decrease. Vice versa for short position.
 \item FRA price $FRA_0$ is implied forward rate for the period beginning when FRA expires to underlying loan maturity. Hence two spot rates are required to determine the implied forward rate.
-\item Although interest on underlying loan won't be paid until end of the loan, payoff on FRA will occur at expiration of FRA 9advanced settled), hence payoff on FRA is present value of interest savings on loan.
+\item Although interest on underlying loan won't be paid until end of the loan, payoff on FRA will occur at expiration of FRA advanced settled), hence payoff on FRA is present value of interest savings on loan.
 \end{enumerate}
 The annualised FRA is then
 \begin{equation}
-FRA_g = \left(\frac{1 + L_T t_T}{1 + L_h t_h} - 1 \right)/t_m \nonumber
+FRA_0 = \left(\frac{1 + L_T t_T}{1 + L_h t_h} - 1 \right)/t_m \nonumber
 \end{equation}
 \end{method}
 
@@ -167,7 +167,7 @@ FRA_g = \left(\frac{1 + L_T t_T}{1 + L_h t_h} - 1 \right)/t_m \nonumber
 The value of FRA comes from interest savings on a loan to be made at settlement date, and when this value is to be received (at end of the loan), then computed to present value.\\
 Let fixed-rate at initiation be $FRA_0$, and rate of FRA at time $g$ be $FRA_g$. The value of long FRA is then
 \begin{equation}
-V_g = NA \times \frac{FRA_g - FRA_0}{1 + D_{(T-g)} t_{(T_g)}} \nonumber
+V_g = NA \times \frac{(FRA_g - FRA_0)t_m}{1 + L_{(T-g)} t_{(T_g)}} \nonumber
 \end{equation}
 \end{method}
 
@@ -255,7 +255,7 @@ r_{\text{FIX}, \text{Annual}} = r_{\text{FIX}, \text{Periodic}} \times \text{Num
 Party that is fixed-rate payer benefits if rates increase as they are paying the lower (older) fixed rate while receiving the higher (newer) floating rate, vice versa.\\
 Value of pay-fixed swap is PV of difference in payments under new rate, relative to old rate.
 \begin{equation}
-V_{\text{Swap}, t} = - NA \times (r_{\text{FIX},t} - r_{\text{FIX}, 0}) \times \frac{NAD}{360} \times \sum\limits_{i=1}^n PV_i \nonumber
+V_{\text{Swap}, t} = - NA \times (r_{\text{FIX},t} - r_{\text{FIX}, 0}) \times \frac{NAD}{360} \times \sum\limits_{i=1}^n PV_i(1) \nonumber
 \end{equation}
 where $NA$ is absolute value of notional amount. Receive-fixed swap has negative value of pay-fixed swap.
 \end{remark}

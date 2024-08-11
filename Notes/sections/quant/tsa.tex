@@ -151,7 +151,7 @@ Even after a model is selected, the model may not forecast well.
 \begin{definition} \hlt{Autoregressive Conditional Heteroskedasticity (ARCH) Model}\\
 Used to test for autoregressive conditional heteroskedasticity. The time series variance of residuals in on e period is dependent on variance of residuals in preceding periods. An ARCH($q$) mode is as follows
 \begin{equation}
-\epsilon_t \sim N \left( 0, a_0 + \sum\limits_{i=1}^q a_i \epsilon_{t-1}^2 \right), \ \ \ \epsilon_t^2 = a_0 + \sum\limits_{i=1}^q a_i \epsilon_{t-1}^2 \nonumber
+\epsilon_t \sim N \left( 0, a_0 + \sum\limits_{i=1}^q a_i \epsilon_{t-i}^2 \right), \ \ \ \epsilon_t^2 = a_0 + \sum\limits_{i=1}^q a_i \epsilon_{t-i}^2 \nonumber
 \end{equation}
 Using $t$-statistics, if $a_i$ is statistically significant from zero, then series is ARCH($q$).
 \end{definition}
